@@ -2,7 +2,16 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faInstagram,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 
+library.add(faGithub, faInstagram, faLinkedin, faWhatsapp);
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -24,19 +33,6 @@ export default function Home() {
         <meta name="author" content="Mayur Pai" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="../mayur_pai.ico" type="image/x-icon" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"
-          rel="stylesheet"
-        />
         {/* <!-- <meta name="robots" content="noindex,nofollow"/> --> */}
         {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" /> */}
       </Head>
@@ -85,7 +81,7 @@ export default function Home() {
         </ul>
       </nav>
       <div className={styles.main_container}>
-        <div className={styles.html_body_h1}>
+        {/* <div className={styles.html_body_h1}>
           <span>&lt;html&gt; </span>
           <br />
         </div>
@@ -94,7 +90,7 @@ export default function Home() {
         </div>
         <div className={styles.html_body_h1}>
           <span> &lt;h1&gt; </span>
-        </div>
+        </div> */}
         <div className={styles.page}>
           <h1 className={styles.header_font}>
             <ul>
@@ -143,21 +139,79 @@ export default function Home() {
               <li>&nbsp;</li>
             </ul>
           </h1>
-          <div className={styles.html_h1}>
+          {/* <div className={styles.html_h1}>
             <span>&lt;/h1&gt;</span>
-          </div>
-          <p className={styles.fp}>Front End Developer | Programmer</p>
+          </div> */}
           <Link href="/contact">
             <a>
               <div className={styles.contact}>Contact Me!</div>
             </a>
           </Link>
+          <div className={styles.wrapper}>
+            <p className={styles.fp}>Check Out My</p>
+            <div className={styles.icon_github}>
+              <div className={styles.tooltip}>Github</div>
+              <span>
+                <Link href="https://github.com/mayurpai">
+                  <a target="_blank">
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      style={{ width: "2rem" }}
+                      fixedWidth
+                    />
+                  </a>
+                </Link>
+              </span>
+            </div>
+            <div className={styles.icon_instagram}>
+              <div className={styles.tooltip}>Instagram</div>
+              <span>
+                <Link href="https://www.instagram.com/mayurpai19/">
+                  <a target="_blank">
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      style={{ width: "2rem" }}
+                      fixedWidth
+                    />
+                  </a>
+                </Link>
+              </span>
+            </div>
+            <div className={styles.icon_linkedin}>
+              <div className={styles.tooltip}>LinkedIn</div>
+              <span>
+                <Link href="https://www.linkedin.com/in/mayur-pai5/">
+                  <a target="_blank">
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      style={{ width: "2rem" }}
+                      fixedWidth
+                    />
+                  </a>
+                </Link>
+              </span>
+            </div>
+            <div className={styles.icon_whatsapp}>
+              <div className={styles.tooltip}>Whatsapp</div>
+              <span>
+                <Link href="https://wa.me//919611609185">
+                  <a target="_blank">
+                    <FontAwesomeIcon
+                      icon={faWhatsapp}
+                      style={{ width: "2rem" }}
+                      fixedWidth
+                    />
+                  </a>
+                </Link>
+              </span>
+            </div>
+          </div>
         </div>
-        <div className={styles.html_body_html}>
+        {/* <div className={styles.html_body_html}>
           <span>&lt;/body&gt; </span>
           <br />
           <span>&lt;/html&gt; </span>
-        </div>
+        </div> */}
       </div>
 
       {/* <footer className={styles.footer}>
