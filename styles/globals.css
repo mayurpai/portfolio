@@ -9,6 +9,7 @@
   -ms-user-select: none;
   user-select: none;
   /* overflow-x: hidden; */
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -22,6 +23,29 @@
   --theme_color_blue: #09FDD9;
   --theme_color_pink: #FD0953;
   --highlights: rgb(172, 182, 190);
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--highlights);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme_color_pink);
+  background: -webkit-linear-gradient(to top, var(--theme_color_blue), var(--theme_color_pink));
+  background: linear-gradient(to top, var(--theme_color_blue), var(--theme_color_pink));
+  border-radius: 5rem;
+  transition: 1s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme_color_blue);
+  background: -webkit-linear-gradient(to top, var(--theme_color_pink), var(--theme_color_blue));
+  background: linear-gradient(to top, var(--theme_color_pink), var(--theme_color_blue));
 }
 
 /* html {

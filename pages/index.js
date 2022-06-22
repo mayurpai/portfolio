@@ -8,10 +8,10 @@ import {
   faGithub,
   faInstagram,
   faLinkedin,
-  faWhatsapp,
+  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faGithub, faInstagram, faLinkedin, faWhatsapp);
+library.add(faGithub, faInstagram, faLinkedin, faFacebook);
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -41,12 +41,13 @@ export default function Home() {
           <li>
             <Link href="/">
               <a>
-                <Image
+                <strong>Home</strong>
+                {/* <Image
                   className={styles.logo}
                   src="/logo.png"
                   width={60}
                   height={60}
-                />
+                /> */}
               </a>
             </Link>
           </li>
@@ -80,7 +81,7 @@ export default function Home() {
           </li>
         </ul>
       </nav>
-      <div className={styles.main_container}>
+      <section className={styles.main_container}>
         {/* <div className={styles.html_body_h1}>
           <span>&lt;html&gt; </span>
           <br />
@@ -149,6 +150,20 @@ export default function Home() {
           </Link>
           <div className={styles.wrapper}>
             <p className={styles.fp}>Check Out My</p>
+            <div className={styles.icon_facebook}>
+              <div className={styles.tooltip}>Facebook</div>
+              <span>
+                <Link href="https://www.facebook.com/profile.php?id=100010154376824">
+                  <a target="_blank">
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      style={{ width: "2rem" }}
+                      fixedWidth
+                    />
+                  </a>
+                </Link>
+              </span>
+            </div>
             <div className={styles.icon_github}>
               <div className={styles.tooltip}>Github</div>
               <span>
@@ -191,29 +206,25 @@ export default function Home() {
                 </Link>
               </span>
             </div>
-            <div className={styles.icon_whatsapp}>
-              <div className={styles.tooltip}>Whatsapp</div>
-              <span>
-                <Link href="https://wa.me//919611609185">
-                  <a target="_blank">
-                    <FontAwesomeIcon
-                      icon={faWhatsapp}
-                      style={{ width: "2rem" }}
-                      fixedWidth
-                    />
-                  </a>
-                </Link>
-              </span>
-            </div>
           </div>
+        </div>
+        <div className={styles.image_page}>
+          <div className={styles.hexagon}></div>
+          <Image
+            className={styles.image_logo}
+            src="/Mayur Pai B H_Profile.png"
+            width="480px"
+            height="480px"
+          />
         </div>
         {/* <div className={styles.html_body_html}>
           <span>&lt;/body&gt; </span>
           <br />
           <span>&lt;/html&gt; </span>
         </div> */}
-      </div>
-
+      </section>
+      <section className={styles.about}></section>
+        
       {/* <footer className={styles.footer}>
       </footer> */}
     </div>
