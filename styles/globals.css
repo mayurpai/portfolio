@@ -89,19 +89,25 @@
 
 @media screen and (max-width: 450px) {
   html {
-    font-size: 27.5%;
+    font-size: 50%;
   }
 }
 
 @media screen and (max-width: 360px) {
   html {
-    font-size: 22.5%;
+    font-size: 43;
   }
 }
 
 @media screen and (max-width: 320px) {
   html {
-    font-size: 22.5%;
+    font-size: 37%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  html {
+    font-size: 30%;
   }
 }
 

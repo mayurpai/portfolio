@@ -19,13 +19,13 @@ export default function Home() {
       <section className={styles.main_container} id="home">
         <div className={styles.page}>
           <div className={styles.html_body_h2}>
-            <span>&lt;html&gt; </span>
+            <span>&lt;!DOCTYPE html&gt; </span>
             <br />
             <span>&lt;body&gt; </span>
           </div>
-          <div className={styles.html_body_h1}>
+          {/* <div className={styles.html_body_h1}>
             <span> &lt;h1&gt; </span>
-          </div>
+          </div> */}
           <h1 className={styles.header_font}>
             <ul>
               <li>H</li>
@@ -148,10 +148,10 @@ export default function Home() {
         </div>
 
         <div className={styles.image_page}>
-          <div className={styles.hexagon}></div>
+          {/* <div className={styles.hexagon}></div> */}
           <Image
             className={styles.image_logo}
-            src="/Mayur Pai B H_Profile.png"
+            src="/mayurpai.png"
             width="480px"
             height="480px"
           />

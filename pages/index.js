@@ -36,6 +36,9 @@ export default function Index() {
       <Nav />
       <Home />
       <About />
+      {/* <Skills/> */}
+      {/* <Projects/> */}
+      {/* <Contact/> */}
       {/* <footer className={styles.footer}>
       </footer> */}
     </div>
