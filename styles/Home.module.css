@@ -68,7 +68,7 @@
 
 .page {
   position: relative;
-  left: 0rem;
+  left: 1rem;
   flex: 1 1 170px;
   display: flex;
   justify-content: center;
@@ -429,51 +429,55 @@
   }
 }
 
-.html_body_h1 {
+/* .html_body_h1 {
   font-family: "La Belle Aurore", cursive;
-  color: var(--highlights);
+  color: var(--theme_color_blue);
   position: fixed;
   background: transparent;
   top: 5.5rem;
-  margin-left: 14rem;
-  font-size: 2rem;
+  margin-left: 50rem;
+  font-size: 4rem;
   overflow: hidden;
-}
+} */
 
 .html_body_h2 {
   font-family: "La Belle Aurore", cursive;
   color: var(--highlights);
-  position: fixed;
+  position: absolute;
   background: transparent;
-  top: 8.5rem;
-  margin-left: 15.5rem;
-  font-size: 2rem;
+  left: -5rem;
+  font-size: 1.2rem;
+  margin-top: -2rem;
   overflow: hidden;
 }
 
 .html_body_h1 {
-  font-family: "La Belle Aurore", cursive;
+  font-family: "La Belle Aurore",
+  cursive;
   color: var(--highlights);
-  position: fixed;
+  position: absolute;
   background: transparent;
-  margin-bottom: 37rem;
-  margin-left: 15.5rem;
-  font-size: 2rem;
+  left: -5rem;
+  font-size: 1.2rem;
+  margin-top: -2rem;
   overflow: hidden;
 }
 
 .html_body_html {
   font-family: "La Belle Aurore", cursive;
   color: var(--highlights);
-  position: fixed;
+  position: absolute;
   background: transparent;
-  bottom: 4.5rem;
-  margin-left: 14rem;
-  font-size: 2rem;
+  left: -5rem;
+  font-size: 1.2rem;
   overflow: hidden;
 }
 
 .html_body_html span:nth-child(1) {
+  margin-left: 2.5rem;
+}
+
+.html_body_h2 span:nth-child(3) {
   margin-left: 2.5rem;
 }
 
