@@ -7,6 +7,7 @@ export default function About() {
   return (
     <>
       <section className={styles.about} id="about">
+        <div className={styles.big_heading}>Me, Myself & I</div>
         <div className={styles.page}>
           <div className={styles.html_body_h1}>
             <span> &lt;h1&gt; </span>

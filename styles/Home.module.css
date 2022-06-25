@@ -35,16 +35,18 @@
 
 .navigation_links .links a {
   text-decoration: none;
-  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+  color: var(--theme_color_blue);
+  /* background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_blue));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   font-size: 2rem;
 }
 
 .navigation_links .links :hover {
-  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_blue));
+  /* background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_blue));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+  color: #eaeaea;
 }
 
 .navigation_links .links a::after {
@@ -529,6 +531,14 @@ overflow: hidden; */
   padding: 7rem;
   top: 100%;
   bottom: 0;
+}
+
+.about .big_heading {
+  position: absolute;
+  top: -4.4rem;
+  left: 0;
+  font-size: 15rem;
+  color: var(--big_heading);
 }
 
 .footer {

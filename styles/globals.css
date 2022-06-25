@@ -23,6 +23,7 @@
   --theme_color_blue: #09FDD9;
   --theme_color_pink: #FD0953;
   --highlights: rgb(172, 182, 190);
+  --big_heading: rgba(141, 141, 141, 0.1);
 }
 
 ::-webkit-scrollbar {

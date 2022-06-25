@@ -17,6 +17,10 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+          rel="stylesheet"
+        ></link>
       </Head>
       <body>
         <Main />
