@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Nav from "./Nav";
 import Home from "./Home";
 import About from "./About";
-// import Skills from "./Skills";
+import Skills from "./Skills";
 // import Projects from "./Projects";
 // import Contact from "./Contact";
 
@@ -36,7 +36,7 @@ export default function Index() {
       <Nav />
       <Home />
       <About />
-      {/* <Skills/> */}
+      <Skills/>
       {/* <Projects/> */}
       {/* <Contact/> */}
       {/* <footer className={styles.footer}>
