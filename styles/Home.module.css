@@ -15,7 +15,9 @@
 
 .main_container,
 .about,
-.skills {
+.skills,
+.projects,
+.contact_me {
   scroll-snap-align: start;
 }
 
@@ -212,8 +214,13 @@
 }
 
 .about .page,
-.skills .page {
-  margin-bottom: 2rem;
+.skills .page,
+.projects .page,
+.contact_me .page {
+  margin-bottom: 6rem;
+  position: relative;
+  left: 1rem;
+  flex: 1 1 70px;
 }
 
 .sup {
@@ -238,29 +245,25 @@
 }
 
 .main_container .fp {
+  position: relative;
   letter-spacing: 0.2ch;
   margin-right: 2rem;
   font-size: 1.5rem;
   color: #eaeaea;
 }
 
-.about .fp {
+.about .fp,
+.skills .fp,
+.projects .fp,
+.contact_me .fp {
+  position: relative;
+  /* Position Has To Be Absolute As The Right Side Image Needs To Get Fit! */
   display: inline-block;
-  margin-top: 5rem;
   background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
   -webkit-background-clip: text;
-  font-size: 2rem;
+  font-size: 1.5rem;
   -webkit-text-fill-color: transparent;
-}
-
-.skills .fp {
-  display: inline-block;
-  margin-top: 5rem;
-  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
-  -webkit-background-clip: text;
-  font-size: 2rem;
-  -webkit-text-fill-color: transparent;
-  /* width: 75%; */
+  /* width: 50%; */
 }
 
 
@@ -476,7 +479,9 @@
 }
 
 .about .html_body_h1,
-.skills .html_body_h1 {
+.skills .html_body_h1,
+.projects .html_body_h1,
+.contact_me .html_body_h1 {
   left: 0rem;
   margin-top: -1rem;
 }
@@ -485,13 +490,22 @@
   left: -5rem;
 }
 
-.html_body_p {
-  margin-top: 4.5rem;
+/* .about .html_body_pc {
+  margin-top: 14.25rem;
 }
+.skills .html_body_pc {
+  margin-top: ;
+}
+.projects .html_body_pc {
 
-.html_body_pc {
-  margin-top: 0.5rem;
 }
+.contact_me .html_body_pc {
+  margin-top: -0.25rem;
+} */
+
+/* .html_body_pc {
+  margin-top: 5.5rem;
+} */
 
 .about .html_h1 {
   margin-left: 34rem;
@@ -501,6 +515,16 @@
 .skills .html_h1 {
   margin-left: 29rem;
   top: 10.75rem;
+}
+
+.projects .html_h1 {
+  margin-left: 22.5rem;
+  top: 4.5rem;
+}
+
+.contact_me .html_h1 {
+  margin-left: 31.5rem;
+  top: 4.5rem;
 }
 
 /* .html_h1 {
@@ -541,34 +565,41 @@ bottom: 0;
 top: 100%;
 overflow: hidden; */
 
-.about {
+.about,
+.skills,
+.projects,
+.contact_me {
   position: absolute;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   flex-direction: column;
   padding: 7rem;
-  top: 100%;
   bottom: 0;
+}
+
+.about {
+  top: 100%;
 }
 
 .skills {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap-reverse;
-  flex-direction: column;
-  padding: 7rem;
   top: 200%;
-  bottom: 0;
+}
+
+.projects {
+  top: 300%;
+}
+
+.contact_me {
+  top: 400%;
 }
 
 .about .big_heading,
-.skills .big_heading {
+.skills .big_heading,
+.projects .big_heading,
+.contact_me .big_heading {
   position: absolute;
   top: -4.4rem;
   left: 0;

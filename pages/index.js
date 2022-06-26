@@ -6,8 +6,8 @@ import Nav from "./Nav";
 import Home from "./Home";
 import About from "./About";
 import Skills from "./Skills";
-// import Projects from "./Projects";
-// import Contact from "./Contact";
+import Projects from "./Projects";
+import Contact from "./Contact";
 
 export default function Index() {
   return (
@@ -36,9 +36,9 @@ export default function Index() {
       <Nav />
       <Home />
       <About />
-      <Skills/>
-      {/* <Projects/> */}
-      {/* <Contact/> */}
+      <Skills />
+      <Projects />
+      <Contact />
       {/* <footer className={styles.footer}>
       </footer> */}
     </div>
