@@ -43,6 +43,11 @@ export default function Contact() {
           <div className={styles.html_body_pc}>
             <span> &lt;p/&gt; </span>
           </div>
+          <div className={styles.html_body_html}>
+            <span>&lt;/body&gt; </span>
+            <br />
+            <span>&lt;/html&gt; </span>
+          </div>
         </div>
       </section>
     </>

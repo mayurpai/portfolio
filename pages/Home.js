@@ -140,11 +140,6 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <div className={styles.html_body_html}>
-            <span>&lt;/body&gt; </span>
-            <br />
-            <span>&lt;/html&gt; </span>
-          </div>
         </div>
 
         <div className={styles.image_page}>
