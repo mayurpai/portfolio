@@ -10,6 +10,13 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 
 export default function Index() {
+  // let showingAlert = false;
+  // const interval = setInterval(() => {
+  //   document.title = showingAlert ? "Welcome To" : "My Portfolio ❤️";
+  //   showingAlert = !showingAlert;
+  // }, 1000);
+  // clearInterval(interval);
+
   return (
     <div className={styles.container}>
       <Head>
