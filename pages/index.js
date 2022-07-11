@@ -10,6 +10,22 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 
 export default function Index() {
+  let title = "";
+  if (typeof window !== "undefined") {
+    let url = document.URL;
+    if (url === "http://localhost:3000/#about") {
+      document.title = "Mayur Pai | About";
+    } else if (url == "http://localhost:3000/#skills") {
+      document.title = "Mayur Pai | Skills";
+    } else if (url == "http://localhost:3000/#projects") {
+      document.title = "Mayur Pai | Projects";
+    } else if (url == "http://localhost:3000/#contact") {
+      document.title = "Mayur Pai | Contact";
+    } else {
+      document.title = "Mayur Pai";
+    }
+    title = document.title;
+  }
   // let showingAlert = false;
   // const interval = setInterval(() => {
   //   document.title = showingAlert ? "Welcome To" : "My Portfolio ❤️";
@@ -21,7 +37,7 @@ export default function Index() {
     <div className={styles.container}>
       <Head>
         <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Mayur Pai</title>
+        <title>{title}</title>
         <meta
           name="google-site-verification"
           content="rh1RLLiXrVeBTdNJYi9yEqzNYMHcW_ps05wOO0xfhT4"
