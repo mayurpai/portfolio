@@ -2,6 +2,18 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+// "@fortawesome/free-brands-svg-icons";
+// "@fortawesome/free-solid-svg-icons";
+// "@fortawesome/pro-duotone-svg-icons";
+// "@fortawesome/pro-light-svg-icons"
+// "@fortawesome/pro-solid-svg-icons"
+// "@fortawesome/free-solid-svg-icons"
+// "@fortawesome/free-regular-svg-icons"
+// "@fortawesome/pro-regular-svg-icons"
+library.add(faDownload);
 
 export default function Skills() {
   return (
@@ -63,6 +75,23 @@ export default function Skills() {
           </p>
           <div className={styles.html_body_pc}>
             <span> &lt;p/&gt; </span>
+          </div>
+          <div className={styles.wrapper}>
+            {/* <p className={styles.fp}>Resume</p> */}
+            <div className={styles.icon_resume}>
+              <div className={styles.tooltip}>Resume</div>
+              <span>
+                <Link href="https://drive.google.com/uc?export=download&id=1n3VI5hKL2ehBK32jImo6b0ajN1yE7_rU">
+                  <a target="_blank">
+                    <FontAwesomeIcon
+                      icon={faDownload}
+                      style={{ width: "2rem" }}
+                      fixedWidth
+                    />
+                  </a>
+                </Link>
+              </span>
+            </div>
           </div>
         </div>
       </section>

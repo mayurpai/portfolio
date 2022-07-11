@@ -4,6 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Nav() {
+  // var titles = "";
+  // if (typeof window !== "undefined") {
+  //   titles = document.title;
+  // }
   return (
     <>
       <nav className={styles.navigation_links}>

@@ -30,28 +30,73 @@ export default function Projects() {
           <div className={styles.html_body_p}>
             <span> &lt;p&gt; </span>
           </div>
-          <p className={styles.fp}>
-            <br />
-            Based on best practices, I create fast, simple, and easy-to-use
-            responsive websites. I have extensive experience with front-end
-            development, HTML, CSS, JS, building small and medium websites,
-            using custom plugins, animations, and coding interactive layouts. I
-            have also interned as a Tech Consultant at QuantumHunts, as a Web
-            Developer at LetsGrowMore, as an Outreach Coordinator at Xpert, and
-            others. <br />
-            <br />
-            For more information, please visit my
-            <Link href="https://www.linkedin.com/in/mayur-pai5/">
-              <a target="_blank"> LinkedIn </a>
-            </Link>
-            profile or feel free to
-            <Link href="#contact">
-              <a target="_blank"> Contact Me </a>
-            </Link>
-            directly.
-          </p>
-          <div className={styles.html_body_pc}>
-            <span> &lt;p/&gt; </span>
+
+          <div className={styles.projects_card}>
+            <div className={styles.card}>
+              <div className={styles.box}>
+                <div className={styles.content}>
+                  <h2 className={styles.h2}>01</h2>
+                  <h3 className={styles.h3}>Portfolio</h3>
+                  {/* <p>A website which defines me, my achievements and my endeavors.</p> */}
+                  <p className={styles.p}>
+                    Developed a fully responsive personal portfolio website
+                    using HTML5, CSS3 and JavaScript.
+                  </p>
+                  <a href="https://github.com/mayurpai/mayurpai.github.io">
+                    Read More
+                  </a>
+                  {/* <a href="https://mayurpai.github.io/">Visit Website</a> */}
+                </div>
+              </div>
+            </div>
+            <div className={styles.card}>
+              <div className={styles.box}>
+                <div className={styles.content}>
+                  <h2>02</h2>
+                  <h3>Tu Phodega</h3>
+                  {/* <p>A website which provides all the engineering subject's notes.</p> */}
+                  <p>
+                    A fully responsive website using HTML5, CSS3 and JavaScript
+                    that comprises the notes, materials, and MQPs of the
+                    branches of Engineering.
+                  </p>
+                  <a href="https://github.com/mayurpai/TuPhodega">Read More</a>
+                  {/* <a href="https://mayurpai.github.io/TuPhodega/index.html">Visit Website</a> */}
+                </div>
+              </div>
+            </div>
+            <div className={styles.card}>
+              <div className={styles.box}>
+                <div className={styles.content}>
+                  <h2>03</h2>
+                  <h3>Engineering Calculator</h3>
+                  <p>
+                    The primary focus is to gather all the Engineering students
+                    who wish to calculate their marks.
+                  </p>
+                  {/* <p>A SGPA/CGPA calculator built especially for all my Engineering friends.</p> */}
+                  <a href="https://github.com/mayurpai/Engineering-Calculator">
+                    Read More
+                  </a>
+                  {/* <a href="https://mayurpai.github.io/Engineering-Calculator/index.html">Visit Website</a> */}
+                </div>
+              </div>
+            </div>
+            <div className={styles.card}>
+              <div className={styles.box}>
+                <div className={styles.content}>
+                  <h2>04</h2>
+                  <h3>Arms And Ammunition</h3>
+                  <p>
+                    Built a professional real-time military base simulation
+                    project over Database Management System.
+                  </p>
+                  <a href="https://github.com/mayurpai/ArmsAndAmmunition">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

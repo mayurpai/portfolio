@@ -268,6 +268,7 @@
 
 
 .wrapper {
+  /* position: absolute; */
   display: inline-flex;
   margin-top: 8rem;
 }
@@ -275,7 +276,8 @@
 .wrapper .icon_github,
 .wrapper .icon_instagram,
 .wrapper .icon_linkedin,
-.wrapper .icon_facebook {
+.wrapper .icon_facebook,
+.wrapper .icon_resume {
   position: relative;
   margin: 0 1rem;
   text-align: center;
@@ -292,7 +294,8 @@
 .wrapper .icon_github span,
 .wrapper .icon_instagram span,
 .wrapper .icon_linkedin span,
-.wrapper .icon_facebook span {
+.wrapper .icon_facebook span,
+.wrapper .icon_resume span {
   display: block;
   height: 4rem;
   width: 4rem;
@@ -311,7 +314,8 @@
 .wrapper .icon_github .tooltip,
 .wrapper .icon_instagram .tooltip,
 .wrapper .icon_linkedin .tooltip,
-.wrapper .icon_facebook .tooltip {
+.wrapper .icon_facebook .tooltip,
+.wrapper .icon_resume .tooltip {
   position: absolute;
   top: 0;
   z-index: 1;
@@ -330,7 +334,8 @@
 .wrapper .icon_github:hover .tooltip,
 .wrapper .icon_instagram:hover .tooltip,
 .wrapper .icon_linkedin:hover .tooltip,
-.wrapper .icon_facebook:hover .tooltip {
+.wrapper .icon_facebook:hover .tooltip,
+.wrapper .icon_resume:hover .tooltip {
   top: -70px;
   opacity: 1;
   pointer-events: auto;
@@ -339,7 +344,8 @@
 .wrapper .icon_github .tooltip:before,
 .wrapper .icon_instagram .tooltip:before,
 .wrapper .icon_linkedin .tooltip:before,
-.wrapper .icon_facebook .tooltip:before {
+.wrapper .icon_facebook .tooltip:before,
+.wrapper .icon_resume .tooltip:before {
   position: absolute;
   content: "";
   height: 15px;
@@ -354,7 +360,8 @@
 .wrapper .icon_github:hover span,
 .wrapper .icon_instagram:hover span,
 .wrapper .icon_linkedin:hover span,
-.wrapper .icon_facebook:hover span {
+.wrapper .icon_facebook:hover span,
+.wrapper .icon_resume:hover span {
   color: #fff;
 }
 
@@ -362,10 +369,12 @@
 .wrapper .icon_instagram:hover span,
 .wrapper .icon_linkedin:hover span,
 .wrapper .icon_facebook:hover span,
+.wrapper .icon_resume:hover span,
 .wrapper .icon_github:hover .tooltip,
 .wrapper .icon_instagram:hover .tooltip,
 .wrapper .icon_linkedin:hover .tooltip,
-.wrapper .icon_facebook:hover .tooltip {
+.wrapper .icon_facebook:hover .tooltip,
+.wrapper .icon_resume:hover .tooltip {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
 }
 
@@ -391,6 +400,15 @@
 .wrapper .icon_facebook:hover .tooltip,
 .wrapper .icon_facebook:hover .tooltip:before {
   background: #3b5998;
+}
+
+.wrapper .icon_resume:hover span,
+.wrapper .icon_resume:hover .tooltip {
+  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+}
+
+.wrapper .icon_resume:hover .tooltip:before {
+  background: transparent;
 }
 
 
@@ -454,13 +472,13 @@
   33% {
     opacity: 1;
     color: var(--theme_color_blue);
-    text-shadow: 0.5rem 0.5rem var(--theme_color_pink);
+    text-shadow: 0.2rem 0.2rem var(--theme_color_pink);
   }
 
   66% {
     opacity: 1;
     color: var(--theme_color_pink);
-    text-shadow: 0.5rem 0.5rem var(--theme_color_blue);
+    text-shadow: 0.2rem 0.2rem var(--theme_color_blue);
   }
 
   100% {
@@ -557,7 +575,125 @@
   margin-left: 2.5rem;
 }
 
+.projects_card {
+  position: absolute;
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* background-color: #000; */
+  max-width: 90rem;
+  /* justify-content: center; */
+  align-items: center;
+  place-items: center;
+  /* margin: 4rem 0; */
+  /* top: 9rem; */
+  left: 0;
+}
 
+.card {
+  position: relative;
+  min-width: 20rem;
+  height: 20rem;
+  box-shadow: inset .5rem .5rem .5rem rgba(0, 0, 0, 0.2), inset -.5rem -.5rem 1.5rem rgba(255, 255, 255, 0.1), .5rem .5rem 1.5rem rgba(0, 0, 0, 0.3), -.5rem -.5rem 1.5rem rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  margin: 3rem;
+  background-color: transparent;
+}
+
+.card .box {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  background: #2a2b2f;
+  border: .2rem solid #1e1f23;
+  border-radius: 1.5rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.card .box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.card .box:hover {
+  transform: translateY(-3rem);
+  box-shadow: 0 4rem 7rem rgba(0, 0, 0, 0.5);
+}
+
+.card .box .content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.card .box .content .h2 {
+  position: absolute;
+  top: -1rem;
+  right: 3rem;
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.05);
+  font-family: 'Sigmar One', cursive;
+}
+
+.card .box .content .h3 {
+  font-size: 1.8em;
+  color: aqua;
+  transition: 0.5s;
+  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card .box .content .p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card .box .content a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: .8rem 2rem;
+  background-color: #000;
+  margin-bottom: .5rem;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+
+.card:nth-child(1) .box .content a {
+  background: rgb(249, 13, 84);
+}
+
+.card:nth-child(2) .box .content a {
+  background: rgb(249, 13, 84);
+}
+
+.card:nth-child(3) .box .content a {
+  background: rgb(249, 13, 84);
+}
+
+.card:nth-child(4) .box .content a {
+  background: rgb(249, 13, 84);
+}
 
 
 
@@ -667,14 +803,14 @@ overflow: hidden; */
     opacity: 1;
     color: var(--theme_color_blue);
     width: auto;
-    text-shadow: 0.5rem 0.5rem var(--theme_color_pink);
+    text-shadow: 0.2rem 0.2rem var(--theme_color_pink);
   }
 
   66% {
     opacity: 1;
     color: var(--theme_color_pink);
     width: auto;
-    text-shadow: 0.5rem 0.5rem var(--theme_color_blue);
+    text-shadow: 0.2rem 0.2rem var(--theme_color_blue);
   }
 
   100% {
