@@ -81,7 +81,7 @@ export default function Skills() {
             <div className={styles.icon_resume}>
               <div className={styles.tooltip}>Resume</div>
               <span>
-                <Link href="https://drive.google.com/uc?export=download&id=1n3VI5hKL2ehBK32jImo6b0ajN1yE7_rU">
+                <Link href="https://drive.google.com/uc?export=download&id=1-3850exUDZ8_BlKVPI2GnV5QXBT6Ljrv">
                   <a target="_blank">
                     <FontAwesomeIcon
                       icon={faDownload}
