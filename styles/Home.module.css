@@ -458,7 +458,8 @@
   margin-bottom: 1rem;
 }
 
-.contact {
+.contact,
+.form .inputBox button[type="submit"] {
   position: absolute;
   /* font-family: "Roboto Mono", monospace; */
   font-family: Coolvetica Rg;
@@ -476,11 +477,20 @@
   font-size: 1.5rem;
   border-radius: 5rem;
   box-shadow: 0.2rem 0.2rem var(--theme_color_pink);
-  margin-top: 1rem;
   margin-left: 0rem;
 }
 
-.contact:before {
+.contact {
+  margin-top: 1rem;
+}
+
+.form .inputBox button[type="submit"] {
+  margin-top: 6rem;
+  cursor: pointer;
+}
+
+.contact:before,
+.form .inputBox button[type="submit"]::before {
   transition: 0.5s all ease;
   position: absolute;
   top: 0;
@@ -492,7 +502,8 @@
   background-color: var(--theme_color_blue);
 }
 
-.contact:hover:before {
+.contact:hover:before,
+.form .inputBox button[type="submit"]:hover::before {
   transition: 0.5s all ease;
   left: 0;
   right: 0;
@@ -500,7 +511,8 @@
   z-index: -10;
 }
 
-.contact:hover {
+.contact:hover,
+.form .inputBox button[type="submit"]:hover {
   color: var(--background_color);
   -webkit-animation: jello-horizontal 0.9s both;
   animation: jello-horizontal 0.9s both;
@@ -1474,4 +1486,76 @@ overflow: hidden; */
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   overflow: hidden;
+}
+
+.contact_container {
+  position: absolute;
+  min-width: 42rem;
+  min-height: 20rem;
+  left: 0;
+  margin-top: -6.25rem;
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* border-radius: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  position: relative;
+  width: 42rem;
+  height: 5rem;
+  /* padding: 4rem; */
+  /* backdrop-filter: blur(5px); */
+  /* border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1); */
+}
+
+.form .flex_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form .inputBox textarea {
+  position: absolute;
+  resize: none;
+  height: 5rem;
+  /* width: 100rem; */
+}
+
+.form .inputBox {
+  width: 20rem;
+  margin-top: 1rem;
+}
+
+.form .inputBox input,
+.form .inputBox textarea {
+  width: 100%;
+  font-family: Coolvetica Rg;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.5rem;
+  color: var(--theme_color_blue);
+  letter-spacing: 0.1rem;
+  transition: linear 0.1s;
+}
+
+.form .inputBox input::placeholder,
+.form .inputBox textarea::placeholder {
+  color: var(--theme_color_pink);
+}
+
+
+.form .inputBox input:focus,
+.form .inputBox textarea:focus {
+  transform: scale(1.1);
+  border-left: 2pt solid var(--theme_color_blue);
+  color: var(--theme_color_blue);
 }

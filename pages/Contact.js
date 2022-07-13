@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "../components/contact-form";
 
 export default function Contact() {
   return (
@@ -42,6 +43,9 @@ export default function Contact() {
           </p>
           <div className={styles.html_body_pc}>
             <span> &lt;p/&gt; </span>
+          </div>
+          <div className={styles.contact_container}>
+            <ContactForm />
           </div>
           <div className={styles.html_body_html}>
             <span>&lt;/body&gt; </span>
