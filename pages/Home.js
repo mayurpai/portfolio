@@ -141,14 +141,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-
         <div className={styles.image_page}>
           {/* <div className={styles.hexagon}></div> */}
           <Image
             className={styles.image_logo}
             src="/mayurpai.png"
-            width="480px"
-            height="480px"
+            layout="fill"
+            objectFit="contain"
+            objectPosition="top center"
+            // width="480px"
+            // height="480px"
           />
         </div>
       </section>

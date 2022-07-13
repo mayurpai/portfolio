@@ -2,18 +2,7 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
-// "@fortawesome/free-brands-svg-icons";
-// "@fortawesome/free-solid-svg-icons";
-// "@fortawesome/pro-duotone-svg-icons";
-// "@fortawesome/pro-light-svg-icons"
-// "@fortawesome/pro-solid-svg-icons"
-// "@fortawesome/free-solid-svg-icons"
-// "@fortawesome/free-regular-svg-icons"
-// "@fortawesome/pro-regular-svg-icons"
-library.add(faDownload);
+
 
 export default function Skills() {
   return (
@@ -76,22 +65,64 @@ export default function Skills() {
           <div className={styles.html_body_pc}>
             <span> &lt;p/&gt; </span>
           </div>
-          <div className={styles.wrapper}>
-            {/* <p className={styles.fp}>Resume</p> */}
-            <div className={styles.icon_resume}>
-              <div className={styles.tooltip}>Resume</div>
-              <span>
-                <Link href="https://drive.google.com/uc?export=download&id=1-3850exUDZ8_BlKVPI2GnV5QXBT6Ljrv">
-                  <a target="_blank">
-                    <FontAwesomeIcon
-                      icon={faDownload}
-                      style={{ width: "2rem" }}
-                      fixedWidth
-                    />
-                  </a>
-                </Link>
-              </span>
-            </div>
+        </div>
+        <div className={styles.image_page_skill}>
+          <div className={styles.frost}></div>
+          <div className={styles.skill}>
+            <h3 className={styles.h3}>Hyper-Text Markup Language (HTML)</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>Cascading Style Sheets (CSS)</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>Java Script (JS)</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>
+              Syntactically Awesome Style Sheets (SASS)
+            </h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>jQuery</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>Git & GitHub</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>Flask</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>MySQL</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>React</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>C</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>C++</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>Java</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
+            <h3 className={styles.h3}>Python</h3>
+            <div className={styles.hr}></div>
+            <div className={styles.max}></div>
+            <div className={styles.brbottom}></div>
           </div>
         </div>
       </section>
