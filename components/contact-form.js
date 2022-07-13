@@ -7,7 +7,8 @@ export default function ContactForm() {
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("message").value = "";
-    alert("Thanks For The Submission!");
+    // alert("Thanks For The Submission!");
+    
   }
 
   return (
