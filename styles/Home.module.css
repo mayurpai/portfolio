@@ -822,11 +822,14 @@ bottom: 0;
 top: 100%;
 overflow: hidden; */
 
+.about {
+  position: absolute;
+}
 .about,
 /* .skills, */
 /* .contact_me */
 .projects {
-  position: absolute;
+  /* position: absolute; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -836,6 +839,7 @@ overflow: hidden; */
   padding: 7rem;
   bottom: 0;
 }
+
 
 .about {
   top: 100%;
@@ -864,9 +868,7 @@ overflow: hidden; */
   color: var(--big_heading);
 }
 
-.projects .big_heading {
-  top: 0rem;
-}
+
 
 .fp a:hover,
 .fp a:focus,
