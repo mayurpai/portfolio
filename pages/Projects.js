@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Cards from "../components/Cards";
 
 export default function Projects() {
   return (
@@ -33,87 +34,48 @@ export default function Projects() {
           </div>
 
           <div className={styles.projects_card}>
-            <div className={styles.card}>
-              <div className={styles.box}>
-                <div className={styles.content}>
-                  <h2 className={styles.h2}>01</h2>
-                  <h3 className={styles.h3}>Tu Phodega</h3>
-                  {/* <p>A website which defines me, my achievements and my endeavors.</p> */}
-                  <p className={styles.p}>
-                    Designed and developed a website with Mobile Responsive User
-                    Experience to include notes, materials, and MQPs from all
-                    Engineering colleges in India
-                  </p>
-                  <a
-                    href="https://github.com/mayurpai/TuPhodega"
-                    target="_blank"
-                  >
-                    Read More
-                  </a>
-                  {/* <a href="https://mayurpai.github.io/">Visit Website</a> */}
-                </div>
-              </div>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.box}>
-                <div className={styles.content}>
-                  <h2 className={styles.h2}>02</h2>
-                  <h3 className={styles.h3}>Engineering Calculator</h3>
-                  <p className={styles.p}>
-                    Povided engineering students with a dynamic, interactive,
-                    and responsive webpage that calculates their grade point
-                    averages for the semester and the year
-                  </p>
-                  {/* <p>A SGPA/CGPA calculator built especially for all my Engineering friends.</p> */}
-                  <a
-                    href="https://github.com/mayurpai/Engineering-Calculator"
-                    target="_blank"
-                  >
-                    Read More
-                  </a>
-                  {/* <a href="https://mayurpai.github.io/Engineering-Calculator/index.html">Visit Website</a> */}
-                </div>
-              </div>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.box}>
-                <div className={styles.content}>
-                  <h2 className={styles.h2}>03</h2>
-                  <h3 className={styles.h3}>Arms And Ammunition</h3>
-                  <p className={styles.p}>
-                    Implemented an accurate real-time simulation of a military
-                    base in order to store and validate weapon and equipment
-                    information
-                  </p>
-                  <a
-                    href="https://github.com/mayurpai/ArmsAndAmmunition"
-                    target="_blank"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.box}>
-                <div className={styles.content}>
-                  <h2 className={styles.h2}>04</h2>
-                  <h3 className={styles.h3}>Pharmacy System</h3>
-                  <p className={styles.p}>
-                    Incorporated features such as searching, ordering, deleting,
-                    modifying, printing receipts, and daily transaction
-                    summaries of medicine orders and customers
-                  </p>
-                  <a
-                    href="https://github.com/mayurpai/Pharmacy-Management-System"
-                    target="_blank"
-                  >
-                    Read More
-                  </a>
-                  {/* <a href="https://mayurpai.github.io/TuPhodega/index.html">Visit Website</a> */}
-                </div>
-              </div>
-            </div>
+            <Cards
+              id="01"
+              title="Carbon Footprint Management"
+              desc="Developed a framework to predict optimal air quality to reduce the carbon footprint of organizations, working as part of a 4-person team"
+              link="https://github.com/varun-official/Carbon-footprint-management-system"
+            ></Cards>
+            <Cards
+              id="02"
+              title="Auto Rickshaw Fare Meter (A.F.M)"
+              desc="Developed an Android application using Android Studio which is based over the usage of Google Maps API for those who wish to evade unreasonable fare price hikes"
+              link="https://github.com/mayurpai/Autorickshaw-Fare-Meter"
+            ></Cards>
+            <Cards
+              id="03"
+              title="Pharmacy Management System"
+              desc="Incorporated features such as searching, ordering, deleting, modifying, printing receipts, and daily transaction summaries of medicine orders and customers"
+              link="https://github.com/mayurpai/Pharmacy-Management-System"
+            ></Cards>
+            <Cards
+              id="04"
+              title="Arms And Ammunition"
+              desc="Implemented an accurate real-time simulation of a military base in order to store and validate weapon and equipment information"
+              link="https://github.com/mayurpai/ArmsAndAmmunition"
+            ></Cards>
+            <Cards
+              id="05"
+              title="Engineering Calculator"
+              desc="Provided engineering students with a dynamic, interactive, and responsive webpage that calculates their grade point averages for the semester and the year"
+              link="https://github.com/mayurpai/Engineering-Calculator"
+            ></Cards>
+            <Cards
+              id="06"
+              title="Tu Phodega"
+              desc="Designed and developed a website with Mobile Responsive User Experience to include notes, materials, and MQPs from all Engineering colleges in India"
+              link="https://github.com/mayurpai/TuPhodega"
+            ></Cards>
+            <Cards
+              id="07"
+              title="My Portfolio"
+              desc="A fully responsive personal portfolio website was created and developed to reflect who I am, what I have accomplished, and what I seek to achieve"
+              link="https://github.com/mayurpai/mayurpai.github.io"
+            ></Cards>
           </div>
         </div>
       </section>
