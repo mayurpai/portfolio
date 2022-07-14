@@ -37,21 +37,30 @@ export default function Contact() {
             <br />
             I'm looking for freelance opportunities, particularly ambitious or
             large projects. Feel free to use the form for any other request or
-            question you may have. <br />
+            question you may have.
+            <br />
             <br />
             It's always a pleasure to assist.
           </p>
           <div className={styles.html_body_pc}>
             <span> &lt;p/&gt; </span>
           </div>
+        </div>
+        <div className={styles.image_page_contact}>
           <div className={styles.contact_container}>
+            <div className={styles.html_body_form}>
+              <span> &lt;form&gt; </span>
+            </div>
             <ContactForm />
+            <div className={styles.html_body_form_end}>
+              <span> &lt;/form&gt; </span>
+            </div>
           </div>
-          <div className={styles.html_body_html}>
-            <span>&lt;/body&gt; </span>
-            <br />
-            <span>&lt;/html&gt; </span>
-          </div>
+        </div>
+        <div className={styles.html_body_html}>
+          <span>&lt;/body&gt; </span>
+          <br />
+          <span>&lt;/html&gt; </span>
         </div>
       </section>
     </>

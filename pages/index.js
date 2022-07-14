@@ -15,11 +15,12 @@ export default function Index() {
     let url = document.URL;
     if (url === "http://localhost:3000/#about") {
       document.title = "Mayur Pai | About";
-    } else if (url == "http://localhost:3000/#skills") {
-      document.title = "Mayur Pai | Skills";
-    } else if (url == "http://localhost:3000/#projects") {
-      document.title = "Mayur Pai | Projects";
-    } else if (url == "http://localhost:3000/#contact") {
+    // } else if (url == "http://localhost:3000/#skills") {
+    //   document.title = "Mayur Pai | Skills";
+    // } else if (url == "http://localhost:3000/#projects") {
+    //   document.title = "Mayur Pai | Projects";
+    }
+    else if (url == "http://localhost:3000/#contact") {
       document.title = "Mayur Pai | Contact";
     } else {
       document.title = "Mayur Pai";
@@ -59,8 +60,8 @@ export default function Index() {
       <Nav />
       <Home />
       <About />
-      <Skills />
-      <Projects />
+      {/* <Skills />
+      <Projects /> */}
       <Contact />
       {/* <footer className={styles.footer}>
       </footer> */}

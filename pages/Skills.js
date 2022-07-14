@@ -3,10 +3,13 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function Skills() {
   return (
     <>
+      <Head>
+        <title>Mayur Pai | Skills</title>
+        <link rel="icon" href="../mayur_pai.ico" type="image/x-icon" />
+      </Head>
       <section className={styles.skills} id="skills">
         <div className={styles.big_heading}>Skills & Experience</div>
         <div className={styles.page}>
