@@ -257,6 +257,10 @@
   flex: 1 1 70px;
 }
 
+.projects .page {
+  top: 4.5rem;
+}
+
 .sup {
   font-size: 6rem;
 }
@@ -660,7 +664,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  max-width: 90rem;
+  min-width: 40rem;
   /* justify-content: center; */
   align-items: center;
   place-items: center;
@@ -858,6 +862,10 @@ overflow: hidden; */
   left: 0;
   font-size: 15rem;
   color: var(--big_heading);
+}
+
+.projects .big_heading {
+  top: 0rem;
 }
 
 .fp a:hover,

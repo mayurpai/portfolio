@@ -64,8 +64,8 @@ export default function Skills() {
               <a target="_blank"> LinkedIn </a>
             </Link>
             profile or feel free to
-            <Link href="#contact">
-              <a target="_blank"> Contact Me </a>
+            <Link href="https://mayurpai.github.io/portfolio#contact">
+              <a> Contact Me </a>
             </Link>
             directly.
           </p>
