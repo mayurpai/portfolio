@@ -9,7 +9,11 @@ export default function Projects() {
     <>
       <Head>
         <title>Mayur Pai | Projects</title>
-        <link rel="icon" href="../mayur_pai.ico" type="image/x-icon" />
+        <link
+          rel="icon"
+          href={`${process.env.NEXT_PUBLIC_FAVICON}/mayur_pai.ico`}
+          type="image/x-icon"
+        />
       </Head>
       <section className={styles.projects} id="projects">
         <div className={styles.big_heading}>Projects</div>
