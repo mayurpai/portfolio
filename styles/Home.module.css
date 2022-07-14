@@ -655,6 +655,7 @@
   margin-left: 2.5rem;
 }
 
+
 .projects_card {
   position: relative;
   display: flex;
@@ -756,6 +757,12 @@
   font-family: Coolvetica Rg;
   font-size: 1.5rem;
   justify-content: center;
+  transition: 0.5s;
+}
+
+.card .box .content a:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 .card:nth-child(1) .box .content a {
