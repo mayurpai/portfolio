@@ -13,14 +13,13 @@ export default function Index() {
   let title = "";
   if (typeof window !== "undefined") {
     let url = document.URL;
-    if (url === "http://localhost:3000/#about") {
+    if (url === "https://mayurpai.github.io/portfolio#about") {
       document.title = "Mayur Pai | About";
-    // } else if (url == "http://localhost:3000/#skills") {
-    //   document.title = "Mayur Pai | Skills";
-    // } else if (url == "http://localhost:3000/#projects") {
-    //   document.title = "Mayur Pai | Projects";
-    }
-    else if (url == "http://localhost:3000/#contact") {
+      // } else if (url == "http://localhost:3000/#skills") {
+      //   document.title = "Mayur Pai | Skills";
+      // } else if (url == "http://localhost:3000/#projects") {
+      //   document.title = "Mayur Pai | Projects";
+    } else if (url == "https://mayurpai.github.io/portfolio#contact") {
       document.title = "Mayur Pai | Contact";
     } else {
       document.title = "Mayur Pai";

@@ -29,14 +29,14 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="./Skills">
+            <Link href="/Skills">
               <a>
                 <strong>Skills</strong>
               </a>
             </Link>
           </li>
           <li>
-            <Link href="./Projects">
+            <Link href="/Projects">
               <a>
                 <strong>Projects</strong>
               </a>
