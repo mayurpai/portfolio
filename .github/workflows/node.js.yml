@@ -31,7 +31,7 @@ jobs:
     - run: npm run export
     - run: touch ./out/.nojekyll
     
-    name: Deploy 🚀
+    - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # The folder the action should deploy.
