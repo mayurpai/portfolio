@@ -35,12 +35,12 @@ export default function Contact() {
           </div>
           <p className={styles.fp}>
             <br />
-            I'm looking for freelance opportunities, particularly ambitious or
-            large projects. Feel free to use the form for any other request or
-            question you may have.
+            I&apos;m looking for freelance opportunities, particularly ambitious
+            or large projects. Feel free to use the form for any other request
+            or question you may have.
             <br />
             <br />
-            It's always a pleasure to assist.
+            It&apos;s always a pleasure to assist.
           </p>
           <div className={styles.html_body_pc}>
             <span> &lt;p/&gt; </span>

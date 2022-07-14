@@ -11,10 +11,8 @@ export default function cards(props) {
           <div className={styles.content}>
             <h2 className={styles.h2}>{props.id}</h2>
             <h3 className={styles.h3}>{props.title}</h3>
-            <p className={styles.p}>
-              {props.desc}
-            </p>
-            <a href={props.link} target="_blank">
+            <p className={styles.p}>{props.desc}</p>
+            <a href={props.link} target="_blank" rel="noreferrer">
               Read More
             </a>
             {/* <a href="https://mayurpai.github.io/">Visit Website</a> */}

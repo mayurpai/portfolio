@@ -149,6 +149,7 @@ export default function Home() {
             layout="fill"
             objectFit="contain"
             objectPosition="top center"
+            alt="Profile"
             // width="480px"
             // height="480px"
           />

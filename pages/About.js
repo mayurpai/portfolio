@@ -50,18 +50,18 @@ export default function About() {
           </div>
           <p className={styles.fp}>
             <br />I am Mayur Pai B H, a web developer, and programmer. An
-            inquisitive-natured person who loves exploring routes that I've
-            never come across. One of my favorite ways to learn is to teach. I'm
-            pursuing my Bachelor's degree, a fourth-year engineering student in
-            the stream of Information Science from Sahyadri College of
-            Engineering and Management, Mangaluru. <br />
+            inquisitive-natured person who loves exploring routes that I&apos;ve
+            never come across. One of my favorite ways to learn is to teach.
+            I&apos;m pursuing my Bachelor&apos;s degree, a fourth-year
+            engineering student in the stream of Information Science from
+            Sahyadri College of Engineering and Management, Mangaluru. <br />
             <br />
             Ever since I was a little kid, Computers have fascinated me and have
             driven my passion and craze for them. Learning new things on a daily
             basis has always been my priority. I studied languages, algorithms,
-            built up my technicality, leadership skills, and much more. There's
-            certainly yet more to learn, yet more problems to solve, and yet
-            more to build.
+            built up my technicality, leadership skills, and much more.
+            There&apos;s certainly yet more to learn, yet more problems to
+            solve, and yet more to build.
           </p>
           <div className={styles.html_body_pc}>
             <span> &lt;p/&gt; </span>
