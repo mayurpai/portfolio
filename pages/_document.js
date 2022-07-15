@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
           href="https://fonts.googleapis.com/css2?family=Sigmar+One&family=Work+Sans&display=swap"
           rel="stylesheet"
