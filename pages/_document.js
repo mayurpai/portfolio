@@ -5,6 +5,11 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Sigmar+One&family=Work+Sans&display=swap"
+          rel="stylesheet"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap"
           rel="stylesheet"
