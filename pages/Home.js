@@ -151,6 +151,7 @@ export default function Home() {
             objectPosition="top center"
             alt="Profile"
             priority
+            loading="eager"
             // width="480px"
             // height="480px"
           />
