@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//About</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//Contact</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//Home</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//mayur_pai</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//Nav</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//Projects</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//Skills</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//vercel</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+
+	<url>
+		<loc>https://mayurpai.github.io/portfolio//</loc>
+		<lastmod>2022-07-16</lastmod>
+	</url>
+</urlset>
