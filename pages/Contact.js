@@ -7,6 +7,14 @@ import ContactForm from "../components/contact-form";
 export default function Contact() {
   return (
     <>
+      <Head>
+        <title>Mayur Pai | Contact</title>
+        <link
+          rel="icon"
+          href={`${process.env.NEXT_PUBLIC_FAVICON}/mayur_pai.ico`}
+          type="image/x-icon"
+        />
+      </Head>
       <section className={styles.contact_me} id="contact">
         <div className={styles.big_heading}>Contact Me</div>
         <div className={styles.page}>

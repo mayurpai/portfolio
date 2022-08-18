@@ -22,7 +22,8 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="#about">
+            {/* <Link href="#about"> */}
+            <Link href="/About">
               <a>
                 <strong>About</strong>
               </a>
@@ -43,7 +44,8 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="#contact">
+            {/* <Link href="#contact"> */}
+            <Link href="/Contact">
               <a>
                 <strong>Contact</strong>
               </a>

@@ -72,11 +72,12 @@ export default function Home() {
               <li>r</li>
               <li>&nbsp;</li>
             </ul>
-          </h1>
+          </h1>   
           {/* <div className={styles.html_h1}>
             <span>&lt;/h1&gt;</span>
           </div> */}
-          <Link href="#contact">
+          <Link href="/contact">
+          {/* <Link href="#contact"> */}
             <a>
               <div className={styles.contact}>Contact Me!</div>
             </a>

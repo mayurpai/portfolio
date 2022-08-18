@@ -10,22 +10,22 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 
 export default function Index() {
-  let title = "";
-  if (typeof window !== "undefined") {
-    let url = document.URL;
-    if (url === "https://mayurpai.github.io/portfolio#about") {
-      document.title = "Mayur Pai | About";
-      // } else if (url == "http://localhost:3000/#skills") {
-      //   document.title = "Mayur Pai | Skills";
-      // } else if (url == "http://localhost:3000/#projects") {
-      //   document.title = "Mayur Pai | Projects";
-    } else if (url == "https://mayurpai.github.io/portfolio#contact") {
-      document.title = "Mayur Pai | Contact";
-    } else {
-      document.title = "Mayur Pai";
-    }
-    title = document.title;
-  }
+  // let title = "";
+  // if (typeof window !== "undefined") {
+  //   let url = document.URL;
+  //   if (url === "https://mayurpai.github.io/portfolio#about") {
+  //     document.title = "Mayur Pai | About";
+  //     } else if (url == "http://localhost:3000/#skills") {
+  //       document.title = "Mayur Pai | Skills";
+  //     } else if (url == "http://localhost:3000/#projects") {
+  //       document.title = "Mayur Pai | Projects";
+  //   } else if (url == "https://mayurpai.github.io/portfolio#contact") {
+  //     document.title = "Mayur Pai | Contact";
+  //   } else {
+  //     document.title = "Mayur Pai";
+  //   }
+  //   title = document.title;
+  // }
   // let showingAlert = false;
   // const interval = setInterval(() => {
   //   document.title = showingAlert ? "Welcome To" : "My Portfolio ❤️";
@@ -37,7 +37,8 @@ export default function Index() {
     <div className={styles.container}>
       <Head>
         <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>{title}</title>
+        {/* <title>{title}</title> */}
+        <title>Mayur Pai</title>
         <meta
           name="google-site-verification"
           content="rh1RLLiXrVeBTdNJYi9yEqzNYMHcW_ps05wOO0xfhT4"
@@ -52,16 +53,20 @@ export default function Index() {
         />
         <meta name="author" content="Mayur Pai" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href={`${process.env.NEXT_PUBLIC_FAVICON}/mayur_pai.ico`} type="image/x-icon" />
+        <link
+          rel="icon"
+          href={`${process.env.NEXT_PUBLIC_FAVICON}/mayur_pai.ico`}
+          type="image/x-icon"
+        />
         {/* <!-- <meta name="robots" content="noindex,nofollow"/> --> */}
         {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" /> */}
       </Head>
       <Nav />
       <Home />
-      <About />
+      {/* <About /> */}
       {/* <Skills />
       <Projects /> */}
-      <Contact />
+      {/* <Contact /> */}
       {/* <footer className={styles.footer}>
       </footer> */}
     </div>

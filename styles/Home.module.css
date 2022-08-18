@@ -1,5 +1,7 @@
 .container,
 .skills,
+.about,
+.contact_me,
 .projects {
   position: relative;
   display: flex;
@@ -10,7 +12,7 @@
   flex-wrap: wrap-reverse;
   background: var(--background_color);
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   place-items: center;
   overflow-x: hidden;
 }
@@ -754,7 +756,7 @@
   font-family: Coolvetica Rg;
 }
 
-.card .box .content .tech{
+.card .box .content .tech {
   font-size: 1.4rem;
   color: var(--theme_color_blue);
   display: flex;
@@ -827,9 +829,9 @@ overflow: hidden; */
 }
 
 
-.about {
+/* .about {
   top: 100%;
-}
+} */
 
 /* .skills {
   top: 200%;
@@ -839,9 +841,9 @@ overflow: hidden; */
   top: 300%;
 } */
 
-.contact_me {
+/* .contact_me {
   top: 200%;
-}
+} */
 
 .about .big_heading,
 .skills .big_heading,
