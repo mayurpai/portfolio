@@ -18,6 +18,14 @@ library.add(faDownload);
 export default function About() {
   return (
     <>
+      <Head>
+        <title>Mayur Pai | About</title>
+        <link
+          rel="icon"
+          href={`${process.env.NEXT_PUBLIC_FAVICON}/mayur_pai.ico`}
+          type="image/x-icon"
+        />
+      </Head>
       <section className={styles.about} id="about">
         <div className={styles.big_heading}>Me, Myself & I</div>
         <div className={styles.page}>
