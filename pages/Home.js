@@ -76,7 +76,7 @@ export default function Home() {
           {/* <div className={styles.html_h1}>
             <span>&lt;/h1&gt;</span>
           </div> */}
-          <Link href="/contact">
+          <Link href="/Contact">
           {/* <Link href="#contact"> */}
             <a>
               <div className={styles.contact}>Contact Me!</div>
