@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Host: https://mayurpai.github.io/portfolio/
-
-Sitemap: https://mayurpai.github.io/portfolio/sitemap.xml

@@ -85,7 +85,6 @@
   flex-wrap: wrap-reverse;
 }
 
-
 .skills,
 .contact_me {
   flex-wrap: wrap;
@@ -110,7 +109,6 @@
   /* clip-path: polygon(50% 0, 100% 39%, 100% 75%, 50% 100%, 0 75%, 0 39%); */
   /* filter: drop-shadow(0px 6px 3px rgba(255, 255, 255, 0.5)); */
 }
-
 
 .image_page_skill {
   position: relative;
@@ -274,7 +272,6 @@
   -webkit-text-stroke: 0.1rem transparent;
 }
 
-
 .fp {
   display: flex;
   font-family: Coolvetica Rg;
@@ -299,7 +296,10 @@
   position: relative;
   /* Position Has To Be Absolute As The Right Side Image Needs To Get Fit! */
   display: inline-block;
-  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+  background: -webkit-linear-gradient(
+    var(--theme_color_blue),
+    var(--theme_color_pink)
+  );
   -webkit-background-clip: text;
   font-size: 1.5rem;
   -webkit-text-fill-color: transparent;
@@ -321,7 +321,6 @@
   font-size: 1.5rem;
   color: #eaeaea;
 }
-
 
 .wrapper {
   position: absolute;
@@ -365,7 +364,6 @@
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
-
 
 .wrapper .icon_github .tooltip,
 .wrapper .icon_instagram .tooltip,
@@ -460,13 +458,15 @@
 
 .swrapper .icon_resume:hover span,
 .swrapper .icon_resume:hover .tooltip {
-  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+  background: -webkit-linear-gradient(
+    var(--theme_color_blue),
+    var(--theme_color_pink)
+  );
 }
 
 .swrapper .icon_resume:hover .tooltip:before {
   background: transparent;
 }
-
 
 .br {
   display: block;
@@ -651,8 +651,6 @@
   font-size: 1.25rem;
 }
 
-
-
 .html_body_html span:nth-child(1) {
   margin-left: 2.5rem;
 }
@@ -660,7 +658,6 @@
 .html_body_h2 span:nth-child(3) {
   margin-left: 2.5rem;
 }
-
 
 .projects_card {
   position: relative;
@@ -685,7 +682,10 @@
   position: relative;
   min-width: 35rem;
   height: 25rem;
-  box-shadow: inset .5rem .5rem .5rem rgba(0, 0, 0, 0.2), inset -.5rem -.5rem 1.5rem rgba(255, 255, 255, 0.1), .5rem .5rem 1.5rem rgba(0, 0, 0, 0.4), -.5rem -.5rem 1.5rem rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2),
+    inset -0.5rem -0.5rem 1.5rem rgba(255, 255, 255, 0.1),
+    0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.4),
+    -0.5rem -0.5rem 1.5rem rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   margin-right: 3rem;
   margin-top: 3rem;
@@ -700,7 +700,7 @@
   right: 1rem;
   bottom: 1rem;
   background: #2a2b2f;
-  border: .2rem solid var(--theme_color_pink);
+  border: 0.2rem solid var(--theme_color_pink);
   border-radius: 1rem;
   box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.5);
   transition: 0.5s;
@@ -708,7 +708,7 @@
 }
 
 .card .box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -735,7 +735,7 @@
   right: 0.5rem;
   font-size: 6rem;
   color: var(--big_heading);
-  font-family: 'Sigmar One', cursive;
+  font-family: "Sigmar One", cursive;
 }
 
 .card .box .content .h3 {
@@ -784,7 +784,7 @@
   font-size: 1rem;
   transition: 0.5s;
   border: 1pt solid rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0.5rem 0.5rem 0.8rem rgba(255, 255, 255, .15),
+  box-shadow: inset 0.5rem 0.5rem 0.8rem rgba(255, 255, 255, 0.15),
     0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.25);
 }
 
@@ -793,16 +793,12 @@
   transition: 0.5s;
 }
 
-
-
 /* Everytime I Add In New Projects */
 /* .card:nth-child(->projectNumber<-) .box .content a {
   background: transparent;
   border: 1pt solid rgba(255, 255, 255, 0.225;
   box-shadow: 0.1rem 0.1rem .1rem rgba(255, 255, 255, .5);
 } */
-
-
 
 /* For Next Pages Add These CSS
 bottom: 0;
@@ -827,7 +823,6 @@ overflow: hidden; */
   padding: 7rem;
   bottom: 0;
 }
-
 
 /* .about {
   top: 100%;
@@ -855,8 +850,6 @@ overflow: hidden; */
   font-size: 15rem;
   color: var(--big_heading);
 }
-
-
 
 .fp a:hover,
 .fp a:focus,
@@ -933,7 +926,6 @@ overflow: hidden; */
     width: auto;
   }
 }
-
 
 .header_font ul li:nth-child(1) {
   animation: move alternate-reverse 1s 0.3s;
@@ -1145,7 +1137,6 @@ overflow: hidden; */
   /* text-shadow: .5rem .5rem .5rem rgb(255, 255, 255, .2); */
 }
 
-
 .videoback {
   position: absolute;
   right: 0;
@@ -1285,8 +1276,8 @@ overflow: hidden; */
   width: 36rem;
   height: 36rem;
   margin-bottom: 6.5rem;
-  background: rgba(255, 255, 255, .05);
-  box-shadow: .5rem .5rem aqua;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0.5rem 0.5rem aqua;
 }
 
 .skill .hr:nth-child(2) {
@@ -1476,7 +1467,7 @@ overflow: hidden; */
 .form .inputBox textarea {
   width: 100%;
   font-family: Coolvetica Rg;
-  background: rgba(255, 255, 255, .025);
+  background: rgba(255, 255, 255, 0.025);
   border: none;
   outline: none;
   padding: 0.5rem 0.5rem;
@@ -1494,7 +1485,6 @@ overflow: hidden; */
 .form .inputBox textarea::placeholder {
   color: var(--theme_color_pink);
 }
-
 
 .form .inputBox input:focus,
 .form .inputBox textarea:focus {

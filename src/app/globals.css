@@ -19,13 +19,13 @@
 @font-face {
   font-family: Coolvetica Rg;
   font-weight: bold;
-  src: url("coolvetica rg.ttf");
+  src: url("../fonts/coolvetica rg.ttf");
 }
 
 :root {
   --background_color: rgb(31, 40, 47);
-  --theme_color_blue: #09FDD9;
-  --theme_color_pink: #FD0953;
+  --theme_color_blue: #09fdd9;
+  --theme_color_pink: #fd0953;
   --highlights: rgb(172, 182, 190);
   --big_heading: rgba(141, 141, 141, 0.1);
 }
@@ -41,8 +41,16 @@
 
 ::-webkit-scrollbar-thumb {
   background: var(--theme_color_blue);
-  background: -webkit-linear-gradient(to top, var(--theme_color_pink), var(--theme_color_blue));
-  background: linear-gradient(to top, var(--theme_color_pink), var(--theme_color_blue));
+  background: -webkit-linear-gradient(
+    to top,
+    var(--theme_color_pink),
+    var(--theme_color_blue)
+  );
+  background: linear-gradient(
+    to top,
+    var(--theme_color_pink),
+    var(--theme_color_blue)
+  );
   border-radius: 5rem;
 }
 
@@ -60,7 +68,6 @@
   html {
     font-size: 100%;
   }
-
 }
 
 @media screen and (max-width: 1400px) {

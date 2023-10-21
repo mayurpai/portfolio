@@ -1,4 +1,5 @@
-import styles from "../styles/Home.module.css";
+"use client"
+import styles from "../../styles/home.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -72,15 +73,13 @@ export default function Home() {
               <li>r</li>
               <li>&nbsp;</li>
             </ul>
-          </h1>   
+          </h1>
           {/* <div className={styles.html_h1}>
             <span>&lt;/h1&gt;</span>
           </div> */}
           <Link href="/Contact">
-          {/* <Link href="#contact"> */}
-            <a>
-              <div className={styles.contact}>Contact Me!</div>
-            </a>
+            {/* <Link href="#contact"> */}
+            <div className={styles.contact}>Contact Me!</div>
           </Link>
           <div className={styles.wrapper}>
             <p className={styles.fp}>Check Out My</p>
@@ -88,13 +87,11 @@ export default function Home() {
               <div className={styles.tooltip}>Facebook</div>
               <span>
                 <Link href="https://www.facebook.com/profile.php?id=100010154376824">
-                  <a target="_blank">
-                    <FontAwesomeIcon
-                      icon={faFacebook}
-                      style={{ width: "2rem" }}
-                      fixedWidth
-                    />
-                  </a>
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    style={{ width: "2rem" }}
+                    fixedWidth
+                  />
                 </Link>
               </span>
             </div>
@@ -102,13 +99,11 @@ export default function Home() {
               <div className={styles.tooltip}>Github</div>
               <span>
                 <Link href="https://github.com/mayurpai">
-                  <a target="_blank">
-                    <FontAwesomeIcon
-                      icon={faGithub}
-                      style={{ width: "2rem" }}
-                      fixedWidth
-                    />
-                  </a>
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    style={{ width: "2rem" }}
+                    fixedWidth
+                  />
                 </Link>
               </span>
             </div>
@@ -116,13 +111,11 @@ export default function Home() {
               <div className={styles.tooltip}>Instagram</div>
               <span>
                 <Link href="https://www.instagram.com/mayurpai19/">
-                  <a target="_blank">
-                    <FontAwesomeIcon
-                      icon={faInstagram}
-                      style={{ width: "2rem" }}
-                      fixedWidth
-                    />
-                  </a>
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    style={{ width: "2rem" }}
+                    fixedWidth
+                  />
                 </Link>
               </span>
             </div>
@@ -130,13 +123,11 @@ export default function Home() {
               <div className={styles.tooltip}>LinkedIn</div>
               <span>
                 <Link href="https://www.linkedin.com/in/mayur-pai5/">
-                  <a target="_blank">
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      style={{ width: "2rem" }}
-                      fixedWidth
-                    />
-                  </a>
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    style={{ width: "2rem" }}
+                    fixedWidth
+                  />
                 </Link>
               </span>
             </div>
@@ -146,7 +137,7 @@ export default function Home() {
           {/* <div className={styles.hexagon}></div> */}
           <Image
             className={styles.image_logo}
-            src="/mayurpai.png"
+            src="/images/mayurpai.png"
             layout="fill"
             objectFit="contain"
             objectPosition="top center"
