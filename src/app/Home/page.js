@@ -1,25 +1,64 @@
-"use client"
-import styles from "../../styles/home.module.css";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faFacebook,
   faGithub,
   faInstagram,
   faLinkedin,
-  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/legacy/image";
+import Link from "next/link";
+import styles from "../../styles/home.module.css";
 
 library.add(faGithub, faInstagram, faLinkedin, faFacebook);
+
+import {
+  La_Belle_Aurore,
+  Montserrat,
+  Roboto_Mono,
+  Sigmar_One,
+  Work_Sans,
+} from "next/font/google";
+
+const la_Belle_Aurore = La_Belle_Aurore({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  weight: "300",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const roboto_Mono = Roboto_Mono({
+  weight: "100",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const sigmar_One = Sigmar_One({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const work_Sans = Work_Sans({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function Home() {
   return (
     <>
       <section className={styles.main_container} id="home">
         <div className={styles.page}>
-          <div className={styles.html_body_h2}>
+          <div
+            className={`${styles.html_body_h2} ${la_Belle_Aurore.className}`}
+          >
             <span>&lt;!DOCTYPE html&gt; </span>
             <br />
             <span>&lt;body&gt; </span>
@@ -89,7 +128,7 @@ export default function Home() {
                 <Link href="https://www.facebook.com/profile.php?id=100010154376824">
                   <FontAwesomeIcon
                     icon={faFacebook}
-                    style={{ width: "2rem" }}
+                    style={{ fontSize: '2rem' }}
                     fixedWidth
                   />
                 </Link>
@@ -101,7 +140,7 @@ export default function Home() {
                 <Link href="https://github.com/mayurpai">
                   <FontAwesomeIcon
                     icon={faGithub}
-                    style={{ width: "2rem" }}
+                    style={{ fontSize: '2rem' }}
                     fixedWidth
                   />
                 </Link>
@@ -113,7 +152,7 @@ export default function Home() {
                 <Link href="https://www.instagram.com/mayurpai19/">
                   <FontAwesomeIcon
                     icon={faInstagram}
-                    style={{ width: "2rem" }}
+                    style={{ fontSize: '2rem' }}
                     fixedWidth
                   />
                 </Link>
@@ -125,7 +164,7 @@ export default function Home() {
                 <Link href="https://www.linkedin.com/in/mayur-pai5/">
                   <FontAwesomeIcon
                     icon={faLinkedin}
-                    style={{ width: "2rem" }}
+                    style={{ fontSize: '2rem' }}
                     fixedWidth
                   />
                 </Link>

@@ -357,12 +357,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #eaeaea;
+  background: rgb(255, 255, 255, 0.01);
   position: relative;
   z-index: 2;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  /* clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .wrapper .icon_github .tooltip,
@@ -390,7 +396,7 @@
 .wrapper .icon_linkedin:hover .tooltip,
 .wrapper .icon_facebook:hover .tooltip,
 .swrapper .icon_resume:hover .tooltip {
-  top: -70px;
+  top: -50px;
   opacity: 1;
   pointer-events: auto;
 }

@@ -1,8 +1,42 @@
-import { Inter } from "next/font/google";
+import {
+  La_Belle_Aurore,
+  Montserrat,
+  Roboto_Mono,
+  Sigmar_One,
+  Work_Sans,
+} from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const la_Belle_Aurore = La_Belle_Aurore({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  weight: "300",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const roboto_Mono = Roboto_Mono({
+  weight: "100",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const sigmar_One = Sigmar_One({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const work_Sans = Work_Sans({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Mayur Pai",
@@ -29,17 +63,23 @@ export const metadata = {
       },
     ],
   },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* <!-- <meta name="robots" content="noindex,nofollow"/> --> */}
-        {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" /> */}
+        <link
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+          rel="stylesheet"
+        ></link>
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
