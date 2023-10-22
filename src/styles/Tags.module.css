@@ -1,0 +1,7 @@
+.tag {
+  font-family: "La Belle Aurore", cursive;
+  color: var(--highlights);
+  font-size: 1.25rem;
+  height: fit-content;
+  width: fit-content;
+}

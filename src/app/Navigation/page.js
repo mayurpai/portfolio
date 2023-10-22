@@ -1,47 +1,35 @@
-import styles from "../../styles/home.module.css";
+import Image from "next/image";
+import styles from "../../styles/Navigation.module.css";
+import home_styles from "../../styles/Home.module.css";
 import Link from "next/link";
+import Button from "@/components/Button";
 
 export default function Navigation() {
   return (
     <>
-      <nav className={styles.navigation_links}>
+      <nav
+        className={`${styles.navigation_links} ${home_styles.navigation_links}`}
+      >
         <ul className={styles.links}>
           <li>
             <Link href="/">
-              <strong>Home</strong>
-              {/* <Image
-                  className={styles.logo}
-                  src="/logo.png"
-                  width={60}
-                  height={60}
-                /> */}
+              <Image
+                className={styles.logo}
+                src="/images/BestLogo.png"
+                width={35}
+                height={35}
+                alt="logo"
+                loading="eager"
+              />
             </Link>
           </li>
           <li>
-            {/* <Link href="#about"> */}
-            <Link href="/About">
-              <strong>About</strong>
-            </Link>
-          </li>
-          <li>
-            <Link href="/Skills">
-              <strong>Skills</strong>
-            </Link>
-          </li>
-          <li>
-            <Link href="/Projects">
-              <strong>Projects</strong>
-            </Link>
-          </li>
-          <li>
-            {/* <Link href="#contact"> */}
             <Link href="/Contact">
-              <strong>Contact</strong>
+              <Button buttonName="Get in touch!"></Button>
             </Link>
           </li>
         </ul>
       </nav>
-      ;
     </>
   );
 }

@@ -1,0 +1,22 @@
+.button {
+  font-family: Coolvetica Rg;
+  border: 0.1rem solid var(--theme_color_blue);
+  color: var(--theme_color_blue);
+  box-sizing: border-box;
+  background-color: transparent;
+  font-weight: bolder;
+  width: fit-content;
+  height: 3.5rem;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.2rem var(--theme_color_pink);
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
