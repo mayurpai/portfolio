@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import TypingEffect from "../../components/TypingEffect";
 import styles from "../../styles/Home.module.scss";
+import ParentCard from "@/parent-components/ParentCard";
 
 const pt_mono = PT_Mono({
   weight: "400",
@@ -134,6 +135,9 @@ export default function Home() {
             style={{ marginTop: "-0.5rem", marginLeft: "7.5rem" }}
             bool={!tagDecider}
           ></TagsCreator>
+          <div className={styles.projectSection}>
+            <ParentCard />
+          </div>
         </div>
       </section>
     </>
