@@ -1,49 +1,5 @@
-import {
-  La_Belle_Aurore,
-  Montserrat,
-  Roboto_Mono,
-  Sigmar_One,
-  Work_Sans,
-  PT_Mono
-} from "next/font/google";
 import Head from "next/head";
 import "./globals.scss";
-
-const la_Belle_Aurore = La_Belle_Aurore({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  weight: "300",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const roboto_Mono = Roboto_Mono({
-  weight: "100",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const sigmar_One = Sigmar_One({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const work_Sans = Work_Sans({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const pt_mono = PT_Mono({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata = {
   title: "Mayur Pai",

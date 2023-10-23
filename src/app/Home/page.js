@@ -1,11 +1,11 @@
 "use client";
-import styles from "../../styles/Home.module.scss";
-import styled, { keyframes } from "styled-components";
 import TagsCreator from "@/components/TagsCreator";
 import ParentIcon from "@/parent-components/ParentIcon";
 import { PT_Mono } from "next/font/google";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 import TypingEffect from "../../components/TypingEffect";
+import styles from "../../styles/Home.module.scss";
 
 const pt_mono = PT_Mono({
   weight: "400",
@@ -16,6 +16,7 @@ const pt_mono = PT_Mono({
 const text = "Mayur Pai";
 const aboutText =
   "A web developer, and programmer. An Inquisite who loves exploring routes that I've never come across. One of my favorite ways to learn is to teach. I completed my Bachelor's in Information Science from Sahyadri College of Engineering and Management, Mangalore. <br /> <br />  I'm currently working as an Associate Developer at GalaxE. Solutions India Pvt. Ltd. <br /> <br /> It has been my passion and craze to work with computers since I was a young kid. A priority of mine has always been to learn something new every day. As a result of my studies, I have acquired languages and algorithms, technical skills, leadership qualities, and much more. There's certainly a lot more to learn, a lot more problems to solve, and a lot more to build.";
+const project = "Projects";
 
 const move = keyframes`
 0% {
@@ -49,11 +50,13 @@ const AnimatedText = styled.li`
   animation-delay: ${(props) => props.delay}s;
 `;
 
-const items = text.split("").map((char, index) => (
-  <AnimatedText className="li" key={index} delay={0.3 + index * 0.1}>
-    {char}
-  </AnimatedText>
-));
+function createAnimatedText(text) {
+  return text.split("").map((char, index) => (
+    <AnimatedText key={index} delay={0.3 + index * 0.1}>
+      {char}
+    </AnimatedText>
+  ));
+}
 
 export default function Home() {
   const [tagDecider, setTagDecider] = useState(false);
@@ -61,6 +64,7 @@ export default function Home() {
   return (
     <>
       <section className={styles.main_container} id="home">
+        {/* <div className={styles.big_heading}>π</div> */}
         <div className={styles.page}>
           <TagsCreator
             tag="!DOCTYPE html"
@@ -78,7 +82,7 @@ export default function Home() {
             bool={tagDecider}
           ></TagsCreator>
           <h1 className={styles.header_font}>
-            <ul>{items}</ul>
+            <ul>{createAnimatedText(text)}</ul>
           </h1>
           <TagsCreator
             tag="h1"
@@ -111,6 +115,23 @@ export default function Home() {
           <TagsCreator
             tag="button"
             style={{ marginLeft: "12.5rem" }}
+            bool={!tagDecider}
+          ></TagsCreator>
+        </div>
+      </section>
+      <section className={styles.skills} id="projects">
+        <div className={styles.page}>
+          <TagsCreator
+            tag="h2"
+            style={{ marginLeft: "7.5rem" }}
+            bool={tagDecider}
+          ></TagsCreator>
+          <h2 className={styles.project_font}>
+            <ul>{createAnimatedText(project)}</ul>
+          </h2>
+          <TagsCreator
+            tag="h2"
+            style={{ marginTop: "-0.5rem", marginLeft: "7.5rem" }}
             bool={!tagDecider}
           ></TagsCreator>
         </div>

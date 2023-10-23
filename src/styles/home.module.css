@@ -12,7 +12,6 @@
   flex-wrap: wrap-reverse;
   background: var(--background_color);
   scroll-snap-type: y mandatory;
-  /* overflow-y: scroll; */
   place-items: center;
   overflow-x: hidden;
 }
@@ -26,7 +25,6 @@
 }
 
 .main_container,
-.skills,
 .contact_me {
   position: relative;
   width: 100vw;
@@ -46,10 +44,9 @@
 }
 
 .page {
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100vw;
-  /* height: 1rem; */
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -106,18 +103,21 @@
   margin-left: 7rem;
 }
 
-.page .header_font ul li {
+.page .header_font ul li,
+.page .project_font ul li {
   color: #eaeaea;
 }
 
-.page .header_font ul li:hover {
+.page .header_font ul li:hover,
+.page .project_font ul li:hover {
   color: var(--theme_color_blue);
   transition: 1s ease-in-out;
   text-shadow: 0.2rem 0.2rem var(--theme_color_pink);
   -webkit-text-stroke: 0.1rem transparent;
 }
 
-.header_font ul li {
+.header_font ul li,
+.project_font ul li {
   display: inline;
   text-shadow: 0.2rem 0.2rem rgba(255, 255, 255, 0.2);
 }
@@ -136,14 +136,20 @@
   align-items: center; */
 }
 
+.project_font {
+  font-family: Coolvetica Rg;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 4.5rem;
+  padding: 0 9rem;
+  margin-top: -1.5rem;
+}
+
 .about .page,
 .skills .page,
 .projects .page,
 .contact_me .page {
-  margin-bottom: 6rem;
   position: relative;
-  left: 1rem;
-  flex: 1 1 70px;
 }
 
 .projects .page {
@@ -658,14 +664,11 @@ overflow: hidden; */
 /* .contact_me {
   top: 200%;
 } */
-.about .big_heading,
-.skills .big_heading,
-.projects .big_heading,
-.contact_me .big_heading {
+.big_heading {
   position: absolute;
-  top: -4.3rem;
-  left: 0;
-  font-size: 15rem;
+  top: -5rem;
+  left: 22.4rem;
+  font-size: 20rem;
   color: var(--big_heading);
 }
 
