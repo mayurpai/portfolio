@@ -4,9 +4,10 @@ import {
   Roboto_Mono,
   Sigmar_One,
   Work_Sans,
+  PT_Mono
 } from "next/font/google";
 import Head from "next/head";
-import "./globals.css";
+import "./globals.scss";
 
 const la_Belle_Aurore = La_Belle_Aurore({
   weight: "400",
@@ -33,6 +34,12 @@ const sigmar_One = Sigmar_One({
 });
 
 const work_Sans = Work_Sans({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const pt_mono = PT_Mono({
   weight: "400",
   subsets: ["latin"],
   display: "swap",

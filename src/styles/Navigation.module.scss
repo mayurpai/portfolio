@@ -1,0 +1,24 @@
+.navigation_links {
+  position: sticky;
+  top: 0rem;
+  z-index: 999;
+  width: 100vw;
+
+  .links {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2.5rem;
+    text-decoration: none;
+    color: var(--theme_color_blue);
+
+    .logo {
+      transform: rotateZ(30deg);
+      -webkit-transform: rotateZ(30deg);
+      -moz-transform: rotateZ(30deg);
+      -ms-transform: rotateZ(30deg);
+      -o-transform: rotateZ(30deg);
+}
+  }
+}

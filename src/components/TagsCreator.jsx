@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Tags.module.css";
+import styles from "../styles/Tags.module.scss";
 
 import { La_Belle_Aurore } from "next/font/google";
 

@@ -9,7 +9,7 @@ const TypingEffect = ({ text }) => {
       const timeoutId = setTimeout(() => {
         setDisplayText(text.substring(0, currentIndex + 1));
         setCurrentIndex(currentIndex + 1);
-      }, 1); // Adjust the typing speed as needed
+      }, 0); // Adjust the typing speed as needed
       return () => clearTimeout(timeoutId);
     }
   }, [currentIndex, text]);

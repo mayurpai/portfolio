@@ -50,7 +50,6 @@
   top: 0;
   width: 100vw;
   /* height: 1rem; */
-  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -94,13 +93,12 @@
   background: linear-gradient(to right, var(--theme_color_blue), var(--theme_color_pink));
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 } */
+
 .image_logo {
-  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
-          clip-path: polygon(50% 0, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+  clip-path: polygon(50% 0, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
 }
 
 .html_h1 {
-  width: -moz-fit-content;
   width: fit-content;
   margin-top: -0.5rem;
   margin-left: 7rem;
@@ -117,9 +115,10 @@
   -webkit-text-stroke: 0.1rem transparent;
 }
 
+
 .header_font ul li {
   display: inline;
-  text-shadow: 0.2rem 0.2rem rgba(255, 255, 255, 0.2);
+  text-shadow: 0.2rem 0.2rem rgb(255, 255, 255, 0.2);
 }
 
 .header_font {
@@ -185,7 +184,8 @@
   position: relative;
   /* Position Has To Be Absolute As The Right Side Image Needs To Get Fit! */
   display: inline-block;
-  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+  background: -webkit-linear-gradient(var(--theme_color_blue),
+      var(--theme_color_pink));
   -webkit-background-clip: text;
   font-size: 1.5rem;
   -webkit-text-fill-color: transparent;
@@ -243,7 +243,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.01);
+  background: rgb(255, 255, 255, 0.01);
   position: relative;
   z-index: 2;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.25);
@@ -349,7 +349,8 @@
 
 .swrapper .icon_resume:hover span,
 .swrapper .icon_resume:hover .tooltip {
-  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+  background: -webkit-linear-gradient(var(--theme_color_blue),
+      var(--theme_color_pink));
 }
 
 .swrapper .icon_resume:hover .tooltip:before {
@@ -367,7 +368,7 @@
 }
 
 .contact,
-.form .inputBox button[type=submit] {
+.form .inputBox button[type="submit"] {
   position: absolute;
   /* font-family: "Roboto Mono", monospace; */
   font-family: Coolvetica Rg;
@@ -392,13 +393,13 @@
   margin-top: 1rem;
 }
 
-.form .inputBox button[type=submit] {
+.form .inputBox button[type="submit"] {
   margin-top: 5rem;
   cursor: pointer;
 }
 
 .contact:before,
-.form .inputBox button[type=submit]::before {
+.form .inputBox button[type="submit"]::before {
   transition: 0.5s all ease;
   position: absolute;
   top: 0;
@@ -411,7 +412,7 @@
 }
 
 .contact:hover:before,
-.form .inputBox button[type=submit]:hover::before {
+.form .inputBox button[type="submit"]:hover::before {
   transition: 0.5s all ease;
   left: 0;
   right: 0;
@@ -420,18 +421,18 @@
 }
 
 .contact:hover,
-.form .inputBox button[type=submit]:hover {
+.form .inputBox button[type="submit"]:hover {
   color: var(--background_color);
+  -webkit-animation: jello-horizontal 0.9s both;
   animation: jello-horizontal 0.9s both;
 }
 
 .html_doc_header {
-  height: -moz-fit-content;
   height: fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 0 2rem;
 }
+
 
 .about .html_body_h1,
 .skills .html_body_h1,
@@ -445,6 +446,8 @@
   bottom: 5rem;
   left: 2.5rem;
 }
+
+
 
 .about .html_h1 {
   margin-left: 34rem;
@@ -474,6 +477,8 @@
   top: 17rem;
 }
 
+
+
 .html_doc_header,
 .html_body_h1,
 .html_body_html,
@@ -486,6 +491,8 @@
   color: var(--highlights);
   font-size: 1.25rem;
 }
+
+
 
 .projects_card {
   position: relative;
@@ -510,13 +517,15 @@
   position: relative;
   min-width: 35rem;
   height: 25rem;
-  box-shadow: inset 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2), inset -0.5rem -0.5rem 1.5rem rgba(255, 255, 255, 0.1), 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.4), -0.5rem -0.5rem 1.5rem rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2),
+    inset -0.5rem -0.5rem 1.5rem rgba(255, 255, 255, 0.1),
+    0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.4),
+    -0.5rem -0.5rem 1.5rem rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   margin-right: 3rem;
   margin-top: 3rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  background-color: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .card .box {
@@ -540,7 +549,7 @@
   left: 0;
   width: 50%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(255, 255, 255, 0.1);
   pointer-events: none;
 }
 
@@ -599,8 +608,7 @@
   background-color: rgba(255, 255, 255, 0.02);
   /* bottom: 1rem; */
   /* right: 1rem; */
-  -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-          clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   display: flex;
   justify-content: center;
   place-items: center;
@@ -611,7 +619,8 @@
   font-size: 1rem;
   transition: 0.5s;
   border: 1pt solid rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0.5rem 0.5rem 0.8rem rgba(255, 255, 255, 0.15), 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0.5rem 0.5rem 0.8rem rgba(255, 255, 255, 0.15),
+    0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.25);
 }
 
 .card .box .content a:hover {
@@ -625,15 +634,19 @@
   border: 1pt solid rgba(255, 255, 255, 0.225;
   box-shadow: 0.1rem 0.1rem .1rem rgba(255, 255, 255, .5);
 } */
+
 /* For Next Pages Add These CSS
 bottom: 0;
 top: 100%;
 overflow: hidden; */
+
 .about {
   position: absolute;
 }
 
 .about,
+/* .skills, */
+/* .contact_me */
 .projects {
   /* position: absolute; */
   height: 100vh;
@@ -649,15 +662,19 @@ overflow: hidden; */
 /* .about {
   top: 100%;
 } */
+
 /* .skills {
   top: 200%;
 } */
+
 /* .projects {
   top: 300%;
 } */
+
 /* .contact_me {
   top: 200%;
 } */
+
 .about .big_heading,
 .skills .big_heading,
 .projects .big_heading,
@@ -810,11 +827,13 @@ overflow: hidden; */
     width: 0rem;
     opacity: 0;
   }
+
   100% {
     max-width: 100%;
     opacity: 1;
   }
 }
+
 .max {
   position: absolute;
   width: 50rem;
@@ -892,10 +911,6 @@ overflow: hidden; */
   transition: linear 0.1s;
 }
 
-.form .inputBox input::-moz-placeholder, .form .inputBox textarea::-moz-placeholder {
-  color: var(--theme_color_pink);
-}
-
 .form .inputBox input::placeholder,
 .form .inputBox textarea::placeholder {
   color: var(--theme_color_pink);
@@ -916,14 +931,15 @@ overflow: hidden; */
   text-align: justify;
   justify-content: center;
   align-items: center;
+
+  .aboutBody {
+    color: var(--highlights);
+    font-weight: bold;
+    font-size: 1rem;
+    background: -webkit-linear-gradient(var(--theme_color_blue),
+        var(--theme_color_pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 75%;
+  }
 }
-.aboutSection .aboutBody,
-.iconSection .aboutBody {
-  color: var(--highlights);
-  font-weight: bold;
-  font-size: 1rem;
-  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: 75%;
-}/*# sourceMappingURL=Home.module.css.map */

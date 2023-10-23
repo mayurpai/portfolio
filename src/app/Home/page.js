@@ -1,62 +1,63 @@
 "use client";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faFacebook,
-  faGithub,
-  faInstagram,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/legacy/image";
-import Link from "next/link";
-import styles from "../../styles/Home.module.css";
-
-library.add(faGithub, faInstagram, faLinkedin, faFacebook);
-
-import {
-  La_Belle_Aurore,
-  Montserrat,
-  Roboto_Mono,
-  Sigmar_One,
-  Work_Sans,
-} from "next/font/google";
-import Button from "@/components/Button";
+import styles from "../../styles/Home.module.scss";
+import styled, { keyframes } from "styled-components";
 import TagsCreator from "@/components/TagsCreator";
+import ParentIcon from "@/parent-components/ParentIcon";
+import { PT_Mono } from "next/font/google";
 import { useState } from "react";
 import TypingEffect from "../../components/TypingEffect";
 
-const montserrat = Montserrat({
-  weight: "300",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const roboto_Mono = Roboto_Mono({
-  weight: "100",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const sigmar_One = Sigmar_One({
+const pt_mono = PT_Mono({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
 
-const work_Sans = Work_Sans({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+const text = "Mayur Pai";
+const aboutText =
+  "A web developer, and programmer. An Inquisite who loves exploring routes that I've never come across. One of my favorite ways to learn is to teach. I completed my Bachelor's in Information Science from Sahyadri College of Engineering and Management, Mangalore. <br /> <br />  I'm currently working as an Associate Developer at GalaxE. Solutions India Pvt. Ltd. <br /> <br /> It has been my passion and craze to work with computers since I was a young kid. A priority of mine has always been to learn something new every day. As a result of my studies, I have acquired languages and algorithms, technical skills, leadership qualities, and much more. There's certainly a lot more to learn, a lot more problems to solve, and a lot more to build.";
 
-const la_Belle_Aurore = La_Belle_Aurore({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+const move = keyframes`
+0% {
+    opacity: 0;
+    color: transparent;
+    width: auto;
+  }
+
+  33% {
+    opacity: 1;
+    color: var(--theme_color_blue);
+    width: auto;
+    text-shadow: 0.2rem 0.2rem var(--theme_color_pink);
+  }
+
+  66% {
+    opacity: 1;
+    color: var(--theme_color_pink);
+    width: auto;
+    text-shadow: 0.2rem 0.2rem var(--theme_color_blue);
+  }
+
+  100% {
+    opacity: 1;
+    color: transparent;
+    width: auto;
+  }`;
+
+const AnimatedText = styled.li`
+  animation: ${move} alternate-reverse 1s;
+  animation-delay: ${(props) => props.delay}s;
+`;
+
+const items = text.split("").map((char, index) => (
+  <AnimatedText className="li" key={index} delay={0.3 + index * 0.1}>
+    {char}
+  </AnimatedText>
+));
 
 export default function Home() {
   const [tagDecider, setTagDecider] = useState(false);
+
   return (
     <>
       <section className={styles.main_container} id="home">
@@ -77,145 +78,39 @@ export default function Home() {
             bool={tagDecider}
           ></TagsCreator>
           <h1 className={styles.header_font}>
-            <ul>
-              {/* <li>H</li>
-              <li>i</li>
-              <li>,</li>
-              <li>&nbsp;</li>
-              <li>I</li>
-              <li>
-                <sup className={styles.sup}>,</sup>
-              </li>
-              <li>m</li>
-              <div className={styles.br}></div> */}
-              <li>M</li>
-              <li>a</li>
-              <li>y</li>
-              <li>u</li>
-              <li>r</li>
-              <li>&nbsp;</li>
-              <li>P</li>
-              <li>a</li>
-              <li>i</li>
-              {/* <li>,</li>
-              <div className={styles.brbottom}></div>
-              <li>W</li>
-              <li>e</li>
-              <li>b</li>
-              <li>&nbsp;</li>
-              <li>D</li>
-              <li>e</li>
-              <li>v</li>
-              <li>e</li>
-              <li>l</li>
-              <li>o</li>
-              <li>p</li>
-              <li>e</li>
-              <li>r</li>
-              <li>.</li> */}
-            </ul>
+            <ul>{items}</ul>
           </h1>
           <TagsCreator
             tag="h1"
             style={{ marginTop: "-0.5rem", marginLeft: "7.5rem" }}
             bool={!tagDecider}
           ></TagsCreator>
-          {/* <div className={styles.wrapper}>
-            <p className={styles.fp}>Check Out My</p>
-            <div className={styles.icon_facebook}>
-              <div className={styles.tooltip}>Facebook</div>
-              <span>
-                <Link href="https://www.facebook.com/profile.php?id=100010154376824">
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    style={{ fontSize: "2rem" }}
-                    fixedWidth
-                  />
-                </Link>
-              </span>
-            </div>
-            <div className={styles.icon_github}>
-              <div className={styles.tooltip}>Github</div>
-              <span>
-                <Link href="https://github.com/mayurpai">
-                  <FontAwesomeIcon
-                    icon={faGithub}
-                    style={{ fontSize: "2rem" }}
-                    fixedWidth
-                  />
-                </Link>
-              </span>
-            </div>
-            <div className={styles.icon_instagram}>
-              <div className={styles.tooltip}>Instagram</div>
-              <span>
-                <Link href="https://www.instagram.com/mayurpai19/">
-                  <FontAwesomeIcon
-                    icon={faInstagram}
-                    style={{ fontSize: "2rem" }}
-                    fixedWidth
-                  />
-                </Link>
-              </span>
-            </div>
-            <div className={styles.icon_linkedin}>
-              <div className={styles.tooltip}>LinkedIn</div>
-              <span>
-                <Link href="https://www.linkedin.com/in/mayur-pai5/">
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    style={{ fontSize: "2rem" }}
-                    fixedWidth
-                  />
-                </Link>
-              </span>
-            </div>
-          </div> */}
           <TagsCreator
             tag="p"
             style={{ marginLeft: "10rem" }}
             bool={tagDecider}
           ></TagsCreator>
           <div className={styles.aboutSection}>
-            <div className={styles.aboutBody}>
-              <TypingEffect
-                text="A web developer, and programmer. An Inquisite who loves exploring
-              routes that I've never come across. One of my favorite ways to
-              learn is to teach. I completed my Bachelor's in Information
-              Science from Sahyadri College of Engineering and Management,
-              Mangalore.
-              <br /> <br /> 
-              I'm currently working as an Associate Developer at GalaxE. Solutions India Pvt. Ltd.
-              <br /> <br />
-              It has been my passion and craze to work with computers since I
-              was a young kid. A priority of mine has always been to learn
-              something new every day. As a result of my studies, I have
-              acquired languages and algorithms, technical skills, leadership
-              qualities, and much more. There's certainly a lot more to learn, a
-              lot more problems to solve, and a lot more to build."
-              />
-              {/* A web developer, and programmer. An Inquisite who loves exploring
-              routes that I've never come across. One of my favorite ways to
-              learn is to teach. I completed my Bachelor's in Information
-              Science from Sahyadri College of Engineering and Management,
-              Mangalore.
-              <br />
-              <br /> I'm currently working as an <b>
-                Associate Developer
-              </b> at <b>GalaxE. Solutions India Pvt. Ltd.</b>
-              <br />
-              <br />
-              It has been my passion and craze to work with computers since I
-              was a young kid. A priority of mine has always been to learn
-              something new every day. As a result of my studies, I have
-              acquired languages and algorithms, technical skills, leadership
-              qualities, and much more. There's certainly a lot more to learn, a
-              lot more problems to solve, and a lot more to build. */}
+            <div className={`${styles.aboutBody} ${pt_mono.className}`}>
+              <TypingEffect text={aboutText} />
             </div>
           </div>
           <TagsCreator
             tag="p"
             style={{ marginLeft: "10rem" }}
+            bool={!tagDecider}
+          ></TagsCreator>
+          <TagsCreator
+            tag="button"
+            style={{ marginLeft: "12.5rem" }}
+            bool={tagDecider}
+          ></TagsCreator>
+          <div className={styles.iconSection}>
+            <ParentIcon />
+          </div>
+          <TagsCreator
+            tag="button"
+            style={{ marginLeft: "12.5rem" }}
             bool={!tagDecider}
           ></TagsCreator>
         </div>

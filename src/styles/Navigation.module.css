@@ -4,7 +4,6 @@
   z-index: 999;
   width: 100vw;
 }
-
 .navigation_links .links {
   display: flex;
   width: 100vw;
@@ -14,3 +13,10 @@
   text-decoration: none;
   color: var(--theme_color_blue);
 }
+.navigation_links .links .logo {
+  transform: rotateZ(30deg);
+  -webkit-transform: rotateZ(30deg);
+  -moz-transform: rotateZ(30deg);
+  -ms-transform: rotateZ(30deg);
+  -o-transform: rotateZ(30deg);
+}/*# sourceMappingURL=Navigation.module.css.map */

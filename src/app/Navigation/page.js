@@ -1,15 +1,11 @@
 import Image from "next/image";
-import styles from "../../styles/Navigation.module.css";
-import home_styles from "../../styles/Home.module.css";
+import styles from "../../styles/Navigation.module.scss";
 import Link from "next/link";
 import Button from "@/components/Button";
 
 export default function Navigation() {
   return (
-    <>
-      <nav
-        className={`${styles.navigation_links} ${home_styles.navigation_links}`}
-      >
+      <nav className={`${styles.navigation_links}`}>
         <ul className={styles.links}>
           <li>
             <Link href="/">
@@ -30,6 +26,5 @@ export default function Navigation() {
           </li>
         </ul>
       </nav>
-    </>
   );
 }
