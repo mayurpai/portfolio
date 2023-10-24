@@ -22,7 +22,7 @@ export default function Icon(props) {
         <Link href={props.url}>
           <FontAwesomeIcon
             icon={props.icon}
-            style={{ fontSize: "1.4rem", color: "whitesmoke" }}
+            style={{ fontSize: "1.4rem", color: "whitesmoke", zIndex: "99 " }}
             fixedWidth
           />
         </Link>

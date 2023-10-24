@@ -1,0 +1,28 @@
+.technology_main {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    position: absolute;
+    bottom: 0.25rem;
+    left: 0;
+
+    .technology {
+        margin: 0 1rem;
+        aspect-ratio: 3/2;
+        image-rendering: optimizeQuality;
+        object-fit: contain;
+        object-position: center;
+        // filter: invert(10%);
+        mix-blend-mode: color-burn;
+        // -webkit-filter: invert(10%);
+    }
+
+    .faIcon {
+        font-size: 2rem;
+        color: rgba(255, 255, 255, .2);
+        aspect-ratio: 3/2;
+        object-fit: contain;
+        mix-blend-mode: color-burn;
+    }
+}

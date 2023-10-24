@@ -15,6 +15,7 @@ import { faCode } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Card.module.scss";
 import { Sigmar_One, PT_Mono } from "next/font/google";
 import Tilt from "react-vanilla-tilt";
+import Technology from "./Technology";
 
 library.add(faGithub, faLink, faCode, faHtml5, faCss3Alt, faJs, faReact);
 
@@ -31,7 +32,6 @@ const pt_mono = PT_Mono({
 });
 
 export default function Card(props) {
-  console.log(props);
   return (
     <Tilt
       className={styles.tilt}
@@ -62,6 +62,9 @@ export default function Card(props) {
             </h2>
             <h3 className={`${styles.h3}`}>{props.title}</h3>
             <p className={`${styles.p} ${pt_mono.className}`}>{props.desc}</p>
+            <div className={styles.technologySection}>
+              <Technology names={props.tech} />
+            </div>
             {/* <p className={styles.tech}> */}
             {/* <FontAwesomeIcon
                 icon={faCode}

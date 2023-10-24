@@ -1,0 +1,26 @@
+.technology_main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  position: absolute;
+  bottom: 0.25rem;
+  left: 0;
+}
+.technology_main .technology {
+  margin: 0 1rem;
+  aspect-ratio: 3/2;
+  image-rendering: optimizeQuality;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  mix-blend-mode: color-burn;
+}
+.technology_main .faIcon {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.2);
+  aspect-ratio: 3/2;
+  -o-object-fit: contain;
+     object-fit: contain;
+  mix-blend-mode: color-burn;
+}/*# sourceMappingURL=Technology.module.css.map */

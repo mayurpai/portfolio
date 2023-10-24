@@ -166,6 +166,10 @@
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
 }
 
+.technologySection {
+    padding: 0.5rem;
+}
+
 // .card .box {
 //     display: grid;
 //     grid-template-columns: repeat(5, 1fr);
@@ -217,12 +221,3 @@
 //     }
 
 // }
-
-// aspect-ratio: 1/1;
-//     height: var(--icon-height,34px);
-//     image-rendering: optimizeQuality;
-//     object-fit: contain;
-//     object-position: center;
-//     width: var(--icon-width,34px);
-// filter: invert(95%);
-// mix-blend-mode: luminosity;
