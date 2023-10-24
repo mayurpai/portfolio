@@ -4,80 +4,74 @@ import styles from "../styles/Technology.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faFacebook,
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faWhatsapp,
   faHtml5,
   faCss3Alt,
   faJs,
+  faReact,
+  faJava,
+  faPython,
+  faBootstrap,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCompassDrafting,
+  faDatabase,
+  faFolderTree,
+  faNetworkWired,
+  faPepperHot,
+} from "@fortawesome/free-solid-svg-icons";
 library.add(
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faFacebook,
   faHtml5,
   faCss3Alt,
-  faJs
+  faJs,
+  faReact,
+  faJava,
+  faPython,
+  faBootstrap,
+  faNetworkWired,
+  faDatabase,
+  faPepperHot,
+  faFolderTree,
+  faCompassDrafting
 );
 
 export default function Technology(props) {
-  //   const basePath = "/technology";
-  //   const technologyMapper = {
-  //     HTML5: `${basePath}/html5.png`,
-  //     CSS3: `${basePath}/css3.png`,
-  //     JavaScript: `${basePath}/js.png`,
-  //     CPP: `${basePath}/cpp.png`,
-  //     Java: `${basePath}/java.png`,
-  //     SQLAlchemy: `${basePath}/flask-sqlalchemy.png`,
-  //     Internet_Of_Things: `${basePath}/iot.png`,
-  //     jQuery: `${basePath}/jquery.png`,
-  //     Machine_Learning: `${basePath}/machine-learning.png`,
-  //     Next: `${basePath}/next.png`,
-  //     phpMyAdmin: `${basePath}/phpmyadmin.png`,
-  //     React: `${basePath}/react.png`,
-  //     Python: `${basePath}/python.png`,
-  //     Flask: `${basePath}/flask.png`,
-  //     Android_Studio: `${basePath}/android-studio.png`,
-  //   };
   const technologyFaMapper = {
-    HTML5: { logo: "faHtml5", color: "red" },
-    CSS3: { logo: "faCss3Alt", color: "red" },
-    JavaScript: { logo: "faJs", color: "red" },
-    // CPP: `${basePath}/cpp.png`,
-    // Java: `${basePath}/java.png`,
-    // SQLAlchemy: `${basePath}/flask-sqlalchemy.png`,
-    // Internet_Of_Things: `${basePath}/iot.png`,
-    // jQuery: `${basePath}/jquery.png`,
-    // Machine_Learning: `${basePath}/machine-learning.png`,
-    // Next: `${basePath}/next.png`,
-    // phpMyAdmin: `${basePath}/phpmyadmin.png`,
-    // React: `${basePath}/react.png`,
-    // Python: `${basePath}/python.png`,
-    // Flask: `${basePath}/flask.png`,
-    // Android_Studio: `${basePath}/android-studio.png`,
+    HTML5: { logo: faHtml5, color: "#e7542e", title: "HTML5" },
+    CSS3: { logo: faCss3Alt, color: "#1c76b8", title: "CSS3" },
+    JavaScript: { logo: faJs, color: "#ffdb43", title: "JavaScript" },
+    Java: { logo: faJava, color: "#ec2226", title: "Java" },
+    SQLAlchemy: { logo: faDatabase, color: "#db290f", title: "SQLAlchemy" },
+    Internet_Of_Things: {
+      logo: faNetworkWired,
+      color: "#2e426a",
+      title: "Internet Of Things",
+    },
+    Bootstrap: { logo: faBootstrap, color: "#820ff8", title: "Bootstrap" },
+    React: { logo: faReact, color: "#149eca", title: "React" },
+    Python: { logo: faPython, color: "#f6c538", title: "Python" },
+    Flask: { logo: faPepperHot, color: "#060606", title: "Flask" },
+    File_Structures: {
+      logo: faFolderTree,
+      color: "#182331",
+      title: "File Structures",
+    },
+    Android_Studio: {
+      logo: faCompassDrafting,
+      color: "#4ee08f",
+      title: "Android Studio",
+    },
   };
   return (
     <div className={styles.technology_main}>
       {props?.names?.map((tech) => (
         <FontAwesomeIcon
+          title={technologyFaMapper[tech]?.title}
           className={styles.faIcon}
           icon={technologyFaMapper[tech]?.logo}
           fixedWidth
-          style={{ color: `${technologyFaMapper[tech]?.color}` }}
+          // style={{ color: `${technologyFaMapper[tech]?.color}` }}
         />
       ))}
-      {/* <Image
-          className={styles.technology}
-          key={tech}
-          src={technologyMapper[tech]}
-          width={35}
-          height={35}
-          alt={`${tech} Logo`}
-          loading="eager"
-        /> */}
     </div>
   );
 }

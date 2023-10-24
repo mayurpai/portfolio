@@ -32,52 +32,55 @@ const pt_mono = PT_Mono({
 });
 
 export default function Card(props) {
+  let link = props.web == "#" ? props.link : props.web;
   return (
-    <Tilt
-      className={styles.tilt}
-      options={{
-        reverse: false,
-        max: 345,
-        perspective: 1000,
-        scale: 5,
-        speed: 300,
-        transition: true,
-        axis: null,
-        reset: false,
-        easing: "cubic-bezier(.03,.98,.52,.99)",
-        glare: false,
-        "max-glare": 1,
-        "glare-prerender": false,
-      }}
-      style={{
-        backgroundColor: "transparent",
-        boxShadow: "none",
-      }}
-    >
-      <div className={styles.card}>
-        <div className={styles.box}>
-          <div className={styles.content}>
-            <h2 className={`${sigmar_One.className} ${styles.h2}`}>
-              {props.id}
-            </h2>
-            <h3 className={`${styles.h3}`}>{props.title}</h3>
-            <p className={`${styles.p} ${pt_mono.className}`}>{props.desc}</p>
-            <div className={styles.technologySection}>
-              <Technology names={props.tech} />
-            </div>
-            {/* <p className={styles.tech}> */}
-            {/* <FontAwesomeIcon
+    <Link href={link} target="_blank">
+      <Tilt
+        className={styles.tilt}
+        options={{
+          reverse: false,
+          max: 345,
+          perspective: 1000,
+          scale: 5,
+          speed: 300,
+          transition: true,
+          axis: null,
+          reset: false,
+          easing: "cubic-bezier(.03,.98,.52,.99)",
+          glare: false,
+          "max-glare": 1,
+          "glare-prerender": false,
+        }}
+        style={{
+          backgroundColor: "transparent",
+          boxShadow: "none",
+        }}
+      >
+        <div className={styles.card}>
+          <div className={styles.box}>
+            <div className={styles.content}>
+              <h2 className={`${sigmar_One.className} ${styles.h2}`}>
+                {props.id}
+              </h2>
+              <h3 className={`${styles.h3}`}>{props.title}</h3>
+              <p className={`${styles.p} ${pt_mono.className}`}>{props.desc}</p>
+              <div className={styles.technologySection}>
+                <Technology names={props.tech} />
+              </div>
+              {/* <p className={styles.tech}> */}
+              {/* <FontAwesomeIcon
                 icon={faCode}
                 style={{ width: "2.5rem", marginBottom: "1.5rem" }}
                 fixedWidth
               />{" "} */}
-            {/* 🧑‍💻 Tech Stack: &nbsp; */}
-            {/* {props.tech} */}
-            {/* </p> */}
-            <div className={styles.flex_link}></div>
+              {/* 🧑‍💻 Tech Stack: &nbsp; */}
+              {/* {props.tech} */}
+              {/* </p> */}
+              <div className={styles.flex_link}></div>
+            </div>
           </div>
         </div>
-      </div>
-    </Tilt>
+      </Tilt>
+    </Link>
   );
 }

@@ -9,7 +9,7 @@ export default function ParentCard() {
         id="01"
         title="Carbon Footprint Management"
         desc="Developed a framework to predict optimal air quality to reduce the carbon footprint of organizations, working as part of a 4-person team"
-        tech={["Python", "Flask", "Machine_Learning", "Internet_Of_Things"]}
+        tech={["Python", "Flask"]}
         link="https://github.com/varun-official/Carbon-footprint-management-system"
         web="#"
       ></Card>
@@ -25,7 +25,7 @@ export default function ParentCard() {
         id="03"
         title="Pharmacy Management System"
         desc="Incorporated features such as searching, ordering, deleting, modifying, printing receipts, and daily transaction summaries of medicine orders and customers"
-        tech={["CPP", "File Structures"]}
+        tech={["File_Structures"]}
         link="https://github.com/mayurpai/Pharmacy-Management-System"
         web="#"
       ></Card>
@@ -37,10 +37,8 @@ export default function ParentCard() {
           "HTML5",
           "CSS3",
           "JavaScript",
-          "jQuery",
-          "AJAX",
+          "Bootstrap",
           "Flask",
-          "phpMyAdmin",
           "SQLAlchemy",
         ]}
         link="https://github.com/mayurpai/ArmsAndAmmunition"
@@ -66,7 +64,7 @@ export default function ParentCard() {
         id="07"
         title="My Portfolio"
         desc="A fully responsive personal portfolio website was created and developed to reflect who I am, what I have accomplished, and what I seek to achieve"
-        tech={["HTML5", "CSS3", "JavaScript", "React", "Next"]}
+        tech={["React"]}
         link="https://github.com/mayurpai/mayurpai.github.io"
         web="https://mayurpai.github.io/portfolio"
       ></Card>
