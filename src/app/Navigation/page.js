@@ -5,26 +5,26 @@ import Button from "@/components/Button";
 
 export default function Navigation() {
   return (
-      <nav className={`${styles.navigation_links}`}>
-        <ul className={styles.links}>
-          <li>
-            <Link href="/">
-              <Image
-                className={styles.logo}
-                src="/images/BestLogo.png"
-                width={35}
-                height={35}
-                alt="logo"
-                loading="eager"
-              />
-            </Link>
-          </li>
-          <li>
-            <Link href="/Contact">
-              <Button buttonName="Get in touch!"></Button>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+    <nav className={`${styles.navigation_links}`}>
+      <ul className={styles.links}>
+        <li>
+          <Link href="/">
+            <Image
+              className={styles.logo}
+              src="/images/BestLogo.png"
+              width={35}
+              height={35}
+              alt="logo"
+              loading="eager"
+            />
+          </Link>
+        </li>
+        <li>
+          <Link href="/Contact">
+            <Button buttonName="Let's Connect!"></Button>
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 }

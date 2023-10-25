@@ -3,24 +3,14 @@
   flex-wrap: wrap;
   justify-content: left;
   position: absolute;
-  bottom: 0.25rem;
-  left: 0;
-}
-.technology_main .technology {
-  margin: 0 1rem;
-  aspect-ratio: 3/2;
-  image-rendering: optimizeQuality;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
-  mix-blend-mode: color-burn;
+  bottom: 0.5rem;
+  left: 0.5rem;
 }
 .technology_main .faIcon {
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.2);
+  font-size: 2.25rem;
+  color: rgba(255, 255, 255, 0.6);
   aspect-ratio: 3/2;
   -o-object-fit: contain;
      object-fit: contain;
-  mix-blend-mode: color-burn;
+  mix-blend-mode: luminosity;
 }/*# sourceMappingURL=Technology.module.css.map */

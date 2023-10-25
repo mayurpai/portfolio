@@ -1,12 +1,15 @@
 "use client";
+import Button from "@/components/Button";
 import TagsCreator from "@/components/TagsCreator";
+import ParentCard from "@/parent-components/ParentCard";
 import ParentIcon from "@/parent-components/ParentIcon";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { PT_Mono } from "next/font/google";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import TypingEffect from "../../components/TypingEffect";
 import styles from "../../styles/Home.module.scss";
-import ParentCard from "@/parent-components/ParentCard";
 
 const pt_mono = PT_Mono({
   weight: "400",
@@ -61,7 +64,6 @@ function createAnimatedText(text) {
 
 export default function Home() {
   const [tagDecider, setTagDecider] = useState(false);
-
   return (
     <>
       <section className={styles.main_container} id="home">
@@ -137,6 +139,13 @@ export default function Home() {
           ></TagsCreator>
           <div className={styles.projectSection}>
             <ParentCard />
+            <Link
+              href="https://github.com/mayurpai"
+              target="_blank"
+              style={{ margin: "0.6rem 0" }}
+            >
+              <Button buttonName="View all Projects" icon={faGithub} />
+            </Link>
           </div>
         </div>
       </section>

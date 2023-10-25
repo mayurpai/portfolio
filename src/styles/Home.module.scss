@@ -46,6 +46,7 @@
 
 .page {
   position: relative;
+  // margin-top: 1rem;
   // top: 0;
   width: 100vw;
   height: fit-content;
@@ -113,6 +114,10 @@
   transition: 1s ease-in-out;
   text-shadow: 0.2rem 0.2rem var(--theme_color_pink);
   -webkit-text-stroke: 0.1rem transparent;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -ms-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
 }
 
 
@@ -164,6 +169,10 @@
   transition: 1s linear;
   text-shadow: 0.2rem 0.2rem var(--theme_color_pink);
   -webkit-text-stroke: 0.1rem transparent;
+  -webkit-transition: 1s linear;
+  -moz-transition: 1s linear;
+  -ms-transition: 1s linear;
+  -o-transition: 1s linear;
 }
 
 .fp {
@@ -810,4 +819,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
