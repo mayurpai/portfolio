@@ -64,6 +64,7 @@ function createAnimatedText(text) {
 
 export default function Home() {
   const [tagDecider, setTagDecider] = useState(false);
+  
   return (
     <>
       <section className={styles.main_container} id="home">

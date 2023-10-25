@@ -10,7 +10,6 @@
   font-family: Coolvetica Rg;
   flex-wrap: wrap-reverse;
   background: var(--background_color);
-  scroll-snap-type: y mandatory;
   place-items: center;
   overflow-x: hidden;
 }

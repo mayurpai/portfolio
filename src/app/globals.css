@@ -20,7 +20,7 @@
   src: url("../fonts/coolvetica rg.ttf");
 }
 :root {
-  --background_color: rgb(31, 40, 47);
+  --background_color: rgba(31, 40, 47);
   --theme_color_blue: #09fdd9;
   --theme_color_pink: #fd0953;
   --highlights: rgb(172, 182, 190);
