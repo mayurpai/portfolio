@@ -7,10 +7,12 @@
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+  margin: 1rem;
 }
 
 .card .box {
   position: absolute;
+  box-shadow: rgb(124, 124, 124) 0px 2px 2px -1px, rgba(255, 255, 255, 0.2) 0px 1px 3px -1px;
   top: 0.5rem;
   left: 0.5rem;
   right: 0.5rem;
@@ -118,7 +120,6 @@
   justify-content: center;
   align-items: center;
   place-items: center;
-  /* margin: 1rem 0; */
 }
 .projects_card .flex_link {
   width: 30.4rem;
