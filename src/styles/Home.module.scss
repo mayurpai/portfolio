@@ -17,14 +17,6 @@
 }
 
 .main_container,
-.about,
-.skills,
-.projects,
-.contact_me {
-  /* scroll-snap-align: start; */
-}
-
-.main_container,
 .skills,
 .contact_me {
   position: relative;
@@ -201,6 +193,7 @@
   display: inline-block;
   background: -webkit-linear-gradient(var(--theme_color_blue),
       var(--theme_color_pink));
+  background-clip: text;
   -webkit-background-clip: text;
   font-size: 1.5rem;
   -webkit-text-fill-color: transparent;
@@ -802,13 +795,13 @@
   text-align: justify;
   justify-content: center;
   align-items: center;
-
   .aboutBody {
     color: var(--highlights);
     font-weight: bold;
     font-size: 1rem;
     background: -webkit-linear-gradient(var(--theme_color_blue),
         var(--theme_color_pink));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     width: 75%;

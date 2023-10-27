@@ -15,14 +15,6 @@
 }
 
 .main_container,
-.about,
-.skills,
-.projects,
-.contact_me {
-  /* scroll-snap-align: start; */
-}
-
-.main_container,
 .skills,
 .contact_me {
   position: relative;
@@ -197,6 +189,7 @@
   /* Position Has To Be Absolute As The Right Side Image Needs To Get Fit! */
   display: inline-block;
   background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+  background-clip: text;
   -webkit-background-clip: text;
   font-size: 1.5rem;
   -webkit-text-fill-color: transparent;
@@ -789,6 +782,7 @@
   font-weight: bold;
   font-size: 1rem;
   background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 75%;

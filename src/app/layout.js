@@ -41,6 +41,11 @@ export default function RootLayout({ children }) {
           href="https://unpkg.com/aos@2.3.1/dist/aos.css"
           rel="stylesheet"
         ></link>
+        <link
+          rel="icon"
+          href="/images/mayur_pai.ico"
+          type="image/x-icon"
+        />
       </Head>
       <body>{children}</body>
     </html>

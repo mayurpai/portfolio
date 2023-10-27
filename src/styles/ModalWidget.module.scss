@@ -1,0 +1,78 @@
+.modalMain {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.05);
+    // display: flex;
+    // justify-content: flex-end;
+    // flex-direction: column;
+    // align-items: flex-end;
+    // flex-wrap: wrap;
+    // margin-bottom: 1rem;
+    
+    .modalMainHeader {
+        // max-height: 100%;
+        display: flex;
+        // flex-wrap: wrap;
+        // text-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .closeButtonStyles {
+        position: relative;
+        color: var(--theme_color_blue);
+        box-shadow: 0.1rem 0.1rem var(--theme_color_pink);
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        height: 2.25rem;
+        width: 2.25rem;
+        border: 0.1rem solid var(--theme_color_blue);
+        font-size: 1rem;
+        font-weight: 100;
+    }
+    
+    .modalHeader {
+        position: relative;
+        height: 2.25rem;
+        color: var(--theme_color_blue);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-family: Coolvetica Rg;
+        letter-spacing: 0.05rem;
+    }
+
+    .modalHolder {
+        position: relative;
+        background-color: aliceblue;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // height: 10rem;
+        // flex-direction: column;
+        margin-top: 2.5rem;
+        
+        .modalLinks {
+            border-radius: 0.5rem;
+            -moz-border-radius: 0.5rem;
+            -webkit-border-radius: 0.5rem;
+            -ms-border-radius: 0.5rem;
+            -o-border-radius: 0.5rem;
+            width: 100%;
+            margin: 0.25rem 0;
+            background-color: burlywood;
+
+            .modalSingleLink {
+                padding: 1rem;
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                height: 3.5rem;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
