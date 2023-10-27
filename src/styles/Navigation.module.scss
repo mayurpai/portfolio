@@ -5,6 +5,7 @@
   margin-bottom: 1rem;
   width: 100vw;
   background-color: rgba(16, 21, 26, 0.1);
+  backdrop-filter: blur(2.5px);
   transition: background-color 0.3s, border-bottom 0.3s;
 
   .links {
