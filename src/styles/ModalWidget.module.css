@@ -1,6 +1,5 @@
 .modalMain {
   position: relative;
-  background-color: rgba(255, 255, 255, 0.05);
 }
 .modalMain .modalMainHeader {
   display: flex;
@@ -17,6 +16,7 @@
   border: 0.1rem solid var(--theme_color_blue);
   font-size: 1rem;
   font-weight: 100;
+  cursor: pointer;
 }
 .modalMain .modalHeader {
   position: relative;
@@ -31,27 +31,5 @@
 }
 .modalMain .modalHolder {
   position: relative;
-  background-color: aliceblue;
   margin-top: 2.5rem;
-}
-.modalMain .modalHolder .modalLinks {
-  border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  -webkit-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
-  width: 100%;
-  margin: 0.25rem 0;
-  background-color: burlywood;
-}
-.modalMain .modalHolder .modalLinks .modalSingleLink {
-  padding: 1rem;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: 3.5rem;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=ModalWidget.module.css.map */

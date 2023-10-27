@@ -1,17 +1,10 @@
 "use client";
 import Button from "@/components/Button";
-import { PT_Mono } from "next/font/google";
+import ModalWidget from "@/components/ModalWidget";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import styles from "../../styles/Navigation.module.scss";
-import ModalWidget from "@/components/ModalWidget";
-
-// const pt_mono = PT_Mono({
-//   weight: "400",
-//   subsets: ["latin"],
-//   display: "swap",
-// });
 
 export default function Navigation() {
   const [isModalOpen, setModalOpen] = useState(true);

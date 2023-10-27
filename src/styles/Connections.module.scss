@@ -1,0 +1,68 @@
+.modalLinks {
+    border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    width: 100%;
+    margin: 0.25rem 0;
+    padding: 0.5rem;
+    transition: 0.3s all linear;
+    -moz-transition: 0.3s all linear;
+    -ms-transition: 0.3s all linear;
+    -o-transition: 0.3s all linear;
+    -webkit-transition: 0.3s all linear;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .modalSingleLink {
+        // padding: 1rem;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        height: 3rem;
+        width: 100%;
+        // background-color: rgba(0, 0, 0, 0.5);
+
+        .modalIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+            width: 3rem;
+            border: 0.05rem solid rgba(255, 255, 255, 0.2);
+            // border-bottom: 0.1rem solid rgba(0, 0, 0, 0.5);
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(255, 255, 255, 0.23) 0px 1px 1px;
+            // box-shadow: 0.1rem 0.1rem 0.2rem rgba(255, 255, 255, .1);
+            border-radius: 0.5rem;
+            // padding: 0.4rem 0;
+            // background-color: rgba(255, 255, 255, 0.05);
+            -webkit-border-radius: 0.5rem;
+            -moz-border-radius: 0.5rem;
+            -ms-border-radius: 0.5rem;
+            -o-border-radius: 0.5rem;
+        }
+
+        .modalIconHeading {
+            display: flex;
+            margin: 0 1rem;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 1rem;
+            line-height: 1.4rem;
+            background: -webkit-linear-gradient(360deg, var(--theme_color_blue), var(--theme_color_pink));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            :nth-child(2) {
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,13 +1,15 @@
-import React from "react";
-import styles from "../styles/ModalWidget.module.scss";
-import Modal from "react-modal";
 import { Black_Ops_One } from "next/font/google";
+import Modal from "react-modal";
+import styles from "../styles/ModalWidget.module.scss";
+import Connections from "./Connections";
 
 const black_Ops_One = Black_Ops_One({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
+
+
 
 const customModalStyles = {
   content: {
@@ -56,18 +58,7 @@ export default function ModalWidget(props) {
           </button>
         </div>
         <div className={styles.modalHolder}>
-          <div className={styles.modalLinks}>
-            <div className={styles.modalSingleLink}>A</div>
-          </div>
-          <div className={styles.modalLinks}>
-            <div className={styles.modalSingleLink}>B</div>
-          </div>
-          <div className={styles.modalLinks}>
-            <div className={styles.modalSingleLink}>C</div>
-          </div>
-          <div className={styles.modalLinks}>
-            <div className={styles.modalSingleLink}>D</div>
-          </div>
+          <Connections />
         </div>
       </div>
     </Modal>
