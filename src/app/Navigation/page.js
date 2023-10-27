@@ -7,7 +7,7 @@ import { useState } from "react";
 import styles from "../../styles/Navigation.module.scss";
 
 export default function Navigation() {
-  const [isModalOpen, setModalOpen] = useState(true);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
