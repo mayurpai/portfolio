@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 
 const TypingEffect = ({ text }) => {
@@ -18,16 +18,14 @@ const TypingEffect = ({ text }) => {
   const parsedText = displayText.replace(/<br\s*\/?>/g, "\n");
 
   return (
-    <div>
-      <p>
-        {parsedText.split("\n").map((line, index) => (
-          <React.Fragment key={index}>
-            {line}
-            {index < parsedText.split("\n").length - 1 && <br />}
-          </React.Fragment>
-        ))}
-      </p>
-    </div>
+    <p>
+      {parsedText.split("\n").map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          {index < parsedText.split("\n").length - 1 && <br />}
+        </React.Fragment>
+      ))}
+    </p>
   );
 };
 

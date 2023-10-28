@@ -20,4 +20,8 @@
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }/*# sourceMappingURL=Button.module.css.map */

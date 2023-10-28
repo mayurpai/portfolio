@@ -787,14 +787,18 @@
   color: var(--theme_color_blue);
 }
 
-.aboutSection,
 .iconSection {
   position: relative;
+  margin-left: 14.5rem;
   width: 100vw;
-  display: flex;
   text-align: justify;
-  justify-content: center;
-  align-items: center;
+}
+
+.aboutSection {
+  position: relative;
+  margin-left: 11.5rem;
+  text-align: left;
+
   .aboutBody {
     color: var(--highlights);
     font-weight: bold;
