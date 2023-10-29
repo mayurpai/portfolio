@@ -20,8 +20,8 @@ export default function Navigation() {
             <Image
               className={styles.logo}
               src="/images/BestLogo.png"
-              width={35}
-              height={35}
+              width={40}
+              height={40}
               alt="logo"
               loading="eager"
             />
