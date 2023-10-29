@@ -9,6 +9,7 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "../styles/Icon.module.scss";
+import Social from "@/constants/Social";
 library.add(faGithub, faInstagram, faLinkedin, faFacebook);
 
 export default function ParentIcon() {
@@ -21,36 +22,36 @@ export default function ParentIcon() {
   };
   return (
     <div className={styles.parent_icon}>
-        <Icon
-          name="LinkedIn"
-          icon={faLinkedin}
-          url="https://www.linkedin.com/in/mayur-pai5/"
-          color={colors.linkedin}
-        />
-        <Icon
-          name="Facebook"
-          icon={faFacebook}
-          url="https://www.facebook.com/profile.php?id=100010154376824"
-          color={colors.facebook}
-        />
-        <Icon
-          name="GitHub"
-          icon={faGithub}
-          url="https://github.com/mayurpai"
-          color={colors.github}
-        />
-        <Icon
-          name="Instagram"
-          icon={faInstagram}
-          url="https://www.instagram.com/mayurpai19/"
-          color={colors.instagram}
-        />
-        <Icon
-          name="WhatsApp"
-          icon={faWhatsapp}
-          url="https://web.whatsapp.com/send/?phone=919611609185/"
-          color={colors.whatsapp}
-        />
+      <Icon
+        name="LinkedIn"
+        icon={faLinkedin}
+        url={Social.LinkedIn}
+        color={colors.linkedin}
+      />
+      <Icon
+        name="Facebook"
+        icon={faFacebook}
+        url={Social.Facebook}
+        color={colors.facebook}
+      />
+      <Icon
+        name="GitHub"
+        icon={faGithub}
+        url={Social.GitHub}
+        color={colors.github}
+      />
+      <Icon
+        name="Instagram"
+        icon={faInstagram}
+        url={Social.Instagram}
+        color={colors.instagram}
+      />
+      <Icon
+        name="WhatsApp"
+        icon={faWhatsapp}
+        url={Social.WhatsApp}
+        color={colors.whatsapp}
+      />
     </div>
   );
 }

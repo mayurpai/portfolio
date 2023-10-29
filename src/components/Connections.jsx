@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import Social from "@/constants/Social";
 
 library.add(faInstagram, faLinkedin, faWhatsapp, faGithub);
 
@@ -25,25 +26,25 @@ const connections = [
     icon: faLinkedin,
     heading: "LinkedIn",
     username: "@mayur-pai5",
-    link: "https://www.linkedin.com/in/mayur-pai5/",
+    link: Social.LinkedIn,
   },
   {
     icon: faGithub,
     heading: "GitHub",
     username: "@mayurpai",
-    link: "https://github.com/mayurpai",
+    link: Social.GitHub,
   },
   {
     icon: faInstagram,
     heading: "Instagram",
     username: "@mayurpai19",
-    link: "https://www.instagram.com/mayurpai19/",
+    link: Social.Instagram,
   },
   {
     icon: faEnvelope,
     heading: "Email",
     username: "mayur5pai@gmail.com",
-    link: "mailto:mayur5pai@gmail.com",
+    link: Social.Email,
   },
 ];
 

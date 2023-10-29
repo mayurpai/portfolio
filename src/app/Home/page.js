@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import TypingEffect from "../../components/TypingEffect";
 import styles from "../../styles/Home.module.scss";
+import Social from "@/constants/Social";
 
 const pt_mono = PT_Mono({
   weight: "400",
@@ -141,7 +142,7 @@ export default function Home() {
           <div className={styles.projectSection}>
             <ParentCard />
             <Link
-              href="https://github.com/mayurpai"
+              href={Social.GitHub}
               target="_blank"
               style={{ margin: "0.6rem 0" }}
             >
