@@ -1,16 +1,12 @@
 "use client";
-import Button from "@/components/Button";
+import Card from "@/components/Card";
+import Icon from "@/components/Icon";
 import TagsCreator from "@/components/TagsCreator";
-import ParentCard from "@/parent-components/ParentCard";
-import ParentIcon from "@/parent-components/ParentIcon";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { PT_Mono } from "next/font/google";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import TypingEffect from "../../components/TypingEffect";
 import styles from "../../styles/Home.module.scss";
-import { Social } from "@/constants/Social";
 
 const pt_mono = PT_Mono({
   weight: "400",
@@ -76,12 +72,17 @@ export default function Home() {
             bool={tagDecider}
           ></TagsCreator>
           <TagsCreator
+            tag='html lang="en"'
+            style={{ marginLeft: "1.5rem" }}
+            bool={tagDecider}
+          ></TagsCreator>
+          <TagsCreator
             tag="body"
             style={{ marginLeft: "3rem" }}
             bool={tagDecider}
           ></TagsCreator>
           {/* <div className={styles.big_heading}>π</div> */}
-           <TagsCreator
+          <TagsCreator
             tag="section"
             style={{ marginLeft: "4.5rem" }}
             bool={tagDecider}
@@ -120,7 +121,7 @@ export default function Home() {
             bool={tagDecider}
           ></TagsCreator>
           <div className={styles.iconSection}>
-            <ParentIcon />
+            <Icon />
           </div>
           <TagsCreator
             tag="a"
@@ -145,14 +146,14 @@ export default function Home() {
             bool={!tagDecider}
           ></TagsCreator>
           <div className={styles.projectSection}>
-            <ParentCard />
-            <Link
+            <Card />
+            {/* <Link
               href={Social.GitHub}
               target="_blank"
               style={{ margin: "0.6rem 0" }}
             >
               <Button buttonName="View all Projects" icon={faGithub} />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -162,7 +163,7 @@ export default function Home() {
         bool={!tagDecider}
       ></TagsCreator>
       <TagsCreator
-        tag="!DOCTYPE html"
+        tag="html"
         style={{ marginLeft: "1.5rem" }}
         bool={!tagDecider}
       ></TagsCreator>

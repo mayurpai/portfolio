@@ -1,19 +1,24 @@
-import React from "react";
-import styles from "../styles/Card.module.scss";
-import Card from "@/components/Card";
+import { Social } from "./Social";
 
-export default function ParentCard() {
-  return (
-    <div className={styles.projects_card}>
-      <Card
-        id="01"
-        title="My Portfolio"
-        desc="A fully responsive personal portfolio website was created and developed to reflect who I am, what I have accomplished, and what I seek to achieve"
-        tech={["React"]}
-        link="https://github.com/mayurpai/mayurpai.github.io"
-        web="https://mayurpai.github.io/portfolio"
-      ></Card>
-      <Card
+export const githubLink = "https://github.com/mayurpai/";
+
+export const Projects = [
+  {
+    id: 1,
+    title: "My Portfolio",
+    description:
+      "A fully responsive personal portfolio website was created and developed to reflect who I am, what I have accomplished, and what I seek to achieve",
+    technology: ["React"],
+    codeLink: githubLink + "portfolio",
+    webLink: Social.Portfolio,
+    imgLink: "",
+    fromDate: "Oct 2023",
+    toDate: "Present",
+  },
+];
+
+{
+  /* <Card
         id="02"
         title="Carbon Footprint Management"
         desc="Developed a framework to predict optimal air quality to reduce the carbon footprint of organizations, working as part of a 4-person team"
@@ -67,7 +72,5 @@ export default function ParentCard() {
         tech={["HTML5", "CSS3", "JavaScript"]}
         link="https://github.com/mayurpai/TuPhodega"
         web="https://mayurpai.github.io/TuPhodega"
-      ></Card>
-    </div>
-  );
+      ></Card> */
 }

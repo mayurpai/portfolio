@@ -1,19 +1,9 @@
-import React from "react";
-import { PT_Mono } from "next/font/google";
-import styles from "../styles/Connections.module.scss";
+import { Connections } from "@/constants/Connections";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
+import { PT_Mono } from "next/font/google";
 import Link from "next/link";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Social } from "@/constants/Social";
+import styles from "../styles/Connections.module.scss";
 
-library.add(faInstagram, faLinkedin, faWhatsapp, faGithub);
 
 const pt_mono = PT_Mono({
   weight: "400",
@@ -21,35 +11,8 @@ const pt_mono = PT_Mono({
   display: "swap",
 });
 
-const connections = [
-  {
-    icon: faLinkedin,
-    heading: "LinkedIn",
-    username: "@mayur-pai5",
-    link: Social.LinkedIn,
-  },
-  {
-    icon: faGithub,
-    heading: "GitHub",
-    username: "@mayurpai",
-    link: Social.GitHub,
-  },
-  {
-    icon: faInstagram,
-    heading: "Instagram",
-    username: "@mayurpai19",
-    link: Social.Instagram,
-  },
-  {
-    icon: faEnvelope,
-    heading: "Email",
-    username: "mayur5pai@gmail.com",
-    link: Social.Email,
-  },
-];
-
-export default function Connections(props) {
-  return connections.map((item, id) => {
+export default function ModalLinks(props) {
+  return Connections.map((item, id) => {
     return (
       <div className={styles.modalLinks} key={id}>
         <Link href={item.link} target="_blank" onClick={props.onRequestClose}>
