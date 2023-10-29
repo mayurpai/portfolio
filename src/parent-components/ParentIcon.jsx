@@ -9,7 +9,7 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "../styles/Icon.module.scss";
-import Social from "@/constants/Social";
+import { Social } from "@/constants/Social";
 library.add(faGithub, faInstagram, faLinkedin, faFacebook);
 
 export default function ParentIcon() {

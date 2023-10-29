@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import TypingEffect from "../../components/TypingEffect";
 import styles from "../../styles/Home.module.scss";
-import Social from "@/constants/Social";
+import { Social } from "@/constants/Social";
 
 const pt_mono = PT_Mono({
   weight: "400",
@@ -68,18 +68,18 @@ export default function Home() {
 
   return (
     <>
-      <TagsCreator
-        tag="!DOCTYPE html"
-        style={{ marginLeft: "2.5rem" }}
-        bool={tagDecider}
-      ></TagsCreator>
-      <TagsCreator
-        tag="body"
-        style={{ marginLeft: "5rem" }}
-        bool={tagDecider}
-      ></TagsCreator>
       <section className={styles.main_container} id="home">
         <div className={styles.page}>
+          <TagsCreator
+            tag="!DOCTYPE html"
+            style={{ marginLeft: "2.5rem" }}
+            bool={tagDecider}
+          ></TagsCreator>
+          <TagsCreator
+            tag="body"
+            style={{ marginLeft: "5rem" }}
+            bool={tagDecider}
+          ></TagsCreator>
           {/* <div className={styles.big_heading}>π</div> */}
           <TagsCreator
             tag="h1"

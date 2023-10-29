@@ -25,11 +25,6 @@
   align-items: center;
 }
 
-.main_container,
-.skills {
-  flex-wrap: wrap-reverse;
-}
-
 .contact_me {
   flex-wrap: wrap;
 }

@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import Social from "@/constants/Social";
+import { Social } from "@/constants/Social";
 
 library.add(faInstagram, faLinkedin, faWhatsapp, faGithub);
 
@@ -48,11 +48,11 @@ const connections = [
   },
 ];
 
-export default function Connections() {
+export default function Connections(props) {
   return connections.map((item, id) => {
     return (
       <div className={styles.modalLinks} key={id}>
-        <Link href={item.link} target="_blank">
+        <Link href={item.link} target="_blank" onClick={props.onRequestClose}>
           <div className={styles.modalSingleLink}>
             <span className={styles.modalIcon}>
               <FontAwesomeIcon

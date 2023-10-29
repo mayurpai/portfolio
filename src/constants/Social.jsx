@@ -1,4 +1,4 @@
-export default Social = {
+export const Social = {
   LinkedIn: "https://www.linkedin.com/in/mayur-pai5/",
   Instagram: "https://www.instagram.com/mayurpai19/",
   WhatsApp: "https://web.whatsapp.com/send/?phone=919611609185/",

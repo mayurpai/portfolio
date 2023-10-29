@@ -9,8 +9,6 @@ const black_Ops_One = Black_Ops_One({
   display: "swap",
 });
 
-
-
 const customModalStyles = {
   content: {
     maxWidth: "30rem",
@@ -39,6 +37,7 @@ const customModalStyles = {
 export default function ModalWidget(props) {
   return (
     <Modal
+      closeTimeoutMS={100}
       isOpen={props.isOpen}
       onRequestClose={props.onRequestClose}
       contentLabel={props.contentLabel}
@@ -58,7 +57,7 @@ export default function ModalWidget(props) {
           </button>
         </div>
         <div className={styles.modalHolder}>
-          <Connections />
+          <Connections onRequestClose={props.onRequestClose} />
         </div>
       </div>
     </Modal>

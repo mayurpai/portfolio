@@ -10,10 +10,12 @@
   font-family: Coolvetica Rg;
   flex-wrap: wrap-reverse;
   background: var(--background_color);
-  // scroll-snap-type: y mandatory;
   // overflow-y: scroll;
   place-items: center;
   overflow-x: hidden;
+  // scroll-snap-type: y mandatory;
+  // scroll-behavior: smooth;
+  // scroll-padding-top: 6rem;
 }
 
 .main_container,
@@ -25,11 +27,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
-
-.main_container,
-.skills {
-  flex-wrap: wrap-reverse;
+  // scroll-snap-align: start;
 }
 
 .contact_me {
