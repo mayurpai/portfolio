@@ -72,18 +72,23 @@ export default function Home() {
         <div className={styles.page}>
           <TagsCreator
             tag="!DOCTYPE html"
-            style={{ marginLeft: "2.5rem" }}
+            style={{ marginLeft: "1.5rem" }}
             bool={tagDecider}
           ></TagsCreator>
           <TagsCreator
             tag="body"
-            style={{ marginLeft: "5rem" }}
+            style={{ marginLeft: "3rem" }}
             bool={tagDecider}
           ></TagsCreator>
           {/* <div className={styles.big_heading}>π</div> */}
+           <TagsCreator
+            tag="section"
+            style={{ marginLeft: "4.5rem" }}
+            bool={tagDecider}
+          ></TagsCreator>
           <TagsCreator
             tag="h1"
-            style={{ marginLeft: "7.5rem" }}
+            style={{ marginBottom: "-2rem", marginLeft: "6rem" }}
             bool={tagDecider}
           ></TagsCreator>
           <h1 className={styles.header_font}>
@@ -91,12 +96,12 @@ export default function Home() {
           </h1>
           <TagsCreator
             tag="h1"
-            style={{ marginTop: "-0.5rem", marginLeft: "7.5rem" }}
+            style={{ marginTop: "-1rem", marginLeft: "6rem" }}
             bool={!tagDecider}
           ></TagsCreator>
           <TagsCreator
             tag="p"
-            style={{ marginLeft: "10rem" }}
+            style={{ marginLeft: "7.5rem" }}
             bool={tagDecider}
           ></TagsCreator>
           <div className={styles.aboutSection}>
@@ -106,20 +111,20 @@ export default function Home() {
           </div>
           <TagsCreator
             tag="p"
-            style={{ marginLeft: "10rem" }}
+            style={{ marginLeft: "7.5rem" }}
             bool={!tagDecider}
           ></TagsCreator>
           <TagsCreator
-            tag="button"
-            style={{ marginLeft: "12.5rem" }}
+            tag="a"
+            style={{ marginLeft: "9rem" }}
             bool={tagDecider}
           ></TagsCreator>
           <div className={styles.iconSection}>
             <ParentIcon />
           </div>
           <TagsCreator
-            tag="button"
-            style={{ marginLeft: "12.5rem" }}
+            tag="a"
+            style={{ marginLeft: "9rem" }}
             bool={!tagDecider}
           ></TagsCreator>
         </div>
@@ -153,12 +158,12 @@ export default function Home() {
       </section>
       <TagsCreator
         tag="body"
-        style={{ marginLeft: "5rem" }}
+        style={{ marginLeft: "3rem" }}
         bool={!tagDecider}
       ></TagsCreator>
       <TagsCreator
         tag="!DOCTYPE html"
-        style={{ marginLeft: "2.5rem" }}
+        style={{ marginLeft: "1.5rem" }}
         bool={!tagDecider}
       ></TagsCreator>
     </>

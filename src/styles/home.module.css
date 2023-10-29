@@ -116,8 +116,7 @@
   font-style: normal;
   font-weight: bolder;
   font-size: 5.5rem;
-  padding: 0 9rem;
-  margin-top: -1.5rem;
+  margin: 0 8rem;
   /* display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -764,14 +763,14 @@
 
 .iconSection {
   position: relative;
-  margin-left: 14.5rem;
+  margin-left: 9rem;
   width: 100vw;
   text-align: justify;
 }
 
 .aboutSection {
   position: relative;
-  margin-left: 11.5rem;
+  margin-left: 9rem;
   text-align: left;
 }
 .aboutSection .aboutBody {
@@ -782,7 +781,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: 75%;
+  width: calc(100% - 9rem);
 }
 
 .projectSection {
