@@ -6,7 +6,7 @@ import ParentIcon from "@/parent-components/ParentIcon";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { PT_Mono } from "next/font/google";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import TypingEffect from "../../components/TypingEffect";
 import styles from "../../styles/Home.module.scss";
@@ -64,22 +64,22 @@ function createAnimatedText(text) {
 
 export default function Home() {
   const [tagDecider, setTagDecider] = useState(false);
-  
+
   return (
     <>
+      <TagsCreator
+        tag="!DOCTYPE html"
+        style={{ marginLeft: "2.5rem" }}
+        bool={tagDecider}
+      ></TagsCreator>
+      <TagsCreator
+        tag="body"
+        style={{ marginLeft: "5rem" }}
+        bool={tagDecider}
+      ></TagsCreator>
       <section className={styles.main_container} id="home">
-        {/* <div className={styles.big_heading}>π</div> */}
         <div className={styles.page}>
-          <TagsCreator
-            tag="!DOCTYPE html"
-            style={{ marginLeft: "2.5rem" }}
-            bool={tagDecider}
-          ></TagsCreator>
-          <TagsCreator
-            tag="body"
-            style={{ marginLeft: "5rem" }}
-            bool={tagDecider}
-          ></TagsCreator>
+          {/* <div className={styles.big_heading}>π</div> */}
           <TagsCreator
             tag="h1"
             style={{ marginLeft: "7.5rem" }}
@@ -150,6 +150,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <TagsCreator
+        tag="body"
+        style={{ marginLeft: "5rem" }}
+        bool={!tagDecider}
+      ></TagsCreator>
+      <TagsCreator
+        tag="!DOCTYPE html"
+        style={{ marginLeft: "2.5rem" }}
+        bool={!tagDecider}
+      ></TagsCreator>
     </>
   );
 }
