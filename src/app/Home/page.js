@@ -128,13 +128,23 @@ export default function Home() {
             style={{ marginLeft: "9rem" }}
             bool={!tagDecider}
           ></TagsCreator>
+          <TagsCreator
+            tag="section"
+            style={{ marginLeft: "4.5rem" }}
+            bool={!tagDecider}
+          ></TagsCreator>
         </div>
       </section>
       <section className={styles.skills} id="projects">
         <div className={styles.page}>
           <TagsCreator
+            tag="section"
+            style={{ marginLeft: "4.5rem" }}
+            bool={tagDecider}
+          ></TagsCreator>
+          <TagsCreator
             tag="h2"
-            style={{ marginLeft: "7.5rem" }}
+            style={{ marginBottom: "-2rem", marginLeft: "6rem" }}
             bool={tagDecider}
           ></TagsCreator>
           <h2 className={styles.project_font}>
@@ -142,7 +152,7 @@ export default function Home() {
           </h2>
           <TagsCreator
             tag="h2"
-            style={{ marginTop: "-0.5rem", marginLeft: "7.5rem" }}
+            style={{ marginTop: "-1rem", marginLeft: "6rem" }}
             bool={!tagDecider}
           ></TagsCreator>
           <div className={styles.projectSection}>
@@ -155,6 +165,11 @@ export default function Home() {
               <Button buttonName="View all Projects" icon={faGithub} />
             </Link> */}
           </div>
+          <TagsCreator
+            tag="section"
+            style={{ marginLeft: "4.5rem" }}
+            bool={!tagDecider}
+          ></TagsCreator>
         </div>
       </section>
       <TagsCreator

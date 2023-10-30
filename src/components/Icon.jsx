@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/Icon.module.scss";
 
-export default function Icon(props) {
+export default function Icon() {
   const [isHovered, setHovered] = useState(false);
   return Icons.map((item, id) => {
     return (

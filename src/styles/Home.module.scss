@@ -117,26 +117,20 @@
   text-shadow: 0.2rem 0.2rem rgb(255, 255, 255, 0.2);
 }
 
-.header_font {
-  font-family: Coolvetica Rg;
-  font-style: normal;
-  font-weight: bolder;
-  font-size: 5.5rem;
-  margin: 0 8rem;
-  /* display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-}
-
+.header_font,
 .project_font {
   font-family: Coolvetica Rg;
   font-style: normal;
   font-weight: bolder;
+  margin: 0 8rem;
+}
+
+.header_font {
+  font-size: 5.5rem;
+}
+
+.project_font {
   font-size: 4.5rem;
-  padding: 0 9rem;
-  margin-top: -1.5rem;
 }
 
 .about .page,
