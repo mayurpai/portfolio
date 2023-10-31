@@ -1,7 +1,7 @@
 .card {
   position: relative;
-  min-width: 30rem;
-  height: 15rem;
+  min-width: 24rem;
+  height: 30rem;
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
@@ -17,24 +17,38 @@
   left: 0.5rem;
   right: 0.5rem;
   bottom: 0.5rem;
-  background: #2a2b2f;
-  border: 0.1rem solid rgba(255, 255, 255, 0.15);
+  background: transparent;
   border-radius: 0.5rem;
+  box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.5);
   transition: 0.5s;
   overflow: hidden;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 .card .box:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .card .box .content {
   padding: 1rem;
   text-align: left;
+}
+.card .box .content .project_image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: 12.5rem;
+  border: none;
+  outline: none;
 }
 
 .card .box .content .h2 {
@@ -131,4 +145,38 @@
 
 .tilt {
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+}
+
+.card:hover .box:hover .project_image {
+  --transition-duration: 500ms;
+  --transition-easing: ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  transition: transform var(--transition-duration) var(--transition-easing);
+  overflow: hidden;
+  -webkit-transition: transform var(--transition-duration) var(--transition-easing);
+  -moz-transition: transform var(--transition-duration) var(--transition-easing);
+  -ms-transition: transform var(--transition-duration) var(--transition-easing);
+  -o-transition: transform var(--transition-duration) var(--transition-easing);
+}
+.card:hover .box:hover .project_image::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.4);
+  width: 60%;
+  height: 100%;
+  top: 0%;
+  left: -125%;
+  transform: skew(45deg);
+  position: absolute;
+  transition: left var(--transition-duration) var(--transition-easing);
+}
+.card:hover .box:hover .project_image:hover::before {
+  left: 150%;
 }/*# sourceMappingURL=Card.module.css.map */

@@ -12,6 +12,7 @@ import { PT_Mono, Sigmar_One } from "next/font/google";
 import Link from "next/link";
 import Tilt from "react-vanilla-tilt";
 import styles from "../styles/Card.module.scss";
+import Image from "next/image";
 
 library.add(faGithub, faLink, faCode, faHtml5, faCss3Alt, faJs, faReact);
 
@@ -27,9 +28,18 @@ const pt_mono = PT_Mono({
   display: "swap",
 });
 
+const imageStyle = {
+  borderRadius: "1rem",
+  border: "none",
+  padding: "0.25rem",
+  outline: "none",
+  // boxShadow: "0rem 0rem 0.1rem rgba(255,255,255,.5)",
+};
+
 export default function Card() {
   return Projects.map((item, id) => {
     let link = item.webLink == "#" ? item.codeLink : item.webLink;
+    console.log(item);
     return (
       <div className={styles.projects_card} key={id}>
         <Link href={link} target="_blank">
@@ -60,6 +70,16 @@ export default function Card() {
                   <h2 className={`${sigmar_One.className} ${styles.h2}`}>
                     {item.id}
                   </h2>
+                  <div className={styles.project_image}>
+                    <Image
+                      style={imageStyle}
+                      fill
+                      src={item.imgLink}
+                      objectFit="contain"
+                      alt={item.title}
+                      priority={true}
+                    ></Image>
+                  </div>
                   <h3 className={`${styles.h3}`}>{item.title}</h3>
                   <p className={`${styles.p} ${pt_mono.className}`}>
                     {item.description}

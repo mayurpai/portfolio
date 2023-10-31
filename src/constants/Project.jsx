@@ -1,6 +1,7 @@
 import { Social } from "./Social";
 
 export const githubLink = "https://github.com/mayurpai/";
+export const imageLink = "/images/projects/";
 
 export const Projects = [
   {
@@ -11,7 +12,7 @@ export const Projects = [
     technology: ["React"],
     codeLink: githubLink + "portfolio",
     webLink: Social.Portfolio,
-    imgLink: "",
+    imgLink: imageLink + "Portfolio.png",
     fromDate: "Oct 2023",
     toDate: "Present",
   },
