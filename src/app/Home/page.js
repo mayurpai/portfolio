@@ -157,13 +157,6 @@ export default function Home() {
           ></TagsCreator>
           <div className={styles.projectSection}>
             <Card />
-            {/* <Link
-              href={Social.GitHub}
-              target="_blank"
-              style={{ margin: "0.6rem 0" }}
-            >
-              <Button buttonName="View all Projects" icon={faGithub} />
-            </Link> */}
           </div>
           <TagsCreator
             tag="section"

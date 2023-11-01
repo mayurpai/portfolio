@@ -8,13 +8,6 @@
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem;
     margin: 1rem;
-
-    //margin-right: 3rem;
-    //margin-top: 3rem;
-    // background-color: rgb(255, 255, 255, 0.1);
-    // border: 0.1rem solid rgb(255, 255, 255, 0.1);
-    // border: 0.1rem solid var(--theme_color_blue);
-    // box-shadow: 0.2rem 0.2rem 0rem var(--theme_color_pink);
 }
 
 .card .box {
@@ -24,7 +17,7 @@
     left: .5rem;
     right: .5rem;
     bottom: .5rem;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.02);
     border-radius: .5rem;
     box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.5);
     transition: 0.5s;
@@ -37,29 +30,30 @@
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
-    // border: 0.1rem solid var(--theme_color_blue);
-    // box-shadow: 0.2rem 0.2rem 0rem var(--theme_color_pink);
 }
 
-// .card .box::before {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 50%;
-//     height: 100%;
-//     background: rgb(255, 255, 255, 0.1);
-//     pointer-events: none;
-// }
+.card .box::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
 
 .card .box:hover {
-    transition: 0.25s linear;
-    border: 0.05rem solid var(--theme_color_blue);
-    box-shadow: 0.1rem 0.1rem 0rem var(--theme_color_pink);
-    -webkit-transition: 0.25s linear;
-    -moz-transition: 0.25s linear;
-    -ms-transition: 0.25s linear;
-    -o-transition: 0.25s linear;
+    transform: scale(1.05, 1.05);
+    box-shadow: 0 0 0.2rem rgba(255, 255, 255, .75);
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    -ms-transform: scale(1.05, 1.05);
+    -o-transform: scale(1.05, 1.05);
+}
+
+.card .box:hover::after {
+    opacity: 1;
 }
 
 .card .box .content {
@@ -67,18 +61,12 @@
     text-align: left;
 
     .project_image {
-        //background-color: aquamarine;
         position: relative;
         display: flex;
         justify-content: center;
         width: 100%;
         aspect-ratio: 16/9;
         height: 11rem;
-        // object-fit: cover;
-        // object-position: center;
-        border: none;
-        outline: none;
-        // box-shadow: 0rem 0rem .1rem rgba(255,255,255,.1);
     }
 }
 
@@ -87,7 +75,6 @@
     bottom: -2rem;
     right: 0.5rem;
     font-size: 6rem;
-    // -webkit-text-stroke: 0.1rem rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.05)
 }
 
@@ -118,66 +105,6 @@
     margin: 0.5rem 0;
 }
 
-.card .box .content a {
-    /* position: absolute; */
-    width: 5rem;
-    height: 5rem;
-    /* padding: .4rem 1rem; */
-    background-color: rgba(255, 255, 255, 0.02);
-    /* bottom: 1rem; */
-    /* right: 1rem; */
-    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-    display: flex;
-    justify-content: center;
-    place-items: center;
-    text-decoration: none;
-    color: var(--theme_color_pink);
-    font-weight: 400;
-    font-family: Coolvetica Rg;
-    font-size: 1rem;
-    transition: 0.5s;
-    border: 1pt solid rgba(255, 255, 255, 0.15);
-    box-shadow: inset 0.5rem 0.5rem 0.8rem rgba(255, 255, 255, 0.15),
-        0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.25);
-}
-
-.card .box .content a:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
-/* Everytime I Add In New Projects */
-/* .card:nth-child(->projectNumber<-) .box .content a {
-    background: transparent;
-    border: 1pt solid rgba(255, 255, 255, 0.225;
-    box-shadow: 0.1rem 0.1rem .1rem rgba(255, 255, 255, .5);
-  } */
-
-/* For Next Pages Add These CSS
-  bottom: 0;
-  top: 100%;
-  overflow: hidden; */
-
-.projects_card {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 75%;
-    justify-content: center;
-    align-items: center;
-    place-items: center;
-    // margin: 1rem 0;
-
-
-    .flex_link {
-        width: 30.4rem;
-        position: absolute;
-        display: flex;
-        bottom: 1rem;
-        justify-content: space-evenly;
-    }
-}
-
 .tilt {
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
 }
@@ -196,19 +123,23 @@
     }
 }
 
-.card .box .project_image {
-    // display: grid;
-    // grid-template-columns: repeat(5, 1fr);
-    // gap: 1.25rem;
+@keyframes beforeAnimation {
+    from {
+        left: -125%;
+    }
+
+    to {
+        left: 150%;
+    }
+}
+
+.card .box:hover .project_image {
     --transition-duration: 500ms;
     --transition-easing: ease-out;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    // border: .1px solid rgba(255, 255, 255, 0.15);
-    // background-color: rgba(white, 0.01);
-    // backdrop-filter: blur(2px);
+    box-shadow: inset 0rem 0rem 0.1rem rgba(255, 255, 255, .1);
     border-radius: .5rem;
     -webkit-border-radius: .5rem;
     -moz-border-radius: .5rem;
@@ -220,31 +151,25 @@
     -moz-transition: transform var(--transition-duration) var(--transition-easing);
     -ms-transition: transform var(--transition-duration) var(--transition-easing);
     -o-transition: transform var(--transition-duration) var(--transition-easing);
+    position: relative;
+}
 
-    &::before {
-        content: '';
-        background: rgba(white, 0.4);
-        width: 60%;
-        height: 100%;
-        top: 0%;
-        left: -125%;
+.card .box:hover .project_image::before {
+    content: '';
+    background: rgba(white, 0.4);
+    width: 60%;
+    height: 100%;
+    top: 0%;
+    left: -125%;
+    transform: skew(45deg);
+    position: absolute;
+    transition: left var(--transition-duration) var(--transition-easing);
+    animation-name: beforeAnimation;
+    animation-duration: var(--transition-duration);
+    animation-timing-function: var(--transition-easing);
+    animation-fill-mode: forwards;
+}
 
-        transform: skew(45deg);
-
-        position: absolute;
-
-        transition: left var(--transition-duration) var(--transition-easing);
-    }
-
-    &:hover {
-        // transform: scale(1.05);
-        // -webkit-transform: scale(1.05);
-        // -moz-transform: scale(1.05);
-        // -ms-transform: scale(1.05);
-        // -o-transform: scale(1.05);
-
-        &::before {
-            left: 150%;
-        }
-    }
+.card .box:hover .project_image:hover::before {
+    left: 150%;
 }

@@ -33,12 +33,13 @@ const imageStyle = {
   border: "none",
   padding: "0.25rem",
   outline: "none",
-  // boxShadow: "0rem 0rem 0.1rem rgba(255,255,255,.5)",
 };
 
 export default function Card() {
   return Projects.map((item, id) => {
     let link = item.webLink == "#" ? item.codeLink : item.webLink;
+    const isTitleTooLong = item.title.length > 16;
+    const isTechnologyTooLong = item.technology.length > 3;
     console.log(item);
     return (
       <div className={styles.projects_card} key={id}>
@@ -68,7 +69,7 @@ export default function Card() {
               <div className={styles.box}>
                 <div className={styles.content}>
                   <h2 className={`${sigmar_One.className} ${styles.h2}`}>
-                    {item.id}
+                    {id + 1}
                   </h2>
                   <div className={styles.project_image}>
                     <Image
@@ -86,8 +87,21 @@ export default function Card() {
                     <h6 className={pt_mono.className}>
                       {item.fromDate} - {item.toDate}
                     </h6>
-                    <p className={`${styles.p} ${pt_mono.className}`}>
-                      {item.description}
+                    <p
+                      className={`${styles.p} ${pt_mono.className}`}
+                      style={
+                        isTitleTooLong && isTechnologyTooLong
+                          ? {
+                              display: "-webkit-box",
+                              WebkitLineClamp: 3,
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }
+                          : {}
+                      }
+                    >
+                      {item.shortDescription}
                     </p>
                   </div>
                   <div className={styles.flex_link}></div>

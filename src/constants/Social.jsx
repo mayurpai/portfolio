@@ -7,4 +7,6 @@ export const Social = {
   Mobile: "9611609185",
   Email: "mailto:mayur5pai@gmail.com",
   Portfolio: "https://mayurpai.github.io/",
+  TuPhodega: "https://mayurpai.github.io/TuPhodega/",
+  EngineeringCalculator: "https://mayurpai.github.io/Engineering-Calculator/",
 };
