@@ -33,7 +33,13 @@
 }
 
 .card .box:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  transition: 0.25s linear;
+  border: 0.05rem solid var(--theme_color_blue);
+  box-shadow: 0.1rem 0.1rem 0rem var(--theme_color_pink);
+  -webkit-transition: 0.25s linear;
+  -moz-transition: 0.25s linear;
+  -ms-transition: 0.25s linear;
+  -o-transition: 0.25s linear;
 }
 
 .card .box .content {
@@ -46,17 +52,17 @@
   justify-content: center;
   width: 100%;
   aspect-ratio: 16/9;
-  height: 12.5rem;
+  height: 11rem;
   border: none;
   outline: none;
 }
 
 .card .box .content .h2 {
   position: absolute;
-  top: -2rem;
+  bottom: -2rem;
   right: 0.5rem;
   font-size: 6rem;
-  color: var(--big_heading);
+  color: rgba(255, 255, 255, 0.05);
 }
 
 .card .box .content .h3 {
@@ -65,27 +71,24 @@
   color: var(--theme_color_blue);
   transition: 0.5s;
   z-index: 1;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   font-family: Coolvetica Rg;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
+  color: whitesmoke;
 }
 
 .card .box .content .p {
   font-size: 1rem;
   font-weight: bold;
+  background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: rgba(255, 255, 255, 0.5);
-}
-
-.card .box .content .tech {
-  font-size: 1.4rem;
-  color: var(--theme_color_blue);
-  display: flex;
-  justify-content: center;
-  transition: 0.5s;
-  margin-top: 0.75rem;
+  margin: 0.5rem 0;
 }
 
 .card .box .content a {
@@ -147,7 +150,20 @@
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
 }
 
-.card:hover .box:hover .project_image {
+.technologySection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin: 0.5rem;
+}
+.technologySection h6 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.card .box .project_image {
   --transition-duration: 500ms;
   --transition-easing: ease-out;
   display: flex;
@@ -166,7 +182,7 @@
   -ms-transition: transform var(--transition-duration) var(--transition-easing);
   -o-transition: transform var(--transition-duration) var(--transition-easing);
 }
-.card:hover .box:hover .project_image::before {
+.card .box .project_image::before {
   content: "";
   background: rgba(255, 255, 255, 0.4);
   width: 60%;
@@ -177,6 +193,6 @@
   position: absolute;
   transition: left var(--transition-duration) var(--transition-easing);
 }
-.card:hover .box:hover .project_image:hover::before {
+.card .box .project_image:hover::before {
   left: 150%;
 }/*# sourceMappingURL=Card.module.css.map */

@@ -13,7 +13,7 @@ import Link from "next/link";
 import Tilt from "react-vanilla-tilt";
 import styles from "../styles/Card.module.scss";
 import Image from "next/image";
-
+import Technology from "./Technology";
 library.add(faGithub, faLink, faCode, faHtml5, faCss3Alt, faJs, faReact);
 
 const sigmar_One = Sigmar_One({
@@ -80,12 +80,15 @@ export default function Card() {
                       priority={true}
                     ></Image>
                   </div>
-                  <h3 className={`${styles.h3}`}>{item.title}</h3>
-                  <p className={`${styles.p} ${pt_mono.className}`}>
-                    {item.description}
-                  </p>
                   <div className={styles.technologySection}>
-                    {/* <Technology names={item.technology} /> */}
+                    <Technology names={item.technology} />
+                    <h3 className={`${styles.h3}`}>{item.title}</h3>
+                    <h6 className={pt_mono.className}>
+                      {item.fromDate} - {item.toDate}
+                    </h6>
+                    <p className={`${styles.p} ${pt_mono.className}`}>
+                      {item.description}
+                    </p>
                   </div>
                   <div className={styles.flex_link}></div>
                 </div>

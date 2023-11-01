@@ -9,7 +9,14 @@ export const Projects = [
     title: "My Portfolio",
     description:
       "A fully responsive personal portfolio website was created and developed to reflect who I am, what I have accomplished, and what I seek to achieve",
-    technology: ["React"],
+    technology: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "Flask",
+      "SQLAlchemy",
+    ],
     codeLink: githubLink + "portfolio",
     webLink: Social.Portfolio,
     imgLink: imageLink + "Portfolio.png",

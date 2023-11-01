@@ -18,6 +18,7 @@ import {
   faFolderTree,
   faPepperHot,
 } from "@fortawesome/free-solid-svg-icons";
+import { PT_Mono } from "next/font/google";
 library.add(
   faHtml5,
   faCss3Alt,
@@ -54,21 +55,33 @@ const technologyFaMapper = {
   },
 };
 
+const pt_mono = PT_Mono({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export default function Technology(props) {
   return (
     <div className={styles.technology_main}>
       {props?.names?.map((tech, id) => {
         const techInfo = technologyFaMapper[tech];
         return (
-          <FontAwesomeIcon
+          <div className={styles.technology}>
+            <p className={`${pt_mono.className}`}>{techInfo.title}</p>
+          </div>
+        );
+        {
+          /* <FontAwesomeIcon
             key={id}
             title={techInfo?.title}
             className={styles.faIcon}
             icon={techInfo?.logo}
             fixedWidth
+            style={{fontSize: "1rem"}}
             // style={{ color: techInfo.color }}
-          />
-        );
+          /> */
+        }
       })}
     </div>
   );
