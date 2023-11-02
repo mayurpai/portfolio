@@ -26,7 +26,7 @@ export const Projects = [
     technology: ["React.js", "Java Spring Framework"],
     codeLink: githubLink + "Gx/tree/main/Extra-Training-Workspace/target",
     webLink: "#",
-    imgLink: imageLink + "404.gif",
+    imgLink: imageLink + "Target.png",
     fromDate: "Dec 2022",
     toDate: "Jan 2023",
   },
