@@ -3,19 +3,19 @@
 .contact_me,
 .projects {
   position: relative;
-  /* display: flex; */
-  height: 100vh;
+  /*display: flex;
+  */height: 100vh;
   width: 100vw;
   justify-content: center;
   font-family: Coolvetica Rg;
   flex-wrap: wrap-reverse;
-  background: var(--background_color);
-  // overflow-y: scroll;
+  background: rgba(17, 17, 17, 2);
+  //overflow-y: scroll;
   place-items: center;
   overflow-x: hidden;
-  // scroll-snap-type: y mandatory;
-  // scroll-behavior: smooth;
-  // scroll-padding-top: 6rem;
+  //scroll-snap-type: y mandatory;
+  //scroll-behavior: smooth;
+  //scroll-padding-top: 6rem;
 }
 
 .main_container,
@@ -110,7 +110,6 @@
   -o-transition: 1s ease-in-out;
 }
 
-
 .header_font ul li,
 .project_font ul li {
   display: inline;
@@ -182,8 +181,10 @@
   position: relative;
   /* Position Has To Be Absolute As The Right Side Image Needs To Get Fit! */
   display: inline-block;
-  background: -webkit-linear-gradient(var(--theme_color_blue),
-      var(--theme_color_pink));
+  background: -webkit-linear-gradient(
+    var(--theme_color_blue),
+    var(--theme_color_pink)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   font-size: 1.5rem;
@@ -348,8 +349,10 @@
 
 .swrapper .icon_resume:hover span,
 .swrapper .icon_resume:hover .tooltip {
-  background: -webkit-linear-gradient(var(--theme_color_blue),
-      var(--theme_color_pink));
+  background: -webkit-linear-gradient(
+    var(--theme_color_blue),
+    var(--theme_color_pink)
+  );
 }
 
 .swrapper .icon_resume:hover .tooltip:before {
@@ -432,7 +435,6 @@
   padding: 0 2rem;
 }
 
-
 .about .html_body_h1,
 .skills .html_body_h1,
 .projects .html_body_h1,
@@ -445,8 +447,6 @@
   bottom: 5rem;
   left: 2.5rem;
 }
-
-
 
 .about .html_h1 {
   margin-left: 34rem;
@@ -476,8 +476,6 @@
   top: 17rem;
 }
 
-
-
 .html_doc_header,
 .html_body_h1,
 .html_body_html,
@@ -490,13 +488,6 @@
   color: var(--highlights);
   font-size: 1.25rem;
 }
-
-
-
-
-
-
-
 
 .about {
   position: absolute;
@@ -795,8 +786,10 @@
     color: var(--highlights);
     font-weight: bold;
     font-size: 1rem;
-    background: -webkit-linear-gradient(var(--theme_color_blue),
-        var(--theme_color_pink));
+    background: -webkit-linear-gradient(
+      var(--theme_color_blue),
+      var(--theme_color_pink)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
