@@ -76,7 +76,7 @@ export default function Card() {
                       style={imageStyle}
                       fill
                       src={item.imgLink}
-                      objectFit="contain"
+                      objectFit="cover"
                       alt={item.title}
                       priority={true}
                     ></Image>
