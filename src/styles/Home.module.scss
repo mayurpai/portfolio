@@ -9,7 +9,7 @@
   justify-content: center;
   font-family: Coolvetica Rg;
   flex-wrap: wrap-reverse;
-  background: rgba(17, 17, 17, 2);
+  background: var(--background_color);
   //overflow-y: scroll;
   place-items: center;
   overflow-x: hidden;
