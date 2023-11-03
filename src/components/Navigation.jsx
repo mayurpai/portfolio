@@ -4,7 +4,7 @@ import ModalWidget from "@/components/ModalWidget";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import styles from "../../styles/Navigation.module.scss";
+import styles from "../styles/Navigation.module.scss";
 
 export default function Navigation() {
   const [isModalOpen, setModalOpen] = useState(false);

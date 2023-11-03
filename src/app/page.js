@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.scss";
 import Home from "./Home/page";
-import Navigation from "./Navigation/page";
+import Navigation from "../components/Navigation";
 
 export default function Index() {
   return (
