@@ -68,7 +68,7 @@ export default function Card() {
             <div className={styles.card}>
               <div className={styles.box}>
                 <div className={styles.content}>
-                  <h2 className={`${sigmar_One.className} ${styles.h2}`}>
+                  <h2 className={`${sigmar_One.className} ${styles.id}`}>
                     {id + 1}
                   </h2>
                   <div className={styles.project_image}>
@@ -81,14 +81,14 @@ export default function Card() {
                       priority={true}
                     ></Image>
                   </div>
-                  <div className={styles.technologySection}>
+                  <div className={styles.technology_section}>
                     <Technology names={item.technology} />
-                    <h3 className={`${styles.h3}`}>{item.title}</h3>
+                    <h3 className={`${styles.title}`}>{item.title}</h3>
                     <h6 className={pt_mono.className}>
                       {item.fromDate} - {item.toDate}
                     </h6>
                     <p
-                      className={`${styles.p} ${pt_mono.className}`}
+                      className={`${styles.description} ${pt_mono.className}`}
                       style={
                         isTitleTooLong && isTechnologyTooLong
                           ? {
@@ -104,7 +104,6 @@ export default function Card() {
                       {item.shortDescription}
                     </p>
                   </div>
-                  <div className={styles.flex_link}></div>
                 </div>
               </div>
             </div>
