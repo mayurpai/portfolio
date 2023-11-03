@@ -12,7 +12,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /* overflow-x: hidden; */
+  // overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -28,6 +28,7 @@
   --theme_color_pink: #fd0953;
   --highlights: rgb(172, 182, 190);
   --big_heading: rgba(141, 141, 141, 0.1);
+  --heading: #eaeaea;
 }
 
 .main_app_container {
