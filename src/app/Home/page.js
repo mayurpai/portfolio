@@ -83,11 +83,6 @@ export default function Home() {
           ></TagsCreator>
           {/* <div className={styles.big_heading}>π</div> */}
           <TagsCreator
-            tag="section"
-            style={{ marginLeft: "4.5rem" }}
-            bool={tagDecider}
-          ></TagsCreator>
-          <TagsCreator
             tag="h1"
             style={{ marginBottom: "-2rem", marginLeft: "6rem" }}
             bool={tagDecider}
@@ -128,41 +123,26 @@ export default function Home() {
             style={{ marginLeft: "9rem" }}
             bool={!tagDecider}
           ></TagsCreator>
-          <TagsCreator
-            tag="section"
-            style={{ marginLeft: "4.5rem" }}
-            bool={!tagDecider}
-          ></TagsCreator>
         </div>
       </section>
       <section className={styles.skills} id="projects">
         <div className={styles.page}>
           <TagsCreator
-            tag="section"
-            style={{ marginLeft: "4.5rem" }}
-            bool={tagDecider}
-          ></TagsCreator>
-          <TagsCreator
-            tag="h2"
+            tag="h1"
             style={{ marginBottom: "-2rem", marginLeft: "6rem" }}
             bool={tagDecider}
           ></TagsCreator>
-          <h2 className={styles.project_font}>
+          <h1 className={styles.project_font}>
             <ul>{createAnimatedText(project)}</ul>
-          </h2>
+          </h1>
           <TagsCreator
-            tag="h2"
+            tag="h1"
             style={{ marginTop: "-1rem", marginLeft: "6rem" }}
             bool={!tagDecider}
           ></TagsCreator>
           <div className={styles.projectSection}>
             <Card />
           </div>
-          <TagsCreator
-            tag="section"
-            style={{ marginLeft: "4.5rem" }}
-            bool={!tagDecider}
-          ></TagsCreator>
         </div>
       </section>
       <TagsCreator
