@@ -1,5 +1,5 @@
 import { PT_Mono } from "next/font/google";
-import styles from "../styles/Technology.module.scss";
+import styles from "../styles/components/Technology.module.scss";
 
 const pt_mono = PT_Mono({
   weight: "400",

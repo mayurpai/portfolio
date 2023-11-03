@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Button.module.scss";
+import styles from "../styles/components/Button.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Button(props) {

@@ -9,4 +9,5 @@ export const Social = {
   Portfolio: "https://mayurpai.github.io/",
   TuPhodega: "https://mayurpai.github.io/TuPhodega/",
   EngineeringCalculator: "https://mayurpai.github.io/Engineering-Calculator/",
+  LajzonKaJadugar: "https://www.instagram.com/_lafzon.ka.jadugar_/"
 };

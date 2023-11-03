@@ -3,7 +3,7 @@ import { Icons } from "@/constants/Icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useState } from "react";
-import styles from "../styles/Icon.module.scss";
+import styles from "../styles/components/Icon.module.scss";
 
 export default function Icon() {
   const [isHovered, setHovered] = useState(false);

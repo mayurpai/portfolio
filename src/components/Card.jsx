@@ -11,7 +11,7 @@ import { faCode, faLink } from "@fortawesome/free-solid-svg-icons";
 import { PT_Mono, Sigmar_One } from "next/font/google";
 import Link from "next/link";
 import Tilt from "react-vanilla-tilt";
-import styles from "../styles/Card.module.scss";
+import styles from "../styles/components/Card.module.scss";
 import Image from "next/image";
 import Technology from "./Technology";
 library.add(faGithub, faLink, faCode, faHtml5, faCss3Alt, faJs, faReact);

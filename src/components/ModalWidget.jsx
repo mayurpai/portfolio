@@ -1,6 +1,6 @@
 import { Black_Ops_One } from "next/font/google";
 import Modal from "react-modal";
-import styles from "../styles/ModalWidget.module.scss";
+import styles from "../styles/components/ModalWidget.module.scss";
 import Connections from "./Connections";
 
 const black_Ops_One = Black_Ops_One({
