@@ -1,16 +1,13 @@
 "use client"
-import React from "react";
-import styles from "../../styles/pages/LafzonKaJadugar.module.scss";
-import TagsCreator from "@/components/TagsCreator";
-import Navigation from "@/components/Navigation";
 import { createAnimatedText } from "@/common/Animation";
+import TagsCreator from "@/components/TagsCreator";
+import styles from "../../styles/pages/LafzonKaJadugar.module.scss";
 
 const heading = "Lafzon Ka Jadugar";
 
 export default function LafzonKaJadugar() {
   return (
     <div>
-      {/* <Navigation /> */}
       <section className={styles.lafzon_ka_jadugar_main_container} id="home">
         <div className={styles.lafzon_ka_jadugar_body_container}>
           <TagsCreator

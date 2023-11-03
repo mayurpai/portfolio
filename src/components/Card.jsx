@@ -40,7 +40,7 @@ export default function Card() {
     let link = item.webLink == "#" ? item.codeLink : item.webLink;
     const isTitleTooLong = item.title.length > 16;
     const isTechnologyTooLong = item.technology.length > 3;
-    console.log(item);
+    // console.log(item);
     return (
       <div className={styles.projects_card} key={id}>
         <Link href={link} target="_blank">

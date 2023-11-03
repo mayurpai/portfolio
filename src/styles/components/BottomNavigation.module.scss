@@ -4,10 +4,11 @@
     z-index: 999;
     margin-bottom: 2rem;
     left: 50%;
-    width: 15rem;
+    width: 16rem;
     background-color: rgba(16, 21, 26, 0.3);
     border-radius: 10rem;
-    height: 2.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.15);
+    height: 3.5rem;
     backdrop-filter: blur(2.5px);
     transition: background-color 0.3s, border-bottom 0.3s;
     -webkit-border-radius: 10rem;
@@ -19,39 +20,43 @@
     -moz-transform: translate(-50%);
     -ms-transform: translate(-50%);
     -o-transform: translate(-50%);
+    box-shadow: 0 0 .3rem rgba(255, 255, 255, 0.15);
 
     .links {
-        position: relative;
-        width: 100%;
         display: flex;
         align-items: center;
         height: 100%;
         text-decoration: none;
-        padding: 0.1rem;
-        color: var(--theme_color_blue);
+        color: var(--heading);
 
-        a {
-            display: flex;
-            align-items: center;
+        .nav {
+            padding: .75rem;
             border-radius: 10rem;
-            width: 100%;
-            margin: 0.1rem;
+            cursor: pointer;
             -webkit-border-radius: 10rem;
             -moz-border-radius: 10rem;
             -ms-border-radius: 10rem;
             -o-border-radius: 10rem;
-        }
+            transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+            width: 100%;
+            margin: .25rem;
 
-        li {
-            height: fit-content;
-        }
+            .spacing {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
 
-        .icon {
-            height: 2rem;
-            position: relative;
-            width: 2rem;
-            margin: 0 .5rem;
-            cursor: pointer;
+                li {
+                    color: rgba(255, 255, 255, 0.6)
+                }
+
+                .icon {
+                    height: 1.5rem;
+                    position: relative;
+                    width: 1.5rem;
+                    color: var(--theme_color_blue);
+                }
+            }
         }
     }
 }
