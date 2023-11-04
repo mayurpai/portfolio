@@ -1,6 +1,7 @@
-import TypingEffect from "@/components/TypingEffect";
 import { PT_Mono } from "next/font/google";
 import styles from "../styles/pages/Home.module.scss";
+import ScrambleEffect from "@/components/ScambleText";
+import TypingEffect from "@/components/TypingEffect";
 
 const pt_mono = PT_Mono({
   weight: "400",
@@ -18,6 +19,7 @@ export default function About() {
         className={`${styles.about_section_body_container} ${pt_mono.className}`}
       >
         <TypingEffect text={aboutText} />
+        {/* <ScrambleEffect text={aboutText}></ScrambleEffect> */}
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 "use client";
-import { createAnimatedText } from "@/common/Animation";
+import ScrambleText, { createAnimatedText } from "@/common/Animation";
 import Icon from "@/components/Icon";
 import TagsCreator from "@/components/TagsCreator";
 import About from "@/sections/About";
 import Project from "@/sections/Project";
 import styles from "../../styles/pages/Home.module.scss";
+
 
 const heading = "Mayur Pai";
 
