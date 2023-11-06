@@ -19,7 +19,7 @@ const customModalStyles = {
     boxShadow:
       "rgba(255, 255, 255, .2) 0px 2px 2px -1px, rgba(255, 255, 255, .3) 0px 1px 2px -1px",
     padding: "10px",
-    backgroundColor: "#1f2528",
+    backgroundColor: "rgba(16, 21, 26, 0.65)",
     overflowY: "hidden",
   },
   overlay: {

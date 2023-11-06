@@ -6,7 +6,6 @@ import About from "@/sections/About";
 import Project from "@/sections/Project";
 import styles from "../../styles/pages/Home.module.scss";
 
-
 const heading = "Mayur Pai";
 
 export default function Home() {
@@ -48,7 +47,7 @@ export default function Home() {
             style={{ marginLeft: "7.5rem" }}
             bool={false}
           ></TagsCreator>
-          <About/>
+          <About />
           <TagsCreator
             tag="p"
             style={{ marginLeft: "7.5rem" }}
@@ -68,18 +67,20 @@ export default function Home() {
             bool={!false}
           ></TagsCreator>
         </div>
+        <Project />
+        <div className={styles.markup_end}>
+          <TagsCreator
+            tag="body"
+            style={{ marginLeft: "3rem" }}
+            bool={!false}
+          ></TagsCreator>
+          <TagsCreator
+            tag="html"
+            style={{ marginLeft: "1.5rem", zIndex: "999" }}
+            bool={!false}
+          ></TagsCreator>
+        </div>
       </section>
-      <Project />
-      <TagsCreator
-        tag="body"
-        style={{ marginLeft: "3rem" }}
-        bool={!false}
-      ></TagsCreator>
-      <TagsCreator
-        tag="html"
-        style={{ marginLeft: "1.5rem" }}
-        bool={!false}
-      ></TagsCreator>
     </div>
   );
 }
