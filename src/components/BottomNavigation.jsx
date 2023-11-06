@@ -13,7 +13,7 @@ const pt_mono = PT_Mono({
 });
 
 const currentPageStyle = {
-  backgroundColor: "rgba(239, 234, 221, 0.1)",
+  backgroundColor: "rgba(239, 234, 221, 0.05)",
   boxShadow: "0 0 0.5rem rgba(0, 0, 0, 0.8)",
   // borderBottom: "0.025rem solid rgba(255,255,255,0.4)" ,
 };
@@ -35,7 +35,7 @@ export default function BottomNavigation({ handlePageChange, currentPage }) {
               icon={faHouse}
               fixedWidth
             />
-            <li className={pt_mono.className}>Home</li>
+            {/* <li className={pt_mono.className}>Home</li> */}
           </div>
         </div>
         <div
@@ -51,7 +51,7 @@ export default function BottomNavigation({ handlePageChange, currentPage }) {
               icon={faHatWizard}
               fixedWidth
             />
-            <li className={pt_mono.className}>Poetry</li>
+            {/* <li className={pt_mono.className}>Poetry</li> */}
           </div>
         </div>
       </ul>
