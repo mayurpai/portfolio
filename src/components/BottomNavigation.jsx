@@ -14,8 +14,8 @@ const pt_mono = PT_Mono({
 
 const currentPageStyle = {
   backgroundColor: "rgba(239, 234, 221, 0.1)",
-  boxShadow: "0 0 0.3rem rgba(255, 255, 255, 0.5)",
-  borderBottom: "0.025rem solid rgba(255,255,255,0.4)",
+  boxShadow: "0 0 0.5rem rgba(0, 0, 0, 0.8)",
+  // borderBottom: "0.025rem solid rgba(255,255,255,0.4)" ,
 };
 
 export default function BottomNavigation({ handlePageChange, currentPage }) {
