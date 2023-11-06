@@ -6,8 +6,11 @@ import Navigation from "../components/Navigation";
 import Home from "./Home/page";
 import LafzonKaJadugar from "./Lafzon-Ka-Jadugar/page";
 import "./globals.scss";
-//import { loadFull } from "tsparticles"; 
+//import { loadFull } from "tsparticles";
+import BoilerFooter from "@/common/BoilerFooter";
+import BoilerHeader from "@/common/BoilerHeader";
 import { loadSlim } from "tsparticles-slim";
+import BoilerBody from "@/common/BoilerHeading";
 
 function Index() {
   const particlesInit = useCallback(async (engine) => {
@@ -23,6 +26,19 @@ function Index() {
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
+
+  let pageComponent;
+
+  switch (currentPage) {
+    case "/":
+      pageComponent = <Home />;
+      break;
+    case "/Lafzon-Ka-Jadugar":
+      pageComponent = <LafzonKaJadugar />;
+      break;
+    default:
+      pageComponent = null;
+  }
 
   return (
     <div className="main_app_container">
@@ -102,8 +118,10 @@ function Index() {
           detectRetina: true,
         }}
       />
-      <Navigation />
-      {currentPage === "/" ? <Home /> : <LafzonKaJadugar />}
+      <Navigation handlePageChange={handlePageChange} />
+      <BoilerHeader />
+      {pageComponent}
+      <BoilerFooter />
       <BottomNavigation
         handlePageChange={handlePageChange}
         currentPage={currentPage}

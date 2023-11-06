@@ -170,3 +170,40 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+.boiler_header,
+.boiler_footer {
+  position: relative;
+  left: -50%;
+  transform: translate(50%);
+  -webkit-transform: translate(50%);
+  -moz-transform: translate(50%);
+  -ms-transform: translate(50%);
+  -o-transform: translate(50%);
+}
+
+.main_heading_container,
+.project_heading_container {
+  font-family: Coolvetica Rg;
+  font-style: normal;
+  font-weight: bolder;
+  margin: 0 8rem;
+  font-size: 5.5rem;
+
+  ul li {
+    color: var(--heading);
+    display: inline;
+    text-shadow: 0.2rem 0.2rem rgb(255, 255, 255, 0.2);
+
+    &:hover {
+      color: var(--theme_color_blue);
+      transition: 1s ease-in-out;
+      text-shadow: 0.2rem 0.2rem var(--theme_color_pink);
+      -webkit-text-stroke: 0.1rem transparent;
+      -webkit-transition: 1s ease-in-out;
+      -moz-transition: 1s ease-in-out;
+      -ms-transition: 1s ease-in-out;
+      -o-transition: 1s ease-in-out;
+    }
+  }
+}

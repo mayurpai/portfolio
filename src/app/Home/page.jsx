@@ -1,5 +1,5 @@
 "use client";
-import ScrambleText, { createAnimatedText } from "@/common/Animation";
+import BoilerHeading from "@/common/BoilerHeading";
 import Icon from "@/components/Icon";
 import TagsCreator from "@/components/TagsCreator";
 import About from "@/sections/About";
@@ -13,35 +13,7 @@ export default function Home() {
     <div>
       <section className={styles.home_container} id="home">
         <div className={styles.home_body_container}>
-          <TagsCreator
-            tag="!DOCTYPE html"
-            style={{ marginLeft: "1.5rem" }}
-            bool={false}
-          ></TagsCreator>
-          <TagsCreator
-            tag='html lang="en"'
-            style={{ marginLeft: "1.5rem" }}
-            bool={false}
-          ></TagsCreator>
-          <TagsCreator
-            tag="body"
-            style={{ marginLeft: "3rem" }}
-            bool={false}
-          ></TagsCreator>
-          {/* <div className={styles.big_heading}>π</div> */}
-          <TagsCreator
-            tag="h1"
-            style={{ marginBottom: "-2rem", marginLeft: "6rem" }}
-            bool={false}
-          ></TagsCreator>
-          <h1 className={styles.main_heading_container}>
-            <ul>{createAnimatedText(heading)}</ul>
-          </h1>
-          <TagsCreator
-            tag="h1"
-            style={{ marginTop: "-1rem", marginLeft: "6rem" }}
-            bool={!false}
-          ></TagsCreator>
+          <BoilerHeading title={heading} />
           <TagsCreator
             tag="p"
             style={{ marginLeft: "7.5rem" }}
@@ -68,18 +40,6 @@ export default function Home() {
           ></TagsCreator>
         </div>
         <Project />
-        <div className={styles.markup_end}>
-          <TagsCreator
-            tag="body"
-            style={{ marginLeft: "3rem" }}
-            bool={!false}
-          ></TagsCreator>
-          <TagsCreator
-            tag="html"
-            style={{ marginLeft: "1.5rem", zIndex: "999" }}
-            bool={!false}
-          ></TagsCreator>
-        </div>
       </section>
     </div>
   );

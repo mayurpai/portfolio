@@ -41,6 +41,15 @@
             transition: opacity .3s ease-in-out, transform .3s ease-in-out;
             width: 100%;
             margin: .25rem;
+            transition: 0.3s all linear;
+            -webkit-transition: 0.3s all linear;
+            -moz-transition: 0.3s all linear;
+            -ms-transition: 0.3s all linear;
+            -o-transition: 0.3s all linear;
+
+            &:hover {
+                background-color: rgba(16, 21, 26, 0.2);
+            }
 
             .spacing {
                 display: flex;

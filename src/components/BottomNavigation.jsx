@@ -2,8 +2,8 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faHatWizard, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "../styles/components/BottomNavigation.module.scss";
 import { PT_Mono } from "next/font/google";
+import styles from "../styles/components/BottomNavigation.module.scss";
 library.add(faHouse, faHatWizard);
 
 const pt_mono = PT_Mono({
@@ -19,13 +19,14 @@ const currentPageStyle = {
 };
 
 export default function BottomNavigation({ handlePageChange, currentPage }) {
-  console.log(currentPage);
   return (
     <nav className={`${styles.navigation_links}`}>
       <ul className={styles.links}>
         <div
           className={styles.nav}
-          onClick={() => handlePageChange("/")}
+          onClick={() => {
+            handlePageChange("/");
+          }}
           style={currentPage == "/" ? currentPageStyle : null}
         >
           <div className={styles.spacing}>
@@ -39,7 +40,9 @@ export default function BottomNavigation({ handlePageChange, currentPage }) {
         </div>
         <div
           className={styles.nav}
-          onClick={() => handlePageChange("/Lafzon-Ka-Jadugar")}
+          onClick={() => {
+            handlePageChange("/Lafzon-Ka-Jadugar");
+          }}
           style={currentPage != "/" ? currentPageStyle : null}
         >
           <div className={styles.spacing}>

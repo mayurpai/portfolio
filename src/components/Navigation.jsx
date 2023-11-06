@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/components/Navigation.module.scss";
 
-export default function Navigation() {
+export default function Navigation({ handlePageChange }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
@@ -15,7 +15,11 @@ export default function Navigation() {
   return (
     <nav className={`${styles.navigation_links}`}>
       <ul className={styles.links}>
-        <li>
+        <li
+          onClick={() => {
+            handlePageChange("/");
+          }}
+        >
           <Link href="/">
             <Image
               className={styles.logo}
