@@ -10,7 +10,6 @@ import "./globals.scss";
 import BoilerFooter from "@/common/BoilerFooter";
 import BoilerHeader from "@/common/BoilerHeader";
 import { loadSlim } from "tsparticles-slim";
-import BoilerBody from "@/common/BoilerHeading";
 
 function Index() {
   const particlesInit = useCallback(async (engine) => {
