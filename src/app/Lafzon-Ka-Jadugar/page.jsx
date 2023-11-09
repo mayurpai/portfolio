@@ -8,9 +8,9 @@ import {
   lajzonKaJadugar,
   Poetry,
 } from "@/constants/Poetry";
+import PoetryCard from "@/components/PoetryCard";
 
 const heading = "Lafzon Ka Jadugar";
-
 export default function LafzonKaJadugar() {
   console.log(link, magicianOfWords, lajzonKaJadugar, Poetry);
   return (
@@ -31,6 +31,7 @@ export default function LafzonKaJadugar() {
             bool={!false}
           ></TagsCreator>
         </div>
+        <PoetryCard />
       </section>
     </div>
   );

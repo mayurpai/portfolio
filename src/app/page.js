@@ -30,10 +30,10 @@ function Index() {
 
   switch (currentPage) {
     case "/":
-      pageComponent = <Home />;
+      pageComponent = <LafzonKaJadugar />;
       break;
     case "/Lafzon-Ka-Jadugar":
-      pageComponent = <LafzonKaJadugar />;
+      pageComponent = <Home />;
       break;
     default:
       pageComponent = null;
