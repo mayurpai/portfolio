@@ -59,10 +59,9 @@ export default function PoetryCard() {
   return Poetry.map((item, id) => {
     return (
       <div className={styles.poetry_card} key={id}>
-        <Link href={link} target="_blank">
-          <div className={styles.box}>
-            <div className={styles.content}>
-              {/* <div className={styles.project_image}>
+        <div className={styles.box}>
+          <div className={styles.content}>
+            {/* <div className={styles.project_image}>
                     <Image
                       style={imageStyle}
                       fill
@@ -72,49 +71,48 @@ export default function PoetryCard() {
                       priority={true}
                     ></Image>
                   </div> */}
-              <div className={styles.technology_section}>
-                <h3
-                  className={`${styles.title} ${tiro_Devanagari_Hindi.className}`}
+            <div className={styles.technology_section}>
+              <h3
+                className={`${styles.title} ${tiro_Devanagari_Hindi.className}`}
+              >
+                {item.description}
+              </h3>
+              <div className={styles.poetry_card_footer}>
+                <h6 className={pt_mono.className}>{item.date}</h6>
+                <CopyToClipboard
+                  text={item.description}
+                  onCopy={() => {
+                    setClipBoardState(true);
+                    notify();
+                  }}
                 >
-                  {item.description}
-                </h3>
-                <div className={styles.poetry_card_footer}>
-                  <h6 className={pt_mono.className}>{item.date}</h6>
-                  <CopyToClipboard
-                    text={item.description}
-                    onCopy={() => {
-                      setClipBoardState(true);
-                      notify();
+                  <div
+                    className={styles.copy_icon}
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                    style={{
+                      transition: "0.5s",
+                      backgroundColor: !isHovered
+                        ? "transparent"
+                        : "rgba(255, 255, 255, 0.075)",
                     }}
                   >
-                    <div
-                      className={styles.copy_icon}
-                      onMouseEnter={() => setHovered(true)}
-                      onMouseLeave={() => setHovered(false)}
-                      style={{
-                        transition: "0.5s",
-                        backgroundColor: !isHovered
-                          ? "transparent"
-                          : "rgba(255, 255, 255, 0.075)",
-                      }}
-                    >
-                      <span>
-                        <FontAwesomeIcon
-                          icon={faCopy}
-                          style={{
-                            fontSize: "1.25rem",
-                          }}
-                          fixedWidth
-                        />
-                      </span>
-                    </div>
-                  </CopyToClipboard>
-                </div>
+                    <span>
+                      <FontAwesomeIcon
+                        icon={faCopy}
+                        style={{
+                          fontSize: "1.25rem",
+                        }}
+                        fixedWidth
+                      />
+                    </span>
+                  </div>
+                </CopyToClipboard>
               </div>
             </div>
           </div>
-          <ToastContainer />
-        </Link>
+        </div>
+        <ToastContainer />
       </div>
     );
   });
