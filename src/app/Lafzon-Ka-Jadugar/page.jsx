@@ -31,7 +31,9 @@ export default function LafzonKaJadugar() {
             bool={!false}
           ></TagsCreator>
         </div>
-        <PoetryCard />
+        <div className={styles.poetry_section_container}>
+          <PoetryCard />
+        </div>
       </section>
     </div>
   );

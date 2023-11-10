@@ -1,0 +1,260 @@
+.tilt {
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+}
+
+.box {
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    margin: 1rem;
+    max-width: 24rem;
+    height: auto;
+    position: relative;
+    top: .5rem;
+    left: .5rem;
+    right: .5rem;
+    bottom: .5rem;
+    background: #141a20a7;
+    border-radius: .5rem;
+    border: 0.1rem solid #27292c;
+    box-shadow: inset 0 0 0.75rem 0.1rem rgba(255, 255, 255, 0.075);
+    transition: 0.5s;
+    overflow: hidden;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+
+    &:hover {
+        transform: scale(1.025);
+        -webkit-transform: scale(1.025);
+        -moz-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+        -o-transform: scale(1.025);
+        background-color: rgba(255, 255, 255, 0.025);
+
+        .project_image {
+            --transition-duration: 500ms;
+            --transition-easing: ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0rem 0rem 0.1rem rgba(255, 255, 255, .1);
+            border-radius: .5rem;
+            -webkit-border-radius: .5rem;
+            -moz-border-radius: .5rem;
+            -ms-border-radius: .5rem;
+            -o-border-radius: .5rem;
+            transition: transform var(--transition-duration) var(--transition-easing);
+            overflow: hidden;
+            -webkit-transition: transform var(--transition-duration) var(--transition-easing);
+            -moz-transition: transform var(--transition-duration) var(--transition-easing);
+            -ms-transition: transform var(--transition-duration) var(--transition-easing);
+            -o-transition: transform var(--transition-duration) var(--transition-easing);
+            position: relative;
+
+            &:hover::before {
+                left: 150%;
+            }
+
+            &::before {
+                content: '';
+                background: rgba(white, 0.4);
+                width: 60%;
+                height: 100%;
+                top: 0%;
+                left: -125%;
+                transform: skew(45deg);
+                position: absolute;
+                transition: left var(--transition-duration) var(--transition-easing);
+                animation-name: beforeAnimation;
+                animation-duration: var(--transition-duration);
+                animation-timing-function: var(--transition-easing);
+                animation-fill-mode: forwards;
+
+            }
+        }
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        border-radius: 5px;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .content {
+        padding: 1rem;
+        text-align: left;
+
+        .technology_section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            margin: 0.5rem;
+
+            .title {
+                font-size: 1.5rem;
+                font-weight: 100;
+                background: -webkit-linear-gradient(var(--theme_color_blue),
+                        var(--theme_color_pink));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: 0.5s;
+                z-index: 1;
+                margin: 0.5rem 0;
+                padding: 0.5rem 0;
+                -webkit-transition: 0.5s;
+                -moz-transition: 0.5s;
+                -ms-transition: 0.5s;
+                -o-transition: 0.5s;
+            }
+
+            h6 {
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 1rem;
+                font-weight: bolder;
+            }
+
+            .poetry_card_footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .copy_icon {
+                height: 3rem;
+                position: relative;
+                width: 3rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+                margin: .25rem;
+                transition: 0.3s all linear;
+                -webkit-transition: 0.3s all linear;
+                -moz-transition: 0.3s all linear;
+                -ms-transition: 0.3s all linear;
+                color: rgba(255, 255, 255, 0.75);
+                -o-transition: 0.3s all linear;
+                background-color: transparent;
+                border: 0.1rem solid rgba(255, 255, 255, .1);
+
+                :after {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: -5rem;
+                    left: 0;
+                    display: flex;
+                    z-index: 2;
+                    justify-content: center;
+                    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    align-items: center;
+                    border-radius: 50%;
+                    transition: all .1s linear;
+                    -webkit-transition: all .1s linear;
+                    -moz-transition: all .1s linear;
+                    -ms-transition: all .1s linear;
+                    -o-transition: all .1s linear;
+                    position: absolute;
+                    background: linear-gradient(-45deg, var(--theme_color_blue), var(--theme_color_pink));
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    z-index: -1;
+                }
+
+                :hover::after {
+                    top: 0;
+                }
+
+                span {
+                    height: 3rem;
+                    position: relative;
+                    width: 3rem;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    background: transparent;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1)
+                }
+            }
+        }
+
+        .project_image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            aspect-ratio: 16/9;
+            height: 11rem;
+
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     height: 100%;
+            //     width: 100%;
+            //     background-image: linear-gradient(to right, #656871 0%, rgba(0, 0, 0, 0.05) 20%, #656871 40%, #656871 100%);
+            //     background-repeat: no-repeat;
+            //     animation: shimmer 1s linear infinite;
+            //     -webkit-animation: shimmer 1s linear infinite;
+            //     animation-delay: 0.2s;
+            //     background-size: cover;
+            // }
+        }
+    }
+}
+
+@keyframes beforeAnimation {
+    from {
+        left: -125%;
+    }
+
+    to {
+        left: 150%;
+    }
+}
+
+
+@keyframes shimmer {
+    0% {
+        background-position: -125px 0;
+    }
+
+    100% {
+        background-position: 125px 0;
+    }
+}

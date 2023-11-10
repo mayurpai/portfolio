@@ -45,4 +45,13 @@
             color: var(--big_heading);
         }
     }
+
+    .poetry_section_container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        // flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
