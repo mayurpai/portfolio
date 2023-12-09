@@ -18,7 +18,7 @@
     bottom: .5rem;
     background: #141a20a7;
     border-radius: .5rem;
-    border: 0.1rem solid #27292c;
+    border: 0.2rem solid #27292c;
     box-shadow: inset 0 0 0.75rem 0.1rem rgba(255, 255, 255, 0.075);
     transition: 0.5s;
     overflow: hidden;
@@ -38,6 +38,7 @@
         -ms-transform: scale(1.025);
         -o-transform: scale(1.025);
         background-color: rgba(255, 255, 255, 0.025);
+        border: 0.1rem solid #edd849;
 
         .project_image {
             --transition-duration: 500ms;
@@ -65,7 +66,7 @@
 
             &::before {
                 content: '';
-                background: rgba(white, 0.4);
+                background: rgba(white, 0.15);
                 width: 60%;
                 height: 100%;
                 top: 0%;
@@ -77,7 +78,10 @@
                 animation-duration: var(--transition-duration);
                 animation-timing-function: var(--transition-easing);
                 animation-fill-mode: forwards;
-
+                -webkit-transform: skew(45deg);
+                -moz-transform: skew(45deg);
+                -ms-transform: skew(45deg);
+                -o-transform: skew(45deg);
             }
         }
 
@@ -97,143 +101,145 @@
         transition: opacity 0.3s ease-in-out;
     }
 
-    .content {
-        padding: 1rem;
-        text-align: left;
+    .project_image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        // aspect-ratio: 16/9;
+        // height: 11rem;
 
-        .technology_section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: left;
-            margin: 0.5rem;
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     height: 100%;
+        //     width: 100%;
+        //     background-image: linear-gradient(to right, #656871 0%, rgba(0, 0, 0, 0.05) 20%, #656871 40%, #656871 100%);
+        //     background-repeat: no-repeat;
+        //     animation: shimmer 1s linear infinite;
+        //     -webkit-animation: shimmer 1s linear infinite;
+        //     animation-delay: 0.2s;
+        //     background-size: cover;
+        // }
 
-            .title {
-                font-size: 1.5rem;
-                font-weight: 100;
-                background: -webkit-linear-gradient(var(--theme_color_blue),
-                        var(--theme_color_pink));
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                transition: 0.5s;
-                z-index: 1;
-                margin: 0.5rem 0;
-                padding: 0.5rem 0;
-                -webkit-transition: 0.5s;
-                -moz-transition: 0.5s;
-                -ms-transition: 0.5s;
-                -o-transition: 0.5s;
-            }
+        .content {
+            padding: 1rem;
+            text-align: left;
 
-            h6 {
-                color: rgba(255, 255, 255, 0.5);
-                font-size: 1rem;
-                font-weight: bolder;
-            }
-
-            .poetry_card_footer {
+            .technology_section {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .copy_icon {
-                height: 3rem;
-                position: relative;
-                width: 3rem;
-                border-radius: 50%;
-                display: flex;
+                flex-direction: column;
                 justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
-                transition: opacity .3s ease-in-out, transform .3s ease-in-out;
-                margin: .25rem;
-                transition: 0.3s all linear;
-                -webkit-transition: 0.3s all linear;
-                -moz-transition: 0.3s all linear;
-                -ms-transition: 0.3s all linear;
-                color: rgba(255, 255, 255, 0.75);
-                -o-transition: 0.3s all linear;
-                background-color: transparent;
-                border: 0.1rem solid rgba(255, 255, 255, .1);
+                align-items: left;
+                margin: 0.5rem;
 
-                :after {
-                    content: "";
-                    width: 100%;
-                    height: 100%;
-                    top: -5rem;
-                    left: 0;
+                .title {
+                    font-size: 1.25rem;
+                    font-weight: 100;
+                    background: linear-gradient(to right, #edd849, #FCF6BA, #edd849, #FBF5B7, #f6cd29);
+                    // background: linear-gradient(-45deg, var(--theme_color_blue), var(--theme_color_pink));
+                    background-clip: text;
+                    background-position: center;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: 0.5s;
+                    z-index: 1;
+                    margin: 0.5rem 0;
+                    padding: 0.5rem 0;
+                    -webkit-transition: 0.5s;
+                    -moz-transition: 0.5s;
+                    -ms-transition: 0.5s;
+                    -o-transition: 0.5s;
+                }
+
+                h6 {
+                    color: rgba(255, 255, 255, 0.2);
+                    font-size: 1rem;
+                    font-weight: bolder;
+                }
+
+                .poetry_card_footer {
                     display: flex;
-                    z-index: 2;
-                    justify-content: center;
-                    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    justify-content: space-between;
                     align-items: center;
-                    border-radius: 50%;
-                    transition: all .1s linear;
-                    -webkit-transition: all .1s linear;
-                    -moz-transition: all .1s linear;
-                    -ms-transition: all .1s linear;
-                    -o-transition: all .1s linear;
-                    position: absolute;
-                    background: linear-gradient(-45deg, var(--theme_color_blue), var(--theme_color_pink));
-                    -webkit-border-radius: 50%;
-                    -moz-border-radius: 50%;
-                    -ms-border-radius: 50%;
-                    -o-border-radius: 50%;
-                    z-index: -1;
                 }
 
-                :hover::after {
-                    top: 0;
-                }
-
-                span {
+                .copy_icon {
                     height: 3rem;
                     position: relative;
                     width: 3rem;
                     border-radius: 50%;
-                    -webkit-border-radius: 50%;
-                    -moz-border-radius: 50%;
-                    background: transparent;
-                    -ms-border-radius: 50%;
-                    -o-border-radius: 50%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    overflow: hidden;
-                }
+                    cursor: pointer;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+                    margin: .25rem;
+                    transition: 0.3s all linear;
+                    -webkit-transition: 0.3s all linear;
+                    -moz-transition: 0.3s all linear;
+                    -ms-transition: 0.3s all linear;
+                    color: rgba(255, 255, 255, 0.75);
+                    -o-transition: 0.3s all linear;
+                    background-color: transparent;
+                    border: 0.1rem solid rgba(255, 255, 255, .1);
 
-                &:hover {
-                    background-color: rgba(255, 255, 255, 0.1)
+                    :after {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        top: -5rem;
+                        left: 0;
+                        display: flex;
+                        z-index: 2;
+                        justify-content: center;
+                        transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                        align-items: center;
+                        border-radius: 50%;
+                        transition: all .1s linear;
+                        -webkit-transition: all .1s linear;
+                        -moz-transition: all .1s linear;
+                        -ms-transition: all .1s linear;
+                        -o-transition: all .1s linear;
+                        position: absolute;
+                        background: linear-gradient(-45deg, var(--theme_color_blue), var(--theme_color_pink));
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                        z-index: -1;
+                    }
+
+                    :hover::after {
+                        top: 0;
+                    }
+
+                    span {
+                        height: 3rem;
+                        position: relative;
+                        width: 3rem;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        background: transparent;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                    }
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.1)
+                    }
                 }
             }
-        }
 
-        .project_image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            aspect-ratio: 16/9;
-            height: 11rem;
-
-            // &::before {
-            //     content: "";
-            //     position: absolute;
-            //     height: 100%;
-            //     width: 100%;
-            //     background-image: linear-gradient(to right, #656871 0%, rgba(0, 0, 0, 0.05) 20%, #656871 40%, #656871 100%);
-            //     background-repeat: no-repeat;
-            //     animation: shimmer 1s linear infinite;
-            //     -webkit-animation: shimmer 1s linear infinite;
-            //     animation-delay: 0.2s;
-            //     background-size: cover;
-            // }
         }
     }
 }
