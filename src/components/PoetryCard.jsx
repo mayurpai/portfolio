@@ -88,7 +88,7 @@ export default function PoetryCard() {
                 <div className={styles.poetry_card_footer}>
                   <h6 className={pt_mono.className}>{item.date}</h6>
                   <CopyToClipboard
-                    text={item.description}
+                    text={item.description.join("\n")}
                     onCopy={() => {
                       setClipBoardState(true);
                       notify();
