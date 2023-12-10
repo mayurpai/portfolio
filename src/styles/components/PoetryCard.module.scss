@@ -9,7 +9,7 @@
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem;
     margin: 1rem;
-    max-width: 24rem;
+    max-width: 26rem;
     height: auto;
     position: relative;
     top: .5rem;
@@ -123,7 +123,7 @@
         // }
 
         .content {
-            padding: 1rem;
+            padding: 0.5rem;
             text-align: left;
 
             .technology_section {
@@ -133,9 +133,17 @@
                 align-items: left;
                 margin: 0.5rem;
 
-                .title {
+                .title_hindi {
                     font-size: 1.25rem;
                     font-weight: 100;
+                }
+                
+                .title_english {
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+
+                .title {
                     background: linear-gradient(to right, #edd849, #FCF6BA, #edd849, #FBF5B7, #f6cd29);
                     // background: linear-gradient(-45deg, var(--theme_color_blue), var(--theme_color_pink));
                     background-clip: text;

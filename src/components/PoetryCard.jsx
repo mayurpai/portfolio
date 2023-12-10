@@ -1,5 +1,5 @@
 "use client";
-import { Poetry } from "@/constants/Poetry";
+import { sortedPoetry } from "@/constants/Poetry";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
@@ -51,24 +51,13 @@ const notify = () => {
   });
 };
 
-function sortByDate(poetry) {
-  poetry.sort((a, b) => {
-    const date1 = new Date(a.date);
-    const date2 = new Date(b.date);
-    return date1 - date2;
-  });
-  return poetry;
-}
-
-
 export default function PoetryCard() {
   const [clipBoardState, setClipBoardState] = useState(false);
   const [isHovered, setHovered] = useState(false);
 
-  return Poetry.map((item, id) => {
+  return sortedPoetry.map((item, id) => {
     return (
       <div className={styles.poetry_card} key={id}>
-        {console.log(item)}
         <div className={styles.box}>
           <div className={styles.project_image}>
             <div className={styles.content}>
@@ -84,14 +73,15 @@ export default function PoetryCard() {
                 <h3
                   className={
                     item.category == "Hindi"
-                      ? `${styles.title} ${tiro_Devanagari_Hindi.className}`
-                      : `${styles.title}`
+                      ? `${styles.title_hindi} ${styles.title} ${tiro_Devanagari_Hindi.className}`
+                      : `${styles.title_english} ${styles.title} ${pt_mono.className}`
                   }
                 >
-                  {item?.description?.map((desc) => (
+                  {item?.description?.map((desc, index) => (
                     <>
                       {desc}
                       <br />
+                      {item.description.length - 1 != index ? <br /> : null}
                     </>
                   ))}
                 </h3>
@@ -131,7 +121,6 @@ export default function PoetryCard() {
             </div>
           </div>
         </div>
-        <button onClick={() => sortByDate(Poetry)}>Click</button>
         <ToastContainer />
       </div>
     );
