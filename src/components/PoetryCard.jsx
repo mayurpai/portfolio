@@ -54,7 +54,7 @@ const notify = () => {
 export default function PoetryCard() {
   const [clipBoardState, setClipBoardState] = useState(false);
   const [isHovered, setHovered] = useState(false);
-
+  console.log(sortedPoetry.length)
   return sortedPoetry.map((item, id) => {
     return (
       <div className={styles.poetry_card} key={id}>

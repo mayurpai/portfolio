@@ -795,6 +795,187 @@ const Poetry = [
     date: "March 31, 2022",
     category: category[0],
   },
+  {
+    description: [
+      "आपकी फ़रमाइश Par, हमने Chuna हयात",
+      "Sirf सामने Se देते Hai हाथ, पीट पीछे खंजर Marna Hai Inki औकात ",
+      "हमारी Hogi देर सारे लोगों Se मुलाक़ात, Kuch Se रिश्तें नाते Rahenge विश्वासघात",
+      "नाकामयाबी Ka दोष Denge Apne हालात, Jab Tak Na बने विख्यात",
+      "बिल्कुल अच्छी Nahi Hai Yeh देहात , हमारी Koi पूछता Nahi Hai खैरियत",
+      "Hogi Kuch परेशानियाँ Iss रात, क्या Patha कल Ho सुप्रभात",
+      "Ek दूसरे Ke दो साथ , Kijiye अपनो Se Kuch बात, यही Toh Hai हयात",
+      "Agar आपको Yeh अच्छी Lagi Toh Kariye अनुपात",
+    ],
+    date: "April 02, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Yeh दुनिया Hai हमसे न्यारा, कौन Hai Kiska सहारा",
+      "Aage बहुत Hai परेशानियाँ, इस्तेमाल Kare Apni शक्तियां",
+      "सबकी Hai एक Na एक कमज़ोरिया, जैसे Har एक Ki Hai परछाईयाँ",
+      "आसान Nahi Hai चुनौतियां, Rahenge बहुत कठिनाइयां",
+      "हार Kabhi Na मानोगे Karo अपने आपसे वादा, आंधी हो या तूफान डटे रहना Hai इरादा",
+    ],
+    date: "April 09, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "तुम क्या जानो, क्या हाल हुआ हैं हमारा",
+      "जबसे तुझे देखा हैं, एक ही सवाल हैं हमारा",
+      "क्यों हर पल सिर्फ और सिर्फ ख़याल हैं तुमारा?",
+    ],
+    date: "April 15, 2022",
+    category: category[1],
+  },
+  {
+    description: [
+      "Hum Kya Cheez Hai, Yeh Tum Apne Sapne Mai Bhi Nahi Soch Sakthe",
+      "Ke, Hum Kya Cheez Hai, Yeh Tum Apne Sapne Mai Bhi Nahi Soch Sakthe",
+      "Buddhi Tezz Hai Tumhari, Yeh Sirf Tum Maantho Ho, Duniya Tujhe Kya Samajhti Hai Tum Soch Bhi Nahi Sakthe",
+    ],
+    date: "December 29, 2021",
+    category: category[0],
+  },
+  {
+    description: [
+      "Hum Kithne Acche Hai, Yeh Tum Kabhi Samajh Nahi Paaoge",
+      "Ke, Hum Kithne Naazuk Hai, Yeh Tum Kabhi Jaan Nahi Paaoge",
+      "Hamare Chahne Waalon Se Puchlo, Tumne Heere Ko Khoya Hai, Jiski Jagah Tum Kabhi Bhar Nahi Paaoge",
+    ],
+    date: "December 29, 2021",
+    category: category[0],
+  },
+  {
+    description: [
+      "मिलता Hi क्या Hai Tum Jaise लोगों Ko, Jo दूसरों Ki ज़िंदगी Mai धक्कल अडाते Hai",
+      "Ke, हासिल Bhi क्या Hi Karloge, दूसरों Ki खुशियाँ बरबाद करने Mai",
+      "Zyada उड़ने Ki ज़रूरत Nahi, Aaj नक़ल Karke आगे Gaye Ho, Kal तलवे चाटके जीवन चलाओगे",
+    ],
+    date: "January 17, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Jaise 'एक सिक्के के दो पहलू होते हैं। '",
+      "Ussi Tarah, 'दोस्ती के दो पहलू होते हैं। '",
+      "Ek आपकी मदद Karne Ke Liye एक तरीका ढुंढेगा Aurr Dusra आपकी मदद Na Karne Ke बहाने ढुंढेगा!",
+    ],
+    date: "January 21, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "प्यार Unse Karo Jo आपके मुस्कुराने Ki वजह हैं",
+      "Unse Karo Jo आपके ख़ुशी Ka एहसास हैं",
+      "Unse Karo Jo आपके Liye बहुत खास हैं",
+      "Kya आप Hi Hai वो, Jiski मुझे तलाश हैं?",
+    ],
+    date: "February 21, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Iss ऑनलाइन Ke ज़माने Mai, Kisi Ko अपना प्यार वाकिफ Hai, Toh Kisi Ko अपनी दोस्ती",
+      "किसीने Unhe अपनाया, Toh किसीने Unhe ठुकराया",
+      "किसीने Unhe प्यार Diya, Toh किसीने Unhe फ्रेंड-जोन Kiya",
+      "किसीने Unke Message Ka इंतज़ार Kiya, Toh किसीने Unke Message Ka रिप्लाई Tak Nah Kiya",
+      "किसीने Unhe समय Diya, Toh किसीने Unhe फूटी कौड़ी Tak Nah Diya",
+      "किसीने Unhe ढेर सारा Message Kiya, Toh किसीने Unhe ब्लॉक Kiya",
+      "किसीने Unhe तुरंत रिप्लाई Diya, Toh किसीने ऑनलाइन रहकर Message Tak Nah Kiya",
+      "Abh आपने Yaha Tak पढ़ लिया, Toh खुद Se लिखे Aurr Bhejiye मुझे Kuch Naya!",
+    ],
+    date: "February 21, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Life's Three Most Important Lessons",
+      "1. You Should Value Those Who Value You.",
+      "2. You Should Be Kind To Those Who Are Kind To You.",
+      "3. You Should Make Time For Those Who Are Willing To Make Time For You.",
+    ],
+    date: "July 19, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Recoros, Records, Records, I Don't Lire It, I Avoid. But Records, Lires Me, I Can't Avoid.",
+    ],
+    date: "April 14, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Don't Expect People To Treat You The Way You Treat Them",
+      "Cuz You Don't Treat Other's The Same Way, As They Expect From You!",
+    ],
+    date: "April 27, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Only If You Relate You React",
+      "Sorry To Say, That Is Not How You Keep Our Friendship Intact",
+      "Sorry To Say, That's Having Our Friendship Impact",
+      "Sorry To Say, That's Not Some Fricking Contract",
+      "Sorry To Say, Our Equations Seem To Subtract",
+      "Sorry To Say, Emotions Is Something You Lacked",
+      "Sorry To Say, You Need To Correct Yourself For A Matter Of Fact",
+      "Sorry To Say, I Don't Give A Shit To Be In Contact",
+    ],
+    date: "May 01, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Today You Can Break Me As You Wish",
+      "But Tomorrow",
+      "Be Ready For Those Unbreakable Sharp Pieces To Cut You The Way I Wish!",
+    ],
+    date: "June 08, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Never Go All The Way To Help Someone Today.",
+      "They Will Just Thank You; But Tomorrow",
+      "They Won't Know Who You Are.",
+    ],
+    date: "May 31, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "If Experiencing 2 Losses Is An Art, Then Loving Your Best Friend Is The Picasso Of It.",
+    ],
+    date: "May 28, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "You May Find 100 Reasons To Quit, But You Still Have To Find That 1 Reason To Stay And Finish What You Started.",
+    ],
+    date: "May 27, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "It Doesn't Matter Whether It Is A Friendship Or A Romantic Relationship.",
+      "It Ends When One's Priorities Change.",
+    ],
+    date: "July 17, 2022",
+    category: category[0],
+  },
+  {
+    description: [
+      "Even If You Think You Can Use Me As Many Times As You Wish.",
+      "Don't Forget That I Can Throw You Out Once And For All.",
+    ],
+    date: "June 20, 2022",
+    category: category[0],
+  },
 ];
 
 const sortedPoetry = sortByDate(Poetry);
