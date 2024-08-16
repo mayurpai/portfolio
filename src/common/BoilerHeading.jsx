@@ -1,6 +1,7 @@
 import TagsCreator from "@/components/TagsCreator";
 import "../app/globals.scss";
 import { createAnimatedText } from "./Animation";
+import ScrambleText from "@/components/ScrambleText";
 
 export default function BoilerHeading({ title }) {
   return (

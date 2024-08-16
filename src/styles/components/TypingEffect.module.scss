@@ -1,0 +1,14 @@
+.cursor {
+    display: inline-block;
+    width: 0.5rem;
+    height: 1em;
+    background: #eaeaea;
+    animation: blink 0.5s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+

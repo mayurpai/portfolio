@@ -23,7 +23,7 @@
 }
 
 :root {
-  --background_color: #080c0f;
+  --background_color: #161f27;
   --theme_color_blue: #09fdd9;
   --theme_color_pink: #fd0953;
   --theme_color_gold_one: #f6cd29;
@@ -46,8 +46,8 @@
   place-items: center;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  //scroll-snap-type: y mandatory;
-  //scroll-padding-top: 6rem;
+//   scroll-snap-type: y mandatory;
+//   scroll-padding-top: 6rem;
 }
 
 ::-webkit-scrollbar {

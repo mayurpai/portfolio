@@ -6,31 +6,29 @@
     position: relative;
     min-width: 24rem;
     height: 30rem;
-    border-radius: .5rem;
-    -webkit-border-radius: .5rem;
-    -moz-border-radius: .5rem;
-    -ms-border-radius: .5rem;
-    -o-border-radius: .5rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
     margin: 1rem;
-
-
 
     .box {
         position: absolute;
-        top: .5rem;
-        left: .5rem;
-        right: .5rem;
-        bottom: .5rem;
+        top: 0.5rem;
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
         background: #141a20a7;
-        border-radius: .5rem;
+        border-radius: 0.5rem;
         border: 0.1rem solid #27292c;
         box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.5);
         transition: 0.5s;
         overflow: hidden;
-        -webkit-border-radius: .5rem;
-        -moz-border-radius: .5rem;
-        -ms-border-radius: .5rem;
-        -o-border-radius: .5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
         -webkit-transition: 0.5s;
         -moz-transition: 0.5s;
         -ms-transition: 0.5s;
@@ -38,7 +36,7 @@
 
         &:hover {
             transform: scale(1.05, 1.05);
-            box-shadow: 0 0 0.2rem rgba(255, 255, 255, .75);
+            box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.75);
             -webkit-transform: scale(1.05, 1.05);
             -moz-transform: scale(1.05, 1.05);
             -ms-transform: scale(1.05, 1.05);
@@ -50,12 +48,12 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                box-shadow: inset 0rem 0rem 0.1rem rgba(255, 255, 255, .1);
-                border-radius: .5rem;
-                -webkit-border-radius: .5rem;
-                -moz-border-radius: .5rem;
-                -ms-border-radius: .5rem;
-                -o-border-radius: .5rem;
+                box-shadow: inset 0rem 0rem 0.1rem rgba(255, 255, 255, 0.1);
+                border-radius: 0.5rem;
+                -webkit-border-radius: 0.5rem;
+                -moz-border-radius: 0.5rem;
+                -ms-border-radius: 0.5rem;
+                -o-border-radius: 0.5rem;
                 transition: transform var(--transition-duration) var(--transition-easing);
                 overflow: hidden;
                 -webkit-transition: transform var(--transition-duration) var(--transition-easing);
@@ -69,7 +67,7 @@
                 }
 
                 &::before {
-                    content: '';
+                    content: "";
                     background: rgba(white, 0.4);
                     width: 60%;
                     height: 100%;
@@ -82,7 +80,6 @@
                     animation-duration: var(--transition-duration);
                     animation-timing-function: var(--transition-easing);
                     animation-fill-mode: forwards;
-
                 }
             }
 
@@ -92,7 +89,7 @@
         }
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             z-index: -1;
             width: 100%;
@@ -111,7 +108,7 @@
                 bottom: -2rem;
                 right: 0.5rem;
                 font-size: 6rem;
-                color: rgba(255, 255, 255, 0.05)
+                color: rgba(255, 255, 255, 0.05);
             }
 
             .title {
@@ -132,8 +129,7 @@
             .description {
                 font-size: 1rem;
                 font-weight: bold;
-                background: -webkit-linear-gradient(var(--theme_color_blue),
-                        var(--theme_color_pink));
+                background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -204,7 +200,6 @@
         left: 150%;
     }
 }
-
 
 @keyframes shimmer {
     0% {

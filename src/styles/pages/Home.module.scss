@@ -1,3 +1,13 @@
+@font-face {
+    font-family: JetBrainsMonoNL;
+    // font-weight: bold;
+    src: url("../../fonts/JetBrainsMonoNL-SemiBold.ttf");
+}
+
+.font {
+    font-family: JetBrainsMonoNL;
+}
+
 .home_container,
 .projects_conatiner {
   position: relative;
@@ -55,7 +65,7 @@
 
       .about_section_body_container {
         color: var(--highlights);
-        font-weight: bold;
+        font-weight: 400;
         font-size: 1rem;
         background: -webkit-linear-gradient(var(--theme_color_blue),
             var(--theme_color_pink));

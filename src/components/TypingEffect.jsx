@@ -1,31 +1,32 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from 'react';
+import styles from "../styles/components/TypingEffect.module.scss";
 
-const TypingEffect = ({ text }) => {
-  const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
+const TypingEffect = ({ htmlString, typingSpeed = 100 }) => {
+    const [displayedText, setDisplayedText] = useState('');
+    const [typingComplete, setTypingComplete] = useState(false);
+    const index = useRef(0);
 
-  useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeoutId = setTimeout(() => {
-        setDisplayText(text.substring(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      }, 0); // Adjust the typing speed as needed
-      return () => clearTimeout(timeoutId);
-    }
-  }, [currentIndex, text]);
+    useEffect(() => {
+      if (index.current < htmlString.length) {
+        const timer = setInterval(() => {
+          setDisplayedText(prev => prev + (htmlString[index.current] || ''));
+          index.current += 1;
 
-  const parsedText = displayText.replace(/<br\s*\/?>/g, "\n");
+          if (index.current >= htmlString.length) {
+            clearInterval(timer);
+            setTypingComplete(true); // Set typingComplete to true when done
+          }
+        }, typingSpeed);
+
+        return () => clearInterval(timer);
+      }
+    }, [htmlString, typingSpeed]);
 
   return (
-    <p>
-      {parsedText.split("\n").map((line, index) => (
-        <React.Fragment key={index}>
-          {line}
-          {index < parsedText.split("\n").length - 1 && <br />}
-        </React.Fragment>
-      ))}
-    </p>
+    <div>
+      <span dangerouslySetInnerHTML={{ __html: displayedText }} />
+      {!typingComplete && <span className={styles.cursor}></span>}
+    </div>
   );
 };
 
