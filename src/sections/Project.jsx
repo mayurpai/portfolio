@@ -8,7 +8,7 @@ export default function Project() {
   return (
     <section className={styles.projects_conatiner} id="projects">
       <div className={styles.projects_body_container}>
-        <BoilerHeading title={heading} />
+        <BoilerHeading title={heading} header="h2"/>
         <div className={styles.project_section_container}>
           <Card />
         </div>

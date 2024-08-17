@@ -1,0 +1,17 @@
+.about_section_container {
+    position: relative;
+    margin-left: 9rem;
+    text-align: left;
+
+    .about_section_body_container {
+        color: var(--highlights);
+        font-weight: 400;
+        font-size: 1.1rem;
+        background: -webkit-linear-gradient(var(--theme_color_blue), var(--theme_color_pink));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: calc(100% - 9rem);
+        line-height: 1.3rem;
+    }
+}

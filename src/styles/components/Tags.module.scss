@@ -1,5 +1,11 @@
+@font-face {
+    font-family: La Belle Aurore;
+    font-weight: bold;
+    src: url("../../fonts/La\ Belle\ Aurore.ttf");
+  }
+
 .tag {
-  font-family: "La Belle Aurore", cursive;
+  font-family: La Belle Aurore;
   color: var(--highlights);
   font-size: 1.25rem;
   height: fit-content;

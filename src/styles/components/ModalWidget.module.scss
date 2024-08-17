@@ -11,13 +11,17 @@
         color: var(--theme_color_blue);
         box-shadow: 0.1rem 0.1rem var(--theme_color_pink);
         border-radius: 0.5rem;
-        background-color: rgba(239, 234, 221, 0.1);
+        background-color: transparent;
         height: 2.25rem;
         width: 2.25rem;
         border: 0.1rem solid var(--theme_color_blue);
         font-size: 1rem;
         font-weight: 100;
         cursor: pointer;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+          }
     }
 
     .modalHeader {

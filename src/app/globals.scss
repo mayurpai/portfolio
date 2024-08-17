@@ -47,7 +47,7 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
 //   scroll-snap-type: y mandatory;
-//   scroll-padding-top: 6rem;
+  scroll-padding-top: 18rem;
 }
 
 ::-webkit-scrollbar {
@@ -190,7 +190,7 @@ ul {
   font-style: normal;
   font-weight: bolder;
   margin: 0 8rem;
-  font-size: 5.5rem;
+//   font-size: 5.5rem;
 
   ul li {
     color: var(--heading);

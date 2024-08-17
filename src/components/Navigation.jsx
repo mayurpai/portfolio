@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/components/Navigation.module.scss";
 
-export default function Navigation({ handlePageChange }) {
+export default function Navigation() {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
@@ -15,11 +15,7 @@ export default function Navigation({ handlePageChange }) {
   return (
     <nav className={`${styles.navigation_links}`}>
       <ul className={styles.links}>
-        <li
-          onClick={() => {
-            handlePageChange("/");
-          }}
-        >
+        <li>
           <Link href="/">
             <Image
               className={styles.logo}
@@ -33,14 +29,14 @@ export default function Navigation({ handlePageChange }) {
         </li>
         <li>
           <div onClick={openModal}>
-            <Button buttonName="Let's Connect!"></Button>
+            <Button buttonName="Let's Debug Our Connection"></Button>
           </div>
         </li>
       </ul>
       <ModalWidget
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        contentLabel="Let's Work Together!"
+        contentLabel="Crush Code Together!"
       ></ModalWidget>
     </nav>
   );

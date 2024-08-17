@@ -6,6 +6,7 @@ import {
     faInstagram,
     faLinkedin,
     faWhatsapp,
+    faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 library.add(faInstagram, faLinkedin, faGithub, faWhatsapp);
 
@@ -40,10 +41,10 @@ export const Icons = [
     color: colors.instagram,
   },
   {
-    icon: faFacebook,
+    icon: faYoutube,
     heading: "Facebook",
-    username: "मयूर पै",
-    link: Social.Facebook,
+    username: "Mayur Pai B H",
+    link: Social.YouTube,
   },
   {
     icon: faWhatsapp,

@@ -54,4 +54,14 @@
         // flex-direction: column;
         flex-wrap: wrap;
     }
+
+    .markup_end {
+        position: relative;
+        left: -50%;
+        transform: translate(50%);
+        -webkit-transform: translate(50%);
+        -moz-transform: translate(50%);
+        -ms-transform: translate(50%);
+        -o-transform: translate(50%);
+      }
 }
