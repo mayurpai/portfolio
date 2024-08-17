@@ -1,5 +1,5 @@
 import { PT_Mono } from "next/font/google";
-import styles from "@/styles/components/About.module.scss";
+import styles from "@/styles/sections/About.module.scss";
 import ScrambleText from "@/components/ScrambleText";
 import TypingEffect from "@/components/TypingEffect";
 import { AboutDesc } from "@/constants/AboutDesc";

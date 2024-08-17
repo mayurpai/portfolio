@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import styles from "../styles/pages/Home.module.scss";
+import styles from "../styles/sections/Project.module.scss";
 import BoilerHeading from "@/common/BoilerHeading";
 
 const heading = "Projects";
