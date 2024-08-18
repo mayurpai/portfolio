@@ -3,7 +3,7 @@ import BoilerHeading from "@/common/BoilerHeading";
 import PoetryCard from "@/components/PoetryCard";
 import TagsCreator from "@/components/TagsCreator";
 import About from "@/sections/About";
-import styles from "../../styles/pages/LafzonKaJadugar.module.scss";
+import styles from "@/styles/pages/LafzonKaJadugar.module.scss";
 
 const heading = "Lafzon Ka Jadugar";
 

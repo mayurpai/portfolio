@@ -1,4 +1,4 @@
-import Home from "./Home/page";
+import Home from "./Index/page";
 import LafzonKaJadugar from "./Lafzon-Ka-Jadugar/page";
 import "./globals.scss";
 

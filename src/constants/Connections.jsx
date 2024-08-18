@@ -1,36 +1,57 @@
 import { Social } from "@/constants/Social";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faGithub,
-  faInstagram,
-  faLinkedin,
+    faFacebook,
+    faGithub,
+    faInstagram,
+    faLinkedin,
+    faWhatsapp,
+    faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 library.add(faInstagram, faLinkedin, faGithub);
 
 export const Connections = [
-  {
-    icon: faLinkedin,
-    heading: "LinkedIn",
-    username: "@mayur-pai5",
-    link: Social.LinkedIn,
-  },
-  {
-    icon: faGithub,
-    heading: "GitHub",
-    username: "@mayurpai",
-    link: Social.GitHub,
-  },
-  {
-    icon: faInstagram,
-    heading: "Instagram",
-    username: "@mayurpai19",
-    link: Social.Instagram,
-  },
-  {
-    icon: faEnvelope,
-    heading: "Email",
-    username: "mayur5pai@gmail.com",
-    link: Social.Email,
-  },
+    {
+        icon: faLinkedin,
+        heading: "LinkedIn",
+        username: "@mayur-pai5",
+        link: Social.LinkedIn,
+    },
+    {
+        icon: faGithub,
+        heading: "GitHub",
+        username: "@mayurpai",
+        link: Social.GitHub,
+    },
+    {
+        icon: faInstagram,
+        heading: "Instagram",
+        username: "@mayurpai19",
+        link: Social.Instagram,
+    },
+    {
+        icon: faEnvelope,
+        heading: "Email",
+        username: "mayur5pai@gmail.com",
+        link: Social.Email,
+    },
+    {
+        icon: faYoutube,
+        heading: "YouTube",
+        username: "@mayurpai19",
+        link: Social.YouTube,
+    },
+    {
+        icon: faWhatsapp,
+        heading: "WhatsApp",
+        username: "मयूर पै",
+        link: Social.WhatsApp,
+    },
+    {
+        icon: faFacebook,
+        heading: "Facebook",
+        username: "Mayur Pai",
+        link: Social.Facebook,
+    },
 ];

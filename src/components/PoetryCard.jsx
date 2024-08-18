@@ -9,7 +9,7 @@ import { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import styles from "../styles/components/PoetryCard.module.scss";
+import styles from "@/styles/components/PoetryCard.module.scss";
 library.add(faCopy, faInstagram);
 
 const sigmar_One = Sigmar_One({

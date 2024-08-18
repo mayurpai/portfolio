@@ -2,7 +2,7 @@ import { Connections } from "@/constants/Connections";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PT_Mono } from "next/font/google";
 import Link from "next/link";
-import styles from "../styles/components/Connections.module.scss";
+import styles from "@/styles/components/Connections.module.scss";
 
 
 const pt_mono = PT_Mono({

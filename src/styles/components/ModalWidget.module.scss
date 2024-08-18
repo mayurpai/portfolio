@@ -1,13 +1,17 @@
 .modalMain {
     position: relative;
+    height: 100%;
 
     .modalMainHeader {
         display: flex;
         justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        // background-color: rgba(16, 21, 26, 0.3);
     }
 
     .closeButtonStyles {
-        position: relative;
         color: var(--blue);
         box-shadow: 0.1rem 0.1rem var(--pink);
         border-radius: 0.5rem;
@@ -21,11 +25,10 @@
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.05);
-          }
+        }
     }
 
     .modalHeader {
-        position: relative;
         height: 2.25rem;
         color: var(--blue);
         display: flex;
@@ -38,6 +41,8 @@
 
     .modalHolder {
         position: relative;
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
+        overflow-y: auto;
+        height: calc(100% - 3.5rem);
     }
 }

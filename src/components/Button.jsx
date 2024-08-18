@@ -5,7 +5,7 @@ import styles from "../styles/components/Button.module.scss";
 export default function Button(props) {
     return (
         <>
-            {props?.buttonName == "Stalk My Dev Resume" ? <Link passHref href="resume/Mayur_Pai_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            {props?.buttonName == "Stalk My Dev Resume" ? <Link passHref href="docs/Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <div className={styles.button}>
                     <FontAwesomeIcon
                         icon={props.icon}

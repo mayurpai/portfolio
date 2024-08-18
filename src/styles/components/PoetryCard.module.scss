@@ -16,10 +16,10 @@
     left: .5rem;
     right: .5rem;
     bottom: .5rem;
-    background: #141a20a7;
+    background: var(--light-navy);
     border-radius: .5rem;
-    border: 0.2rem solid #27292c;
-    box-shadow: inset 0 0 0.75rem 0.1rem rgba(255, 255, 255, 0.075);
+    border: 0.1rem solid var(--green-tint);
+    box-shadow: 0 0 1rem var(--green-tint);
     transition: 0.5s;
     overflow: hidden;
     -webkit-border-radius: .5rem;
@@ -37,7 +37,7 @@
         -moz-transform: scale(1.025);
         -ms-transform: scale(1.025);
         -o-transform: scale(1.025);
-        background-color: rgba(255, 255, 255, 0.025);
+        background: var(--lightest-navy);
         border: 0.1rem solid #edd849;
 
         .project_image {
@@ -46,7 +46,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: inset 0rem 0rem 0.1rem rgba(255, 255, 255, .1);
+            box-shadow: inset 0rem 0rem 0.1rem var(--green-tint);
             border-radius: .5rem;
             -webkit-border-radius: .5rem;
             -moz-border-radius: .5rem;
