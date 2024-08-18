@@ -1,0 +1,31 @@
+.skills_conatiner {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    // scroll-snap-align: start;
+
+    .skills_body_container {
+        position: relative;
+        width: 100vw;
+        height: fit-content;
+
+        .skills_heading_container {
+            font-family: Coolvetica Rg;
+            font-style: normal;
+            font-weight: bolder;
+            margin: 0 8rem;
+            font-size: 5.5rem;
+        }
+
+        .skills_section_container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+}

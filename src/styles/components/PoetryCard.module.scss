@@ -137,7 +137,7 @@
                     font-size: 1.25rem;
                     font-weight: 100;
                 }
-                
+
                 .title_english {
                     font-size: 1rem;
                     font-weight: 600;
@@ -145,7 +145,7 @@
 
                 .title {
                     background: linear-gradient(to right, #edd849, #FCF6BA, #edd849, #FBF5B7, #f6cd29);
-                    // background: linear-gradient(-45deg, var(--theme_color_blue), var(--theme_color_pink));
+                    // background: linear-gradient(-45deg, var(--blue), var(--pink));
                     background-clip: text;
                     background-position: center;
                     -webkit-background-clip: text;
@@ -214,7 +214,7 @@
                         -ms-transition: all .1s linear;
                         -o-transition: all .1s linear;
                         position: absolute;
-                        background: linear-gradient(-45deg, var(--theme_color_blue), var(--theme_color_pink));
+                        background: linear-gradient(-45deg, var(--blue), var(--pink));
                         -webkit-border-radius: 50%;
                         -moz-border-radius: 50%;
                         -ms-border-radius: 50%;

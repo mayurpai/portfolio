@@ -8,13 +8,13 @@
 
     .closeButtonStyles {
         position: relative;
-        color: var(--theme_color_blue);
-        box-shadow: 0.1rem 0.1rem var(--theme_color_pink);
+        color: var(--blue);
+        box-shadow: 0.1rem 0.1rem var(--pink);
         border-radius: 0.5rem;
         background-color: transparent;
         height: 2.25rem;
         width: 2.25rem;
-        border: 0.1rem solid var(--theme_color_blue);
+        border: 0.1rem solid var(--blue);
         font-size: 1rem;
         font-weight: 100;
         cursor: pointer;
@@ -27,7 +27,7 @@
     .modalHeader {
         position: relative;
         height: 2.25rem;
-        color: var(--theme_color_blue);
+        color: var(--blue);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

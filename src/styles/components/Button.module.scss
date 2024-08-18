@@ -1,9 +1,9 @@
 .button {
     font-family: Coolvetica Rg;
-    border: 0.1rem solid var(--theme_color_blue);
-    color: var(--theme_color_blue);
+    border: 0.1rem solid var(--blue);
+    color: var(--blue);
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: var(--light-navy);
     font-weight: bolder;
     width: fit-content;
     height: 3rem;
@@ -14,14 +14,16 @@
     align-items: center;
     font-size: 1.25rem;
     border-radius: 0.5rem;
-    box-shadow: 0.2rem 0.2rem var(--theme_color_pink);
     -webkit-border-radius: 0.5rem;
     -moz-border-radius: 0.5rem;
     -ms-border-radius: 0.5rem;
     -o-border-radius: 0.5rem;
     cursor: pointer;
+    transition: 0.25s ease-in-out;
 
     &:hover {
-        background-color: rgba(255, 255, 255, 0.05);
+        transform: translateX(-0.25rem) translateY(-0.25rem);
+        box-shadow: 0.2rem 0.2rem var(--pink);
+        background-color: var(--light-navy);
     }
 }

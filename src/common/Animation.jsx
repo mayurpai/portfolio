@@ -9,16 +9,16 @@ const move = keyframes`
 
   33% {
     opacity: 1;
-    color: var(--theme_color_blue);
+    color: var(--blue);
     width: auto;
-    text-shadow: 0.2rem 0.2rem var(--theme_color_pink);
+    text-shadow: 0.2rem 0.2rem var(--pink);
   }
 
   66% {
     opacity: 1;
-    color: var(--theme_color_pink);
+    color: var(--pink);
     width: auto;
-    text-shadow: 0.2rem 0.2rem var(--theme_color_blue);
+    text-shadow: 0.2rem 0.2rem var(--blue);
   }
 
   100% {

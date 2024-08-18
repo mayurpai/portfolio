@@ -1,15 +1,16 @@
 "use client";
 import BoilerHeading from "@/common/BoilerHeading";
+import Button from "@/components/Button";
 import Icon from "@/components/Icon";
 import TagsCreator from "@/components/TagsCreator";
 import About from "@/sections/About";
 import Project from "@/sections/Project";
-import styles from "../../styles/pages/Home.module.scss";
-import Button from "@/components/Button";
+import Skills from "@/sections/Skills";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
     faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import styles from "../../styles/pages/Home.module.scss";
 
 library.add(faMagnifyingGlass);
 
@@ -20,7 +21,7 @@ export default function Home() {
         <div>
             <section className={styles.home_container} id="home">
                 <div className={styles.home_body_container}>
-                    <BoilerHeading title={heading} header="h1"/>
+                    <BoilerHeading title={heading} header="h1" />
                     <TagsCreator
                         tag="p"
                         style={{ marginLeft: "7.5rem" }}
@@ -47,7 +48,8 @@ export default function Home() {
                     ></TagsCreator>
                 </div>
                 <Project />
-            <Button buttonName="Stalk My Dev Resume" icon={faMagnifyingGlass} />
+                <Skills />
+                <Button buttonName="Stalk My Dev Resume" icon={faMagnifyingGlass} />
             </section>
         </div>
     );

@@ -1,23 +1,23 @@
 .technology_main {
-
     display: flex;
     flex-wrap: wrap;
 
     .technology {
-        border: 0.05rem solid rgba(255, 255, 255, 0.3);
+        // border: 0.05rem solid rgba(255, 255, 255, 0.3);
         position: relative;
         display: flex;
         margin: 0.24rem;
-        padding: 0.25rem;
-        border-radius: 0.5rem;
-        -webkit-border-radius: 0.5rem;
-        -moz-border-radius: 0.5rem;
-        -ms-border-radius: 0.5rem;
-        -o-border-radius: 0.5rem;
+        padding: 0.3rem 0.75rem;
+        border-radius: 0.56rem;
+        -webkit-border-radius: 0.56rem;
+        -moz-border-radius: 0.56rem;
+        -ms-border-radius: 0.56rem;
+        -o-border-radius: 0.56rem;
+        background-color: rgba(45, 212, 191, 0.1);
 
         p {
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.5);
+            // font-weight: bold;
+            color: var(--green);
         }
     }
 }
