@@ -1,4 +1,4 @@
-.skills_conatiner {
+.experience_conatiner {
     position: relative;
     width: 100vw;
     display: flex;
@@ -7,12 +7,12 @@
     align-items: center;
     // scroll-snap-align: start;
 
-    .skills_body_container {
-        position: relative;
-        width: 100vw;
-        height: fit-content;
+    .experience_body_container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 2rem;
 
-        .skills_heading_container {
+        .experience_heading_container {
             font-family: Coolvetica Rg;
             font-style: normal;
             font-weight: bolder;
@@ -20,7 +20,7 @@
             font-size: 5.5rem;
         }
 
-        .skills_section_container {
+        .experience_section_container {
             position: relative;
             display: flex;
             justify-content: center;

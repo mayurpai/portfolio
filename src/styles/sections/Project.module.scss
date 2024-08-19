@@ -1,16 +1,19 @@
 .projects_conatiner {
-    position: relative;
-    width: 100vw;
+    // position: relative;
+    // width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 4rem 0;
     // scroll-snap-align: start;
 
     .projects_body_container {
         position: relative;
-        width: 100vw;
-        height: fit-content;
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 2rem;
+        // height: fit-content;
 
         .project_heading_container {
             font-family: Coolvetica Rg;

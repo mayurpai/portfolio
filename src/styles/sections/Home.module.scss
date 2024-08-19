@@ -1,6 +1,7 @@
 .home_container {
     position: relative;
     width: 100vw;
+    // padding: 4rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -8,9 +9,9 @@
     // scroll-snap-align: start;
 
     .home_body_container {
-        position: relative;
-        width: 100vw;
-        height: fit-content;
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 2rem;
 
         .main_heading_container {
             font-family: Coolvetica Rg;

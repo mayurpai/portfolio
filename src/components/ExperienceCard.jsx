@@ -14,6 +14,8 @@ import Tilt from "react-vanilla-tilt";
 import styles from "../styles/components/Card.module.scss";
 import Image from "next/image";
 import Technology from "./Technology";
+import Experience from "@/sections/Experience";
+import { Experiences } from "@/constants/Experiences";
 library.add(faGithub, faLink, faCode, faHtml5, faCss3Alt, faJs, faReact);
 
 const sigmar_One = Sigmar_One({
@@ -36,8 +38,8 @@ const imageStyle = {
   objectFit: "cover",
 };
 
-export default function Card() {
-  return Projects.map((item, id) => {
+export default function ExperienceCard() {
+  return Experiences.map((item, id) => {
     let link = item.webLink == "#" ? item.codeLink : item.webLink;
     const isTitleTooLong = item.title.length > 16;
     const isTechnologyTooLong = item.technology.length > 3;

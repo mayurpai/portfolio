@@ -49,11 +49,12 @@ export default function RootLayout({ children }) {
                 <link rel="icon" href="/images/mayur_pai.ico" type="image/x-icon" />
             </Head>
             <body><div className="main_app_container">
-                <Navigation />
-                <BoilerHeader />
-                {children}
-                <BoilerFooter />
-                <BottomNavigation/>
+                <div className="app_conatiner">
+                    <Navigation />
+                    <BoilerHeader />
+                    {children}
+                    <BoilerFooter />
+                    <BottomNavigation /></div>
             </div></body>
         </html>
     );

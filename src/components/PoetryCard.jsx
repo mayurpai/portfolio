@@ -65,7 +65,7 @@ export default function PoetryCard() {
                       style={imageStyle}
                       fill
                       src={item.imgLink}
-                      objectFit="cover"
+                      style={{objectFit:"cover"}}
                       alt={item.title}
                       priority={true}
                     ></Image> */}

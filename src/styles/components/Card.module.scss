@@ -1,5 +1,73 @@
-.tilt {
-    box-shadow: 0 0px 0px var(--green) !important;
+.experience_container {
+    padding: 80px 0;
+    background: var(--black);
+    color: var(--white);
+}
+
+.experience_body_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: var(--dark-slate);
+        transform: translateX(-50%);
+    }
+}
+
+.timeline_item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    padding-left: 50px;
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+        padding-right: 50px;
+        padding-left: 0;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.timeline_item_circle {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--blue);
+    border-radius: 50%;
+    border: 3px solid var(--black);
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--navy-shadow);
+}
+
+.timeline_item_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .card {
@@ -7,10 +75,6 @@
     min-width: 24rem;
     height: 30rem;
     border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
     margin: 1rem;
 
     .box {
@@ -25,42 +89,16 @@
         box-shadow: 0 0 1rem var(--green-tint);
         transition: 0.5s;
         overflow: hidden;
-        -webkit-border-radius: 0.5rem;
-        -moz-border-radius: 0.5rem;
-        -ms-border-radius: 0.5rem;
-        -o-border-radius: 0.5rem;
-        -webkit-transition: 0.5s;
-        -moz-transition: 0.5s;
-        -ms-transition: 0.5s;
-        -o-transition: 0.5s;
 
         &:hover {
             background: var(--lightest-navy);
             transform: scale(1.05, 1.05);
             box-shadow: 0 0 0.2rem var(--white);
-            -webkit-transform: scale(1.05, 1.05);
-            -moz-transform: scale(1.05, 1.05);
-            -ms-transform: scale(1.05, 1.05);
-            -o-transform: scale(1.05, 1.05);
 
             .project_image {
-                --transition-duration: 500ms;
-                --transition-easing: ease-out;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 box-shadow: inset 0rem 0rem 0.1rem var(--green-tint);
                 border-radius: 0.5rem;
-                -webkit-border-radius: 0.5rem;
-                -moz-border-radius: 0.5rem;
-                -ms-border-radius: 0.5rem;
-                -o-border-radius: 0.5rem;
-                transition: transform var(--transition-duration) var(--transition-easing);
-                overflow: hidden;
-                -webkit-transition: transform var(--transition-duration) var(--transition-easing);
-                -moz-transition: transform var(--transition-duration) var(--transition-easing);
-                -ms-transition: transform var(--transition-duration) var(--transition-easing);
-                -o-transition: transform var(--transition-duration) var(--transition-easing);
+                transition: transform 500ms ease-out;
                 position: relative;
 
                 &:hover::before {
@@ -76,10 +114,10 @@
                     left: -125%;
                     transform: skew(45deg);
                     position: absolute;
-                    transition: left var(--transition-duration) var(--transition-easing);
+                    transition: left 500ms ease-out;
                     animation-name: beforeAnimation;
-                    animation-duration: var(--transition-duration);
-                    animation-timing-function: var(--transition-easing);
+                    animation-duration: 500ms;
+                    animation-timing-function: ease-out;
                     animation-fill-mode: forwards;
                 }
             }
@@ -117,13 +155,8 @@
                 font-weight: bold;
                 color: var(--blue);
                 transition: 0.5s;
-                z-index: 1;
                 margin: 0.5rem 0;
                 font-family: Coolvetica Rg;
-                -webkit-transition: 0.5s;
-                -moz-transition: 0.5s;
-                -ms-transition: 0.5s;
-                -o-transition: 0.5s;
                 color: whitesmoke;
             }
 
@@ -139,31 +172,24 @@
                 text-align: left;
             }
 
-            .technology_section {
+            .roles {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: left;
                 margin: 0.5rem;
 
-                .technology_section {
+                .role_item {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: left;
-                    margin: 0.5rem;
-
-                    h6 {
-                        color: rgba(255, 255, 255, 0.5);
-                        font-size: 1rem;
-                        font-weight: bolder;
-                    }
+                    justify-content: space-between;
+                    margin-bottom: 8px;
                 }
 
-                h6 {
-                    color: rgba(255, 255, 255, 0.5);
-                    font-size: 1rem;
-                    font-weight: bolder;
+                .role {
+                    font-weight: 600;
+                    color: var(--white);
+                }
+
+                .date {
+                    color: var(--slate);
                 }
             }
 
@@ -174,19 +200,6 @@
                 width: 100%;
                 aspect-ratio: 16/9;
                 height: 11rem;
-
-                // &::before {
-                //     content: "";
-                //     position: absolute;
-                //     height: 100%;
-                //     width: 100%;
-                //     background-image: linear-gradient(to right, #656871 0%, rgba(0, 0, 0, 0.05) 20%, #656871 40%, #656871 100%);
-                //     background-repeat: no-repeat;
-                //     animation: shimmer 1s linear infinite;
-                //     -webkit-animation: shimmer 1s linear infinite;
-                //     animation-delay: 0.2s;
-                //     background-size: cover;
-                // }
             }
         }
     }
@@ -199,15 +212,5 @@
 
     to {
         left: 150%;
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -125px 0;
-    }
-
-    100% {
-        background-position: 125px 0;
     }
 }
