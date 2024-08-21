@@ -1,11 +1,7 @@
-.tilt {
-    box-shadow: 0 0px 0px var(--green) !important;
-}
-
 .card {
     position: relative;
-    min-width: 24rem;
-    height: 30rem;
+    min-width: 36rem;
+    height: 22rem;
     border-radius: 0.5rem;
     margin: 1rem;
     -webkit-border-radius: 0.5rem;
@@ -36,14 +32,10 @@
 
         &:hover {
             background: var(--lightest-navy);
-            transform: scale(1.05, 1.05);
             box-shadow: 0 0 0.2rem var(--white);
-            -webkit-transform: scale(1.05, 1.05);
-            -moz-transform: scale(1.05, 1.05);
-            -ms-transform: scale(1.05, 1.05);
-            -o-transform: scale(1.05, 1.05);
+            transform: translateY(-0.5rem);
 
-            .project_image {
+            .logo {
                 --transition-duration: 500ms;
                 --transition-easing: ease-out;
                 display: flex;
@@ -63,7 +55,10 @@
                 -ms-transition: transform var(--transition-duration) var(--transition-easing);
                 -o-transition: transform var(--transition-duration) var(--transition-easing);
 
-                transition: transform 500ms ease-out;
+                transition:
+                    transform 500ms ease-out,
+                    box-shadow 500ms ease-out;
+                transform: none;
                 position: relative;
 
                 &:hover::before {
@@ -108,55 +103,86 @@
 
         .content {
             padding: 1rem;
-            text-align: left;
+            // text-align: left;
+            display: flex;
+            // width: 100%;
+            // justify-content: space-between;
+            // flex-direction: row-reverse;
 
             .id {
-                position: absolute;
-                bottom: -2rem;
-                right: 0.5rem;
-                font-size: 6rem;
-                color: rgba(255, 255, 255, 0.05);
-            }
-
-            .title {
-                font-size: 2rem;
-                font-weight: bold;
-                z-index: 1;
-                color: var(--blue);
-                transition: 0.5s;
-                margin: 0.5rem 0;
-                font-family: Coolvetica Rg;
-                color: whitesmoke;
-                -webkit-transition: 0.5s;
-                -moz-transition: 0.5s;
-                -ms-transition: 0.5s;
-                -o-transition: 0.5s;
-            }
-
-            .description {
+                // position: absolute;
+                // top: 2rem;
+                // display: flex;
+                // justify-content: left;
+                // left: 0.5rem;
                 font-size: 1rem;
-                font-weight: bold;
-                background: -webkit-linear-gradient(var(--blue), var(--pink));
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                color: rgba(255, 255, 255, 0.5);
-                margin: 0.5rem 0;
-                text-align: left;
+                padding: 0.5rem 0;
+                width: max-content;
+                height: fit-content;
+                color: rgba(255, 255, 255, 0.05);
+
+                .duration {
+                    font-weight: bold;
+                    color: var(--lightest-slate);
+                }
+
+                .dividor {
+                    color: var(--green);
+                }
+
+                .role {
+                    color: var(--white);
+                }
             }
 
-            .technology_section {
+            .context_holder {
                 display: flex;
+                width: 75%;
+                justify-content: left;
                 flex-direction: column;
-                margin: 0.5rem;
-                justify-content: center;
-                align-items: left;
-                margin: 0.5rem;
+                margin: 0 0.5rem;
 
-                h6 {
-                    color: rgba(255, 255, 255, 0.5);
+                .experience_content_section {
+                    // display: flex;
+                    // flex-direction: column;
+                    // justify-content: right;
+                    // align-items: right;
+                    // margin: 0.5rem;
+                    padding: 0.5rem 0;
+                    margin: 0 0.25rem;
+
+                    h6 {
+                        color: rgba(255, 255, 255, 0.5);
+                        font-size: 1rem;
+                        font-weight: bolder;
+                    }
+                }
+
+                .title {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    z-index: 1;
+                    color: var(--blue);
+                    transition: 0.5s;
+                    font-family: Coolvetica Rg;
+                    color: whitesmoke;
+                    -webkit-transition: 0.5s;
+                    -moz-transition: 0.5s;
+                    -ms-transition: 0.5s;
+                    -o-transition: 0.5s;
+                }
+
+                .description {
                     font-size: 1rem;
-                    font-weight: bolder;
+                    font-weight: bold;
+                    background: -webkit-linear-gradient(var(--blue), var(--pink));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    color: rgba(255, 255, 255, 0.5);
+                    margin: 0 0.25rem;
+                    // padding: 0 0.5rem;
+                    // text-align: left;
                 }
             }
 
@@ -166,13 +192,13 @@
                 font-weight: bolder;
             }
 
-            .project_image {
+            .logo {
                 position: relative;
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                aspect-ratio: 16/9;
-                height: 11rem;
+                // display: flex;
+                // justify-content: center;
+                height: 5rem;
+                width: 5rem;
+                aspect-ratio: 1/1;
 
                 // &::before {
                 //     content: "";
