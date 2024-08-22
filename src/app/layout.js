@@ -5,6 +5,10 @@ import Head from "next/head";
 import Navigation from "../components/Navigation";
 import "./globals.scss";
 
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
+
 
 export const metadata = {
     title: "Mayur Pai",
