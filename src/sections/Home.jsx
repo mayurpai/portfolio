@@ -28,20 +28,20 @@ export default function Home() {
                     style={{ marginLeft: "7.5rem" }}
                     bool={!false}
                 ></TagsCreator>
-                <TagsCreator
+                {/* <TagsCreator
                     tag="button"
                     style={{ marginLeft: "9rem" }}
                     bool={false}
-                ></TagsCreator>
-                <div className={styles.icon_section_container}>
+                ></TagsCreator> */}
+                {/* <div className={styles.icon_section_container}>
                     <Button buttonName="Stalk My Dev Resume" icon={faMagnifyingGlass} />
-                    {/* <Icon /> */}
-                </div>
-                <TagsCreator
+                    <Icon />
+                </div> */}
+                {/* <TagsCreator
                     tag="button"
                     style={{ marginLeft: "9rem" }}
                     bool={!false}
-                ></TagsCreator>
+                ></TagsCreator> */}
             </div>
         </section>
     );

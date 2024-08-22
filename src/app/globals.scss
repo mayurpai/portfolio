@@ -221,3 +221,22 @@ ul {
         }
     }
 }
+
+.not_found {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .not_found_body_conatiner {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 2rem;
+
+        .heading_image {
+            display: flex;
+        }
+    }
+}

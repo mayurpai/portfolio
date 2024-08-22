@@ -6,5 +6,9 @@ export const AboutDesc = [
     {
         "page": "Lafzon Ka Jadugar",
         "description": `S tep into a world where words don't just talk—they freaking come alive. <br/> <br/> On "Lafzon Ka Jadugar", <span style="font-size: 1.5rem; font-family: Coolvetica Rg;">I, the poet, the damn "Magician Of Words"</span>, serving you a spellbinding collection of verses designed to blow your mind and ignite your soul. Each poem is a wild ride through raw emotions and untamed imagination. Buckle up and let's dive into the kind of magic only a true wordsmith can conjure.`
+    },
+    {
+        "page": "Not Found",
+        "description": `<span style="font-size: 2rem; font-family: 'Coolvetica Rg';">Oops!</span> 👻 It looks like this page has wandered into the digital abyss. Maybe a little typo sent it off course, or it's just enjoying early retirement in our server galaxy. <br /><br />But hey, don't worry—my <span style="font-size: 2.5rem; font-family: 'Coolvetica Rg';"><a href="/" style="text-decoration: underline; color: #007bff;">portfolio</a></span> and <span style="font-size: 2.5rem; font-family: 'Coolvetica Rg';"><a href="/Lafzon-Ka-Jadugar" style="text-decoration: underline; color: #007bff;">poetry</a></span> are still shining bright. Just click below, and I'll guide you back to where the magic happens. Because who wants to be lost in cyberspace when there's so much awesomeness to explore?`
     }
 ]

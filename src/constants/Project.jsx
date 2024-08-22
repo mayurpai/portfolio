@@ -71,7 +71,7 @@ export const Projects = [
     toDate: "Jul 2021",
   },
   {
-    title: "Arms And Ammunition",
+    title: "Arms & Ammunition",
     shortDescription:
       "Implemented an accurate real-time simulation of a military base system for defense, maintaining stock, tracking deficits, and aiding national security.",
     fullDescription:
@@ -95,7 +95,7 @@ export const Projects = [
   {
     title: "Engineering Calculator",
     shortDescription:
-      "Engineering Calculator: The essential academic companion for students, simplifying grade calculations and percentage conversions with precision.",
+      "The essential academic companion for students, simplifying grade calculations and percentage conversions with precision.",
     fullDescription:
       "Introducing the Engineering Evaluator your dynamic sidekick in the world of academic excellence. This versatile calculator is engineered specifically for students, empowering them to effortlessly calculate both semester wise and cumulative grade accumulations. It does not stop there. It is your trusted ally for swift percentage conversions, simplifying the journey of engineering students with precision and ease.",
     technology: ["HTML5", "CSS3", "JavaScript"],
@@ -108,7 +108,7 @@ export const Projects = [
   {
     title: "Tu Phodega",
     shortDescription:
-      "Tu Phodega: Your engineering companion, streamlining resources, notes, and materials for an exciting journey.",
+      "Your engineering companion, streamlining resources, notes, and materials for an exciting journey.",
     fullDescription:
       "Designed and developed a website with Mobile Responsive User Experience to include notes, materials, and MQPs from all Engineering colleges in India.",
     technology: ["HTML5", "CSS3", "JavaScript"],

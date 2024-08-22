@@ -3,6 +3,8 @@ import styles from "@/styles/sections/About.module.scss";
 import ScrambleText from "@/components/ScrambleText";
 import TypingEffect from "@/components/TypingEffect";
 import { AboutDesc } from "@/constants/AboutDesc";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const pt_mono = PT_Mono({
     weight: "400",
@@ -17,14 +19,26 @@ export default function About({ page }) {
             <div
                 className={`${styles.about_section_body_container} ${pt_mono.className}`}
             >
-                {matchedParent.map((parent, index) => (
-                    <TypingEffect
-                        key={index}
-                        htmlString={parent.description}
-                        typingSpeed={0}
-                    />
-                ))}
                 {/* <ScrambleText htmlString={aboutText} duration={1000} slowMotionFactor={50} /> */}
+                {
+                    matchedParent.map((parent, index) => {
+                        if (page == "Not Found") {
+                            {/* return <div className={styles.not_found}>
+                                {parent.description}
+                            </div> */}
+                            return <TypingEffect
+                                key={index}
+                                htmlString={parent.description}
+                                typingSpeed={0}
+                                skipTyping={true} />
+                        } else {
+                            return <TypingEffect
+                                key={index}
+                                htmlString={parent.description}
+                                typingSpeed={0}
+                                skipTyping={false} />
+                        }
+                    })}
             </div>
         </div>
     );

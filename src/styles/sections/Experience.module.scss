@@ -1,16 +1,24 @@
 .experience_conatiner {
-    position: relative;
-    width: 100vw;
+    // position: relative;
+    // width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 2rem 0;
     // scroll-snap-align: start;
 
     .experience_body_container {
         width: 100%;
         max-width: 1200px;
         padding: 0 2rem;
+
+        .experience_resume {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
+        }
 
         .experience_heading_container {
             font-family: Coolvetica Rg;
@@ -24,7 +32,7 @@
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
+            // align-items: center;
             flex-wrap: wrap;
         }
     }

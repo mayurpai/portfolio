@@ -6,7 +6,8 @@
         // border: 0.05rem solid rgba(255, 255, 255, 0.3);
         position: relative;
         display: flex;
-        margin: 0.24rem;
+        margin: 0.24rem 0;
+        margin-right: 0.5rem;
         padding: 0.3rem 0.75rem;
         border-radius: 0.56rem;
         -webkit-border-radius: 0.56rem;
@@ -16,7 +17,7 @@
         background-color: rgba(45, 212, 191, 0.1);
 
         p {
-            // font-weight: bold;
+            font-weight: 600;
             color: var(--green);
         }
     }

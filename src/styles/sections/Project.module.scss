@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 4rem 0;
+    padding: 2rem 0;
     // scroll-snap-align: start;
 
     .projects_body_container {
@@ -27,7 +27,7 @@
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
+            // align-items: center;
             flex-wrap: wrap;
         }
     }
