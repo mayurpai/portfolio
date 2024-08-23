@@ -190,7 +190,7 @@
 
                 .description {
                     font-size: 1rem;
-                    font-weight: bold;
+                    font-weight: 400;
                     background: -webkit-linear-gradient(var(--blue), var(--pink));
                     background-clip: text;
                     -webkit-background-clip: text;
@@ -213,6 +213,7 @@
                         // &::marker {
                         //     color: aqua;
                         // }
+
                     }
                 }
             }

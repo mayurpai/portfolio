@@ -1,10 +1,7 @@
-import { PT_Mono } from "next/font/google";
-import styles from "@/styles/sections/About.module.scss";
-import ScrambleText from "@/components/ScrambleText";
 import TypingEffect from "@/components/TypingEffect";
 import { AboutDesc } from "@/constants/AboutDesc";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "@/styles/sections/About.module.scss";
+import { PT_Mono } from "next/font/google";
 
 const pt_mono = PT_Mono({
     weight: "400",

@@ -7,6 +7,7 @@ import "./globals.scss";
 
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import Message from "@/sections/Message";
 config.autoAddCss = false;
 
 
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
                     <Navigation />
                     <BoilerHeader />
                     {children}
+                    <Message />
                     <BoilerFooter />
                     <BottomNavigation /></div>
             </div></body>

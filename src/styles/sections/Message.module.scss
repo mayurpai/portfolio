@@ -1,0 +1,37 @@
+@font-face {
+    font-family: La Belle Aurore;
+    font-weight: bold;
+    src: url("../../fonts/La\ Belle\ Aurore.ttf");
+}
+
+.message_conatiner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .message_body_container {
+        width: 100%;
+        max-width: 1200px;
+
+        .message {
+            display: flex;
+            margin-bottom: 3rem;
+            justify-content: center;
+            font-weight: bold;
+            align-items: center;
+            background: -webkit-linear-gradient(var(--blue), var(--pink));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1rem;
+
+            .bold_text {
+                font-size: 1.25rem;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}

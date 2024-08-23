@@ -86,10 +86,9 @@ export default function ExperienceCard() {
                                         <ul className={styles.desc_list}>
                                             {item?.description?.map((desc, id) => {
                                                 return (
-                                                    <li key={id}>{desc}</li>
-                                                )
-                                            }
-                                            )}
+                                                    <li key={id} dangerouslySetInnerHTML={{ __html: desc }} />
+                                                );
+                                            })}
                                         </ul>
                                     </h1>
 

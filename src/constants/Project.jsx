@@ -15,7 +15,7 @@ export const Projects = [
     webLink: Social.Portfolio,
     imgLink: imageLink + "Portfolio.png",
     fromDate: "Oct 2023",
-    toDate: "Present",
+    toDate: "Aug 2024",
   },
   {
     title: "Target Clone",
