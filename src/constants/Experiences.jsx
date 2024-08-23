@@ -1,4 +1,4 @@
-export const imageLink = "/images/experiences/";
+export const imageLink = "./images/experiences/";
 export const linkedInCompanyLink = "https://www.linkedin.com/company/";
 export const linkedInSchoolLink = "https://www.linkedin.com/school/";
 

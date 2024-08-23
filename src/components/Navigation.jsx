@@ -19,7 +19,7 @@ export default function Navigation() {
           <Link href="/">
             <Image
               className={styles.logo}
-              src="/images/BestLogo.png"
+              src="./images/BestLogo.png"
               width={40}
               height={40}
               alt="logo"

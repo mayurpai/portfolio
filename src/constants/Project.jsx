@@ -1,7 +1,7 @@
 import { Social } from "./Social";
 
 export const githubLink = "https://github.com/mayurpai/";
-export const imageLink = "/images/projects/";
+export const imageLink = "./images/projects/";
 
 export const Projects = [
   {
