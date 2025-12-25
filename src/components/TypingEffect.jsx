@@ -7,6 +7,9 @@ const TypingEffect = ({ htmlString, typingSpeed = 100, skipTyping = false }) => 
     const index = useRef(0);
 
     useEffect(() => {
+        index.current = 0;
+        setDisplayedText('');
+
         if (skipTyping) {
             // Directly display the text without typing effect
             setDisplayedText(htmlString);

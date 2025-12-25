@@ -26,13 +26,13 @@ export default function About({ page }) {
                             return <TypingEffect
                                 key={index}
                                 htmlString={parent.description}
-                                typingSpeed={0}
+                                typingSpeed={2}
                                 skipTyping={true} />
                         } else {
                             return <TypingEffect
                                 key={index}
                                 htmlString={parent.description}
-                                typingSpeed={0}
+                                typingSpeed={2}
                                 skipTyping={false} />
                         }
                     })}

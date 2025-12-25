@@ -1,7 +1,15 @@
 export const AboutDesc = [
     {
         "page": "Home",
-        "description": `I 'm a web wizard and coding aficionado, always on a quest to conquer the wildest realms of programming. Cracking complex challenges and blazing new trails is my forte. Teaching fuels my passion and keeps my skills razor-sharp and my mind always buzzing. <br/> <br/> Armed with a Bachelor's in Information Science from <span style="font-size: 1.5rem; font-family: Coolvetica Rg;">Sahyadri College of Engineering and Management, Mangalore</span>, my credentials are as next-level as my tech game. I don't just keep up with trends—I set them! <br/> <br/> Currently, I'm architecting the next wave of generative AI innovations at <span style="font-size: 1.5rem; font-family: Coolvetica Rg;">GalaxE. Solutions an Endava Company. </span> <br/> <br/> My love affair with computers ignited early and it's still blazing strong. Equipped with a powerhouse toolkit of languages, algorithms, and leadership flair, I'm here to make waves and build legacies.  There's always more to conquer, more bugs to squash, and more groundbreaking projects to craft. Let's crank up the tech magic to eleven!`
+        "description": `I 'm a web wizard and coding aficionado, always on a quest to conquer the wildest realms of programming. Cracking complex challenges, bending systems to my will, and blazing new trails through code is my comfort zone. Teaching fuels my passion, sharpens my thinking, and keeps my curiosity permanently switched on. <br/><br/>
+
+        Armed with a Bachelor's degree in Information Science from <span style="font-size: 1.5rem; font-family: Coolvetica Rg;">Sahyadri College of Engineering and Management, Mangalore</span>, my foundation is as solid as my ambition. I don't just keep up with trends — I chase them down, break them apart, and rebuild them better. <br/><br/>
+
+        Today, I'm living one of those full-circle moments, building and shipping real-world products as a <span style="font-size: 1.5rem; font-family: Coolvetica Rg;">Software Engineer II at Nike</span>. From full-stack systems to Generative AI workflows, I'm deep in the game where performance, scale, and innovation collide. <br/><br/>
+
+        My love affair with computers started early, and it never cooled off. Armed with a growing arsenal of languages, frameworks, algorithms, and leadership instincts, I'm here to build things that move fast, scale hard, and leave a mark. There's always another problem to crack, another idea to explore, and another system waiting to be pushed further. <br/><br/>
+
+        No finish line. Just builds. Let's crank the tech magic to eleven 🚀`
     },
     {
         "page": "Lafzon Ka Jadugar",

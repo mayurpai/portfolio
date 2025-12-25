@@ -27,7 +27,7 @@ export const Connections = [
     {
         icon: faInstagram,
         heading: "Instagram",
-        username: "@mayurpai19",
+        username: "@sou1_unmatch9d.af",
         link: Social.Instagram,
     },
     {
