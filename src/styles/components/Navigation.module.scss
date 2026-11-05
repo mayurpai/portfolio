@@ -6,10 +6,32 @@
   width: 100%;
   background-color: rgba(16, 21, 26, 0.1);
   backdrop-filter: blur(2.5px);
-  transition: background-color 0.3s, border-bottom 0.3s;
+  transition: background-color 0.4s, box-shadow 0.4s, backdrop-filter 0.4s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.06rem;
+    background: linear-gradient(90deg, transparent, var(--blue), var(--pink), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  &.scrolled {
+    background-color: rgba(10, 25, 47, 0.6);
+    backdrop-filter: blur(12px) saturate(140%);
+    box-shadow: 0 0.75rem 2rem rgba(2, 12, 27, 0.5);
+
+    &::after {
+      opacity: 0.6;
+    }
+  }
 
   .links {
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,7 +39,13 @@
     text-decoration: none;
     color: var(--blue);
 
+    .logo_wrap {
+      display: inline-block;
+      filter: drop-shadow(0 0 0.6rem rgba(253, 9, 83, 0.35));
+    }
+
     .logo {
+      display: block;
       transform: rotateZ(30deg);
       -webkit-transform: rotateZ(30deg);
       -moz-transform: rotateZ(30deg);

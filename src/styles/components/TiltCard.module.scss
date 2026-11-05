@@ -1,0 +1,62 @@
+.tilt {
+    --spot-x: 50%;
+    --spot-y: 50%;
+    --px: 0.5;
+    --py: 0.5;
+    --spot-color: 9, 253, 217;
+    position: relative;
+    border-radius: 0.5rem;
+    will-change: transform;
+}
+
+.glare,
+.spotlight {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.glare {
+    z-index: 3;
+}
+
+// Lights up only the 1px border ring around the cursor.
+.spotlight {
+    z-index: 4;
+    padding: 0.08rem;
+    background: radial-gradient(18rem circle at var(--spot-x) var(--spot-y), rgba(var(--spot-color), 0.95), transparent 60%);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tilt:hover .spotlight {
+    opacity: 1;
+}
+
+@property --beam-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+// With no cursor to follow, a card that's active on scroll gets a light running round its border.
+.tilt[data-active]:not(:hover) .spotlight {
+    opacity: 1;
+    background: conic-gradient(from var(--beam-angle), transparent 0 55%, rgba(var(--spot-color), 0.95) 80%, transparent);
+    animation: beam 3.5s linear infinite;
+}
+
+@keyframes beam {
+    to {
+        --beam-angle: 1turn;
+    }
+}

@@ -1,20 +1,23 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useStageReady } from '@/common/stage';
+import { useEffect, useRef, useState } from 'react';
 import styles from "../styles/components/TypingEffect.module.scss";
 
 const TypingEffect = ({ htmlString, typingSpeed = 100, skipTyping = false }) => {
     const [displayedText, setDisplayedText] = useState('');
     const [typingComplete, setTypingComplete] = useState(false);
     const index = useRef(0);
+    const ready = useStageReady();
 
     useEffect(() => {
         index.current = 0;
         setDisplayedText('');
+        setTypingComplete(false);
 
         if (skipTyping) {
             // Directly display the text without typing effect
             setDisplayedText(htmlString);
             setTypingComplete(true);
-        } else if (index.current < htmlString.length) {
+        } else if (ready && index.current < htmlString.length) {
             const timer = setInterval(() => {
                 setDisplayedText(prev => prev + (htmlString[index.current] || ''));
                 index.current += 1;
@@ -27,7 +30,7 @@ const TypingEffect = ({ htmlString, typingSpeed = 100, skipTyping = false }) => 
 
             return () => clearInterval(timer);
         }
-    }, [htmlString, typingSpeed, skipTyping]);
+    }, [htmlString, typingSpeed, skipTyping, ready]);
 
     return (
         <div>

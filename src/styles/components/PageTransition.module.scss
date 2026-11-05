@@ -1,0 +1,48 @@
+.curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 9990;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 50% 120%, rgba(253, 9, 83, 0.25), transparent 55%),
+        radial-gradient(circle at 50% -20%, rgba(9, 253, 217, 0.2), transparent 55%),
+        #020c1b;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 0.35rem;
+        background: linear-gradient(90deg, var(--blue), var(--green), var(--pink));
+        box-shadow: 0 0 1.5rem rgba(9, 253, 217, 0.6);
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        bottom: 0;
+    }
+}
+
+.label {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.15em;
+    padding: 0 1.5rem;
+    font-family: Coolvetica Rg;
+    font-size: clamp(3rem, 9vw, 8rem);
+    color: var(--lightest-slate);
+    text-align: center;
+    text-shadow: 0.25rem 0.25rem var(--pink);
+}
+
+.tag {
+    font-size: 0.55em;
+    color: var(--green);
+    text-shadow: none;
+}

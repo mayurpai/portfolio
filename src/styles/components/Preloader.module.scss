@@ -1,0 +1,552 @@
+$panel: #020c1b;
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    color: var(--white);
+    background:
+        radial-gradient(circle at 85% 90%, rgba(253, 9, 83, 0.16), transparent 45%),
+        radial-gradient(circle at 10% 10%, rgba(9, 253, 217, 0.12), transparent 40%),
+        $panel;
+    // Hides the overlay if JavaScript never takes over.
+    animation: failsafe 0.01s linear 8s forwards;
+
+    :global(html.intro-skip) & {
+        display: none;
+    }
+
+    &[data-phase="launch"] {
+        pointer-events: none;
+    }
+}
+
+.live {
+    animation: none;
+}
+
+// The frame the root site hands over (same size and spot there): a cursor waiting for the terminal.
+.boot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 22px;
+    margin: -11px 0 0 -6px;
+    background: var(--blue);
+    box-shadow: 0 0 14px rgba(9, 253, 217, 0.7);
+    animation: blink 1.05s steps(1) infinite;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.4s ease;
+
+    .live & {
+        opacity: 1;
+    }
+}
+
+// A planet's glowing rim along the bottom of the frame.
+.horizon {
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    width: max(170vmax, 110rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(70% 40% at 50% 0%, #0e2d4d, #061529 55%, $panel);
+    box-shadow:
+        0 0 0 1px rgba(100, 255, 218, 0.22),
+        0 -0.3rem 1.8rem rgba(9, 253, 217, 0.35),
+        0 -2rem 6rem rgba(9, 253, 217, 0.14),
+        0 -5rem 12rem rgba(253, 9, 83, 0.1),
+        inset 0 1.4rem 3rem -1rem rgba(9, 253, 217, 0.3);
+    opacity: 0;
+    transform: translate(-50%, 12%);
+    transition:
+        opacity 1.6s ease,
+        transform 2.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+    .live & {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.brand {
+    position: absolute;
+    top: 2.5rem;
+    left: 3rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: Coolvetica Rg;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    color: var(--lightest-slate);
+    animation: fade-in 1.2s ease 0.3s both;
+}
+
+.logo {
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--pink);
+    text-shadow: -0.1em 0 var(--blue);
+    animation: glitch 1.6s steps(1) infinite;
+}
+
+.brand_name {
+    opacity: 0.7;
+}
+
+.skip {
+    position: absolute;
+    top: 2.8rem;
+    right: 3rem;
+    z-index: 2;
+    padding: 0.5em 1.1em;
+    border: 1px solid rgba(136, 146, 176, 0.3);
+    border-radius: 999px;
+    background: rgba(2, 12, 27, 0.5);
+    color: var(--slate);
+    font-size: clamp(11px, 0.85rem, 14px);
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    animation: fade-in 1s ease 1.4s both;
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--blue);
+        border-color: var(--blue);
+        box-shadow: 0 0 1.2rem rgba(9, 253, 217, 0.25);
+    }
+}
+
+.stage {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(16px, 1.6rem, 26px);
+    width: min(46rem, 92vw);
+    margin-top: -4vh;
+}
+
+.terminal {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(100, 255, 218, 0.16);
+    border-radius: 12px;
+    background: linear-gradient(160deg, rgba(17, 34, 64, 0.78), rgba(2, 12, 27, 0.88));
+    box-shadow:
+        0 30px 80px rgba(2, 12, 27, 0.8),
+        0 0 60px rgba(9, 253, 217, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: text;
+    transition: border-color 0.6s ease;
+
+    .preloader[data-phase="run"] & {
+        border-color: rgba(9, 253, 217, 0.45);
+        animation: charge 0.9s ease-in-out infinite alternate;
+    }
+}
+
+.titlebar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+    background: rgba(2, 12, 27, 0.4);
+}
+
+.lights {
+    position: absolute;
+    left: 16px;
+    display: flex;
+    gap: 8px;
+
+    i {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--pink);
+        box-shadow: 0 0 8px rgba(253, 9, 83, 0.5);
+
+        &:nth-child(2) {
+            background: var(--gold);
+            box-shadow: 0 0 8px rgba(246, 205, 41, 0.5);
+        }
+
+        &:nth-child(3) {
+            background: var(--blue);
+            box-shadow: 0 0 8px rgba(9, 253, 217, 0.5);
+        }
+    }
+}
+
+.title {
+    font-size: clamp(11px, 0.8rem, 13px);
+    letter-spacing: 0.06em;
+    color: var(--slate);
+}
+
+.screen {
+    height: clamp(220px, 40vh, 340px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 16px 22px 20px;
+    font-size: clamp(12px, 1.05rem, 17px);
+    line-height: 1.75;
+    color: var(--light-slate);
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    p {
+        margin: 0;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+}
+
+.muted {
+    color: var(--slate);
+}
+
+.ok {
+    color: var(--green);
+}
+
+.magic {
+    color: var(--gold);
+    text-shadow: 0 0 12px rgba(246, 205, 41, 0.45);
+}
+
+.reply {
+    color: var(--pink);
+}
+
+.line {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.6em;
+}
+
+.path {
+    color: var(--blue);
+}
+
+.sigil {
+    color: var(--pink);
+}
+
+.entry {
+    min-width: 0;
+}
+
+.typed {
+    color: var(--white);
+}
+
+.typed_off {
+    color: var(--pink);
+}
+
+.ghost {
+    color: rgba(136, 146, 176, 0.45);
+}
+
+// Block cursor over the next suggested letter, like zsh-autosuggestions.
+.caret {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.2em;
+    margin-right: -0.6em;
+    vertical-align: -0.22em;
+    background: rgba(9, 253, 217, 0.85);
+    box-shadow: 0 0 10px rgba(9, 253, 217, 0.7);
+    animation: blink 1.05s steps(1) infinite;
+}
+
+.input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+    // Under 16px, iOS zooms in on focus.
+    font-size: 16px;
+    color: transparent;
+    background: transparent;
+    caret-color: transparent;
+    cursor: text;
+    // The global `user-select: none` stops Safari from typing into inputs.
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px, 1rem, 16px);
+    text-align: center;
+    font-size: clamp(12.5px, 0.95rem, 15px);
+    color: var(--slate);
+
+    p {
+        margin: 0;
+        line-height: 1.7;
+    }
+
+    kbd {
+        display: inline-block;
+        margin: 0 0.15em;
+        padding: 0 0.5em;
+        border: 1px solid rgba(100, 255, 218, 0.28);
+        border-bottom-width: 2px;
+        border-radius: 6px;
+        background: rgba(100, 255, 218, 0.06);
+        color: var(--green);
+        font-family: inherit;
+        font-size: 0.92em;
+        line-height: 1.6;
+        white-space: nowrap;
+    }
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 22px;
+}
+
+.cast {
+    position: relative;
+    padding: 0.7em 1.5em;
+    border: 1px solid rgba(9, 253, 217, 0.5);
+    border-radius: 999px;
+    background: linear-gradient(120deg, rgba(9, 253, 217, 0.16), rgba(253, 9, 83, 0.16));
+    color: var(--white);
+    font: inherit;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    box-shadow: 0 0 22px rgba(9, 253, 217, 0.2);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border: 1px solid var(--blue);
+        border-radius: inherit;
+        pointer-events: none;
+        animation: ping 2.4s ease-out infinite;
+    }
+
+    &:hover,
+    &:focus-visible {
+        transform: translateY(-2px);
+        border-color: var(--blue);
+        box-shadow: 0 0 36px rgba(9, 253, 217, 0.45);
+    }
+}
+
+.keys {
+    font-size: 0.9em;
+    opacity: 0.75;
+}
+
+.touch_only {
+    display: none;
+}
+
+@media (hover: none) {
+    .mouse_only {
+        display: none;
+    }
+
+    .touch_only {
+        display: block;
+    }
+}
+
+.counter {
+    position: absolute;
+    right: 3rem;
+    bottom: 2.5rem;
+    z-index: 2;
+    font-family: Coolvetica Rg;
+    font-size: clamp(4.5rem, 12vw, 11rem);
+    line-height: 0.8;
+    background: linear-gradient(120deg, var(--blue), var(--green) 45%, var(--pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    pointer-events: none;
+}
+
+.pct {
+    font-size: 0.3em;
+    margin-left: 0.1em;
+    vertical-align: top;
+}
+
+// The glowing edge of the portal as it opens; sits outside the masked overlay.
+.rim {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    box-shadow:
+        0 0 0 2px rgba(9, 253, 217, 0.75),
+        0 0 32px 6px rgba(9, 253, 217, 0.45),
+        0 0 90px 24px rgba(253, 9, 83, 0.25),
+        inset 0 0 40px 10px rgba(9, 253, 217, 0.35);
+}
+
+@keyframes glitch {
+    0%,
+    100% {
+        text-shadow: -0.1em 0 var(--blue);
+        transform: none;
+    }
+
+    20% {
+        text-shadow: 0.08em 0.02em var(--blue), -0.05em 0 var(--gold);
+        transform: translateX(0.03em) skewX(-6deg);
+    }
+
+    40% {
+        text-shadow: -0.06em -0.03em var(--blue);
+        transform: translateX(-0.02em);
+    }
+
+    60% {
+        text-shadow: -0.1em 0 var(--blue);
+        transform: none;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes ping {
+    from {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    70%,
+    to {
+        opacity: 0;
+        transform: scale(1.12, 1.45);
+    }
+}
+
+@keyframes charge {
+    from {
+        box-shadow:
+            0 30px 80px rgba(2, 12, 27, 0.8),
+            0 0 40px rgba(9, 253, 217, 0.18);
+    }
+
+    to {
+        box-shadow:
+            0 30px 80px rgba(2, 12, 27, 0.8),
+            0 0 80px rgba(9, 253, 217, 0.4),
+            0 0 160px rgba(253, 9, 83, 0.2);
+    }
+}
+
+@keyframes failsafe {
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .brand {
+        top: 1.8rem;
+        left: 1.6rem;
+    }
+
+    .skip {
+        top: 2.2rem;
+        right: 1.6rem;
+    }
+
+    .stage {
+        margin-top: 3vh;
+    }
+
+    .screen {
+        height: clamp(200px, 36vh, 300px);
+        padding: 14px 16px 16px;
+    }
+
+    .counter {
+        right: 1.6rem;
+        bottom: 1.6rem;
+    }
+
+    .horizon {
+        top: 84%;
+    }
+}
+
+// Landscape phones: give the height to the terminal.
+@media screen and (max-height: 500px) {
+    .stage {
+        margin-top: 0;
+    }
+
+    .screen {
+        height: clamp(130px, 46vh, 220px);
+    }
+
+    .horizon {
+        top: 92%;
+    }
+}

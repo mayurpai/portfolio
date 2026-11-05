@@ -1,7 +1,3 @@
-.tilt {
-    box-shadow: 0 0px 0px var(--green) !important;
-}
-
 .card {
     // position: relative;
     width: 24rem;
@@ -12,12 +8,7 @@
     -moz-border-radius: 0.5rem;
     -ms-border-radius: 0.5rem;
     -o-border-radius: 0.5rem;
-
-    &:hover {
-        .link_icon {
-            transform: translateX(0.2rem) translateY(-0.2rem);
-        }
-    }
+    transition: translate 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 
     .box {
         // position: absolute;
@@ -25,7 +16,9 @@
         left: 0.5rem;
         right: 0.5rem;
         bottom: 0.5rem;
-        background: var(--light-navy);
+        background:
+            radial-gradient(26rem circle at var(--spot-x) var(--spot-y), rgba(9, 253, 217, 0.08), transparent 45%),
+            var(--light-navy);
         border-radius: 0.5rem;
         border: 0.1rem solid var(--green-tint);
         box-shadow: 0 0 1rem var(--green-tint);
@@ -39,67 +32,6 @@
         -moz-transition: 0.5s;
         -ms-transition: 0.5s;
         -o-transition: 0.5s;
-
-        &:hover {
-            background: var(--lightest-navy);
-            box-shadow: 0 0 0.2rem var(--white);
-            // transform: scale(1.05, 1.05);
-            // -webkit-transform: scale(1.05, 1.05);
-            // -moz-transform: scale(1.05, 1.05);
-            // -ms-transform: scale(1.05, 1.05);
-            // -o-transform: scale(1.05, 1.05);
-
-            .project_image {
-                --transition-duration: 500ms;
-                --transition-easing: ease-out;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                box-shadow: inset 0rem 0rem 0.1rem var(--green-tint);
-                border-radius: 0.5rem;
-                -webkit-border-radius: 0.5rem;
-                -moz-border-radius: 0.5rem;
-                -ms-border-radius: 0.5rem;
-                -o-border-radius: 0.5rem;
-                transition: transform var(--transition-duration) var(--transition-easing);
-                overflow: hidden;
-                -webkit-transition: transform var(--transition-duration) var(--transition-easing);
-                -moz-transition: transform var(--transition-duration) var(--transition-easing);
-                -ms-transition: transform var(--transition-duration) var(--transition-easing);
-                -o-transition: transform var(--transition-duration) var(--transition-easing);
-
-                transition: transform 500ms ease-out;
-                position: relative;
-
-                &:hover::before {
-                    left: 150%;
-                }
-
-                &::before {
-                    content: "";
-                    background: rgba(white, 0.4);
-                    width: 60%;
-                    height: 100%;
-                    top: 0%;
-                    left: -125%;
-                    transform: skew(45deg);
-                    transition: left var(--transition-duration) var(--transition-easing);
-                    position: absolute;
-                    animation-duration: var(--transition-duration);
-                    animation-timing-function: var(--transition-easing);
-                    transition: left 500ms ease-out;
-                    animation-name: beforeAnimation;
-                    animation-duration: 500ms;
-                    animation-timing-function: ease-out;
-                    animation-fill-mode: forwards;
-                }
-            }
-
-            // &::after {
-            //     opacity: 1;
-            // }
-        }
 
         // &::after {
         //     content: "";
@@ -123,6 +55,12 @@
                 right: 0.5rem;
                 font-size: 6rem;
                 color: var(--green-tint);
+                -webkit-text-stroke: 0.08rem transparent;
+                transform: translate(calc((var(--px) - 0.5) * 1.6rem), calc((var(--py) - 0.5) * 1.6rem));
+                transition:
+                    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                    color 0.4s ease,
+                    -webkit-text-stroke-color 0.4s ease;
             }
 
             .technology_section {
@@ -134,6 +72,8 @@
                 margin: 0.5rem;
 
                 .title_name {
+                    position: relative;
+                    width: fit-content;
                     font-size: 1.75rem;
                     font-weight: bold;
                     z-index: 1;
@@ -145,6 +85,20 @@
                     -moz-transition: 0.5s;
                     -ms-transition: 0.5s;
                     -o-transition: 0.5s;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -0.2rem;
+                        width: 100%;
+                        height: 0.15rem;
+                        border-radius: 1rem;
+                        background: linear-gradient(90deg, var(--blue), var(--pink));
+                        transform: scaleX(0);
+                        transform-origin: left center;
+                        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+                    }
                 }
 
                 .description {
@@ -212,6 +166,12 @@
                 width: 100%;
                 aspect-ratio: 16/9;
                 height: 11rem;
+                overflow: hidden;
+                border-radius: 1rem;
+
+                img {
+                    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+                }
 
                 // &::before {
                 //     content: "";
@@ -225,6 +185,67 @@
                 //     animation-delay: 0.2s;
                 //     background-size: cover;
                 // }
+            }
+        }
+    }
+
+    // Hover, or crossing the middle of the screen while scrolling (TiltCard sets data-active).
+    &:hover,
+    &[data-active] {
+        translate: 0 -0.6rem;
+
+        .box {
+            background:
+                radial-gradient(26rem circle at var(--spot-x) var(--spot-y), rgba(9, 253, 217, 0.12), transparent 45%),
+                var(--lightest-navy);
+            box-shadow:
+                0 0 0.2rem var(--white),
+                0 2rem 3rem rgba(2, 12, 27, 0.65);
+        }
+
+        // Full chain so these outrank the resting styles above.
+        .box .content {
+            .id {
+                color: transparent;
+                -webkit-text-stroke: 0.08rem rgba(253, 9, 83, 0.55);
+            }
+
+            .technology_section {
+                .link_icon {
+                    transform: translateX(0.2rem) translateY(-0.2rem);
+                }
+
+                .title_name::after {
+                    transform: scaleX(1);
+                }
+            }
+
+            .project_image {
+                box-shadow: inset 0 0 0.1rem var(--green-tint);
+
+                // A light sweep across the screenshot.
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: -125%;
+                    z-index: 1;
+                    width: 60%;
+                    height: 100%;
+                    background: rgba(white, 0.4);
+                    transform: skew(45deg);
+                    transition: left 500ms ease-out;
+                    animation: beforeAnimation 500ms ease-out forwards;
+                }
+
+                &:hover::before {
+                    left: 150%;
+                }
+
+                // Image drifts against the tilt for a touch of depth.
+                img {
+                    transform: scale(1.1) translate(calc((var(--px) - 0.5) * -1.2rem), calc((var(--py) - 0.5) * -1.2rem));
+                }
             }
         }
     }

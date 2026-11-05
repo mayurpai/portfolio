@@ -1,0 +1,81 @@
+.marquee {
+    position: relative;
+    display: grid;
+    margin: 3rem 0 1rem;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+// Both bands share one grid cell so they cross in an X at the centre.
+.band {
+    position: relative;
+    grid-area: 1 / 1;
+    align-self: center;
+    left: -5vw;
+    width: 110vw;
+    overflow: hidden;
+    padding: 1rem 0;
+    white-space: nowrap;
+}
+
+.band_primary {
+    z-index: 2;
+    color: var(--black);
+    background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
+    box-shadow: 0 0 2.5rem rgba(9, 253, 217, 0.35);
+    transform: rotate(-4deg);
+
+    .star {
+        color: var(--pink);
+    }
+}
+
+.band_outline {
+    z-index: 1;
+    color: transparent;
+    -webkit-text-stroke: 0.06rem var(--pink);
+    background: rgba(10, 25, 47, 0.85);
+    border-block: 0.06rem solid rgba(253, 9, 83, 0.4);
+    backdrop-filter: blur(4px);
+    transform: rotate(4deg);
+
+    .star {
+        color: var(--blue);
+        -webkit-text-stroke: 0;
+    }
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    display: inline-flex;
+    align-items: center;
+    gap: 2.25rem;
+    padding-right: 2.25rem;
+    font-family: Coolvetica Rg;
+    font-size: 2.6rem;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.star {
+    display: inline-block;
+    font-size: 1.5rem;
+    animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}

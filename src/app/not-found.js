@@ -10,8 +10,9 @@ export default function NotFound() {
 
     return (
         <section className="not_found" id="not_found">
+            <div className="ghost" aria-hidden="true">👻</div>
             <div className="not_found_body_container">
-                <div className="heading">
+                <div className="heading glitch">
                     <BoilerHeading title={heading} header="h1" />
                 </div>
                 <TagsCreator

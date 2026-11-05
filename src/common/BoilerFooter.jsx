@@ -13,6 +13,7 @@ export default function BoilerFooter() {
         tag="html"
         style={{ marginLeft: "1.5rem", zIndex: "999" }}
         bool={!false}
+        delay={0.2}
       ></TagsCreator>
     </div>
   );

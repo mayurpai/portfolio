@@ -46,20 +46,50 @@
 
 .main_app_container {
     position: relative;
-    // display: flex;
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
+    z-index: 1;
+    min-height: 100vh;
+    width: 100%;
     font-family: Coolvetica Rg;
-    flex-wrap: wrap-reverse;
+    // `clip` (unlike `hidden`) keeps the sticky navigation working.
+    overflow-x: clip;
+}
+
+html {
     background: var(--black);
-    overflow-y: scroll;
-    place-items: center;
-    align-items: center;
+    scroll-padding-top: 6rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--pink) transparent;
+}
+
+body {
+    background: var(--black);
     overflow-x: hidden;
-    scroll-behavior: smooth;
-    //   scroll-snap-type: y mandatory;
-    scroll-padding-top: 18rem;
+}
+
+.app_conatiner {
+    padding-bottom: 5rem;
+}
+
+html.has-custom-cursor,
+html.has-custom-cursor * {
+    cursor: none !important;
+}
+
+:focus-visible {
+    outline: 0.12rem dashed var(--blue);
+    outline-offset: 0.3rem;
+}
+
+.sr_only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 ::-webkit-scrollbar {
@@ -203,23 +233,68 @@ ul {
     font-style: normal;
     font-weight: bolder;
     margin: 0 8rem;
+    color: var(--lightest-slate);
     //   font-size: 5.5rem;
+}
 
-    ul li {
-        color: var(--lightest-slate);
-        display: inline;
-        text-shadow: 0.2rem 0.2rem var(--green-tint);
+.heading_block {
+    position: relative;
+    isolation: isolate;
+}
 
-        &:hover {
-            color: var(--blue);
-            transition: 1s ease-in-out;
-            text-shadow: 0.2rem 0.2rem var(--pink);
-            -webkit-text-stroke: 0.1rem transparent;
-            -webkit-transition: 1s ease-in-out;
-            -moz-transition: 1s ease-in-out;
-            -ms-transition: 1s ease-in-out;
-            -o-transition: 1s ease-in-out;
-        }
+.heading_ghost {
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    z-index: -1;
+    font-family: Coolvetica Rg;
+    font-size: 11rem;
+    line-height: 1;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.06rem rgba(100, 255, 218, 0.13);
+    pointer-events: none;
+}
+
+.animated_text {
+    display: inline-block;
+    perspective: 40rem;
+}
+
+.animated_word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.animated_char {
+    display: inline-block;
+    transform-origin: 50% 100%;
+    text-shadow: 0.2rem 0.2rem var(--green-tint);
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+
+    &:hover {
+        color: var(--blue);
+        text-shadow: 0.2rem 0.2rem var(--pink);
+    }
+}
+
+// A ripple that rolls through the hero name every few seconds.
+h1 .animated_char {
+    animation: letter-wave 6s ease-in-out calc(4.5s + var(--i) * 0.07s) infinite;
+}
+
+@keyframes letter-wave {
+    0%,
+    9%,
+    100% {
+        translate: 0 0;
+    }
+
+    4% {
+        translate: 0 -0.12em;
     }
 }
 
@@ -239,5 +314,66 @@ ul {
         .heading {
             display: flex;
         }
+    }
+
+    .glitch .animated_char {
+        animation: glitch 2.8s steps(1) infinite;
+    }
+
+    .ghost {
+        position: absolute;
+        top: 2rem;
+        right: 12%;
+        font-size: 6rem;
+        filter: drop-shadow(0 0 1.5rem rgba(9, 253, 217, 0.45));
+        animation: ghost-float 4s ease-in-out infinite;
+        pointer-events: none;
+    }
+}
+
+@keyframes glitch {
+    0%,
+    86%,
+    100% {
+        text-shadow: 0.2rem 0.2rem var(--green-tint);
+        translate: 0 0;
+    }
+
+    88% {
+        text-shadow: -0.06em 0 var(--pink), 0.06em 0 var(--blue);
+        translate: 0.04em 0;
+    }
+
+    91% {
+        text-shadow: 0.08em 0.02em var(--blue), -0.05em -0.02em var(--pink);
+        translate: -0.05em 0.02em;
+    }
+
+    94% {
+        text-shadow: -0.03em 0 var(--pink), 0.03em 0 var(--gold);
+        translate: 0.02em -0.02em;
+    }
+}
+
+@keyframes ghost-float {
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(-6deg);
+    }
+
+    50% {
+        transform: translate(-1.5rem, -1.25rem) rotate(6deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

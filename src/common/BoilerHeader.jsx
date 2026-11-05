@@ -13,11 +13,13 @@ export default function BoilerHeader() {
         tag='html lang="en"'
         style={{ marginLeft: "1.5rem" }}
         bool={false}
+        delay={0.15}
       ></TagsCreator>
       <TagsCreator
         tag="body"
         style={{ marginLeft: "3rem" }}
         bool={false}
+        delay={0.3}
       ></TagsCreator>
     </div>
   );

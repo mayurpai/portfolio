@@ -7,7 +7,8 @@
     align-items: center;
 
     .lafzon_ka_jadugar_body_container {
-        // width: 100%;
+        // A fixed width keeps the typed text from growing out of the centre.
+        width: 100%;
         // max-width: 1200px;
         padding: 0 2rem;
 

@@ -1,10 +1,25 @@
-import React from "react";
+"use client";
 import TagsCreator from "@/components/TagsCreator";
+import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 import "../app/globals.scss";
-import { createAnimatedText } from "./Animation";
-import ScrambleText from "@/components/ScrambleText";
+import { AnimatedText } from "./Animation";
+import { useStageReady } from "./stage";
 
-export default function BoilerHeading({ title, header }) {
+// Giant outlined copy of the title that slides sideways as the section scrolls by.
+function GhostWord({ text }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const x = useTransform(scrollYProgress, [0, 1], ["12%", "-30%"]);
+
+  return (
+    <motion.span ref={ref} className="heading_ghost" style={{ x, y: "-50%" }} aria-hidden="true">
+      {text}
+    </motion.span>
+  );
+}
+
+export default function BoilerHeading({ title, header, section = false, children }) {
   // Define the allowed header tags, their font sizes, and margin styles
   const headingStyles = {
     h1: { fontSize: "5.5rem", marginTop: "-1rem", marginBottom: "-2rem", marginLeft: "6rem" },
@@ -18,9 +33,13 @@ export default function BoilerHeading({ title, header }) {
   // Validate the header prop and default to "h1" if invalid
   const Tag = headingStyles[header] ? header : "h1";
   const style = headingStyles[Tag] || headingStyles.h1; // Default style to h1 if header is invalid
+  const ready = useStageReady();
+  // Section headings reveal on scroll; a page title plays as soon as the intro lifts.
+  const isPageTitle = Tag === "h1" && !section;
 
   return (
-    <>
+    <div className="heading_block">
+      {!isPageTitle && <GhostWord text={title} />}
       <TagsCreator
         tag={header}
         style={{ marginBottom: style.marginBottom, marginLeft: style.marginLeft }}
@@ -28,14 +47,16 @@ export default function BoilerHeading({ title, header }) {
       />
       {React.createElement(
         Tag,
-        { className: "main_heading_container", style: { fontSize: style.fontSize }},
-        <ul>{createAnimatedText(title)}</ul>
+        { className: "main_heading_container", style: { fontSize: style.fontSize }, "aria-label": title },
+        <AnimatedText text={title} play={isPageTitle ? ready : undefined} />
       )}
+      {children}
       <TagsCreator
         tag={header}
-        style={{ marginTop: style.marginTop, marginLeft: style.marginLeft }}
+        style={{ marginTop: children ? "0.3rem" : style.marginTop, marginLeft: style.marginLeft }}
         bool={true}
+        delay={0.35}
       />
-    </>
+    </div>
   );
 }

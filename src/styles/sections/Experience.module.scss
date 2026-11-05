@@ -29,11 +29,56 @@
         }
 
         .experience_section_container {
+            // Shared with ExperienceCard so each node sits on the rail.
+            --gutter: 3rem;
+            --rail: 1.25rem;
             position: relative;
             display: flex;
-            justify-content: center;
-            // align-items: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            width: fit-content;
+            margin: 0 auto;
+            padding-left: var(--gutter);
         }
+
+        // Scroll-drawn line running past every role.
+        .timeline {
+            position: absolute;
+            top: 2rem;
+            bottom: 2rem;
+            left: var(--rail);
+            width: 0.12rem;
+            border-radius: 1rem;
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .timeline_fill {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            transform-origin: top center;
+            background: linear-gradient(to bottom, var(--blue), var(--green), var(--pink));
+            box-shadow: 0 0 0.75rem rgba(9, 253, 217, 0.6);
+        }
+
+        .timeline_comet {
+            position: absolute;
+            left: 50%;
+            width: 0.9rem;
+            height: 0.9rem;
+            margin: -0.45rem 0 0 -0.45rem;
+            border-radius: 50%;
+            background: var(--white);
+            box-shadow:
+                0 0 0 0.25rem rgba(9, 253, 217, 0.25),
+                0 0 1.25rem 0.3rem var(--blue);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .experience_conatiner .experience_body_container .experience_section_container {
+        --gutter: 2rem;
+        --rail: 0.6rem;
     }
 }

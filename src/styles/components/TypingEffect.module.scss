@@ -2,7 +2,10 @@
     display: inline-block;
     width: 0.5rem;
     height: 1em;
-    background: #eaeaea;
+    margin-left: 0.15rem;
+    vertical-align: text-bottom;
+    background: var(--blue);
+    box-shadow: 0 0 0.6rem var(--blue);
     animation: blink 0.5s step-start infinite;
 }
 
@@ -11,4 +14,3 @@
         opacity: 0;
     }
 }
-

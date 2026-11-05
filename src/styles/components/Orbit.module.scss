@@ -1,0 +1,178 @@
+.orbit {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 24rem;
+    aspect-ratio: 1;
+    // Only the disc takes the pointer, so text wrapping into the corners stays reachable.
+    border-radius: 50%;
+    pointer-events: auto;
+
+    // Freeze the system on hover so each planet can be pointed at.
+    &:hover .ring,
+    &:hover .planet_body {
+        animation-play-state: paused;
+    }
+}
+
+.core {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 6.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    font-family: Coolvetica Rg;
+    font-size: 2rem;
+    color: var(--white);
+    background: radial-gradient(circle at 30% 30%, #1d3b66, var(--dark-navy) 70%);
+    animation: pulse 3.2s ease-in-out infinite;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: -0.4rem;
+        z-index: -1;
+        border-radius: 50%;
+        background: conic-gradient(var(--blue), var(--pink), var(--gold), var(--blue));
+        filter: blur(0.5rem);
+        opacity: 0.85;
+        animation: spin 4s linear infinite;
+    }
+
+    span {
+        text-shadow: 0.15rem 0.15rem var(--pink);
+    }
+}
+
+.ring {
+    position: absolute;
+    width: var(--size);
+    aspect-ratio: 1;
+    border: 0.06rem dashed rgba(100, 255, 218, 0.22);
+    border-radius: 50%;
+    // Outer rings sit on top of inner ones; only the planets should catch the pointer.
+    pointer-events: none;
+    animation: spin var(--duration) linear infinite;
+
+    // A glowing comet riding each ring.
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -0.25rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-top: -0.25rem;
+        border-radius: 50%;
+        background: var(--pink);
+        box-shadow: 0 0 0.8rem 0.2rem var(--pink);
+    }
+}
+
+.reverse {
+    animation-direction: reverse;
+
+    &::after {
+        background: var(--blue);
+        box-shadow: 0 0 0.8rem 0.2rem var(--blue);
+    }
+}
+
+.satellite {
+    position: absolute;
+    inset: 0;
+    transform: rotate(var(--angle));
+    pointer-events: none;
+}
+
+.planet {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle)));
+    pointer-events: auto;
+}
+
+// Counter-spins against its ring so the logo always stays upright.
+.planet_body {
+    display: grid;
+    place-items: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    border: 0.06rem solid rgba(100, 255, 218, 0.3);
+    border-radius: 50%;
+    font-size: 1.35rem;
+    color: var(--green);
+    background: rgba(17, 34, 64, 0.92);
+    box-shadow: 0 0 1rem rgba(9, 253, 217, 0.15);
+    animation: spin var(--duration) linear infinite reverse;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    svg {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    &:hover {
+        color: var(--black);
+        background-color: var(--blue);
+        box-shadow: 0 0 1.5rem var(--blue);
+
+        svg {
+            transform: scale(1.25);
+        }
+    }
+}
+
+.reverse .planet_body {
+    animation-direction: normal;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 0.06rem rgba(100, 255, 218, 0.3),
+            0 0 2.5rem rgba(9, 253, 217, 0.3),
+            inset 0 0 1.5rem rgba(9, 253, 217, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 0.06rem rgba(253, 9, 83, 0.4),
+            0 0 4rem rgba(253, 9, 83, 0.35),
+            inset 0 0 2rem rgba(253, 9, 83, 0.25);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .orbit {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .orbit {
+        width: 17rem;
+    }
+
+    .core {
+        width: 5rem;
+        font-size: 1.6rem;
+    }
+
+    .planet_body {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1.1rem;
+    }
+}

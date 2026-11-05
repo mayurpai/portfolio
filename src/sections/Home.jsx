@@ -1,6 +1,7 @@
 
 import BoilerHeading from "@/common/BoilerHeading";
-import Button from "@/components/Button";
+import Orbit from "@/components/Orbit";
+import RoleRotator from "@/components/RoleRotator";
 import TagsCreator from "@/components/TagsCreator";
 import About from "@/sections/About";
 import styles from "@/styles/sections/Home.module.scss";
@@ -16,11 +17,18 @@ export default function Home() {
     return (
         <section className={styles.home_container} id="home">
             <div className={styles.home_body_container}>
-                <BoilerHeading title={heading} header="h1" />
+                {/* First in the flow so the name and the paragraph wrap around it. */}
+                <div className={styles.orbit_slot}>
+                    <Orbit />
+                </div>
+                <BoilerHeading title={heading} header="h1">
+                    <RoleRotator />
+                </BoilerHeading>
                 <TagsCreator
                     tag="p"
                     style={{ marginLeft: "7.5rem" }}
                     bool={false}
+                    delay={0.5}
                 ></TagsCreator>
                 <About page="Home" />
                 <TagsCreator

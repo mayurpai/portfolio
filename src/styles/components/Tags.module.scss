@@ -11,3 +11,14 @@
   height: fit-content;
   width: fit-content;
 }
+
+.ink {
+  display: inline-block;
+  transform-origin: left center;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+
+  &:hover {
+    color: var(--pink);
+    text-shadow: 0 0 0.75rem rgba(253, 9, 83, 0.6);
+  }
+}

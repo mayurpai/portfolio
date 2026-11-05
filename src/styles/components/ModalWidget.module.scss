@@ -1,3 +1,84 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background-color: rgba(2, 12, 27, 0);
+    backdrop-filter: blur(0);
+    transition:
+        background-color 0.3s ease,
+        backdrop-filter 0.3s ease;
+}
+
+.overlay_open {
+    background-color: rgba(2, 12, 27, 0.55);
+    backdrop-filter: blur(6px);
+}
+
+.overlay_close {
+    background-color: rgba(2, 12, 27, 0);
+    backdrop-filter: blur(0);
+}
+
+.content {
+    position: relative;
+    isolation: isolate;
+    width: min(30rem, 100%);
+    height: 24rem;
+    padding: 10px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    outline: none;
+    box-shadow:
+        0 2rem 4rem rgba(2, 12, 27, 0.7),
+        0 0 2.5rem rgba(9, 253, 217, 0.12);
+    opacity: 0;
+    transform: perspective(60rem) translateY(2.5rem) rotateX(16deg) scale(0.88);
+    transition:
+        opacity 0.3s ease,
+        transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    // react-modal focuses the dialog itself; the border beam already marks it.
+    &:focus-visible {
+        outline: none;
+    }
+
+    // A light beam that runs around the border.
+    &::before {
+        content: "";
+        position: absolute;
+        inset: -50%;
+        z-index: -2;
+        background: conic-gradient(from 0deg, transparent 0 62%, var(--blue) 80%, var(--pink) 92%, transparent);
+        animation: beam 4s linear infinite;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0.08rem;
+        z-index: -1;
+        border-radius: 0.7rem;
+        background:
+            radial-gradient(circle at 100% 0%, rgba(253, 9, 83, 0.12), transparent 45%),
+            radial-gradient(circle at 0% 100%, rgba(9, 253, 217, 0.1), transparent 45%),
+            rgba(10, 25, 47, 0.96);
+    }
+}
+
+.content_open {
+    opacity: 1;
+    transform: none;
+}
+
+.content_close {
+    opacity: 0;
+    transform: perspective(60rem) translateY(1rem) scale(0.95);
+    transition-duration: 0.25s;
+}
+
 .modalMain {
     position: relative;
     height: 100%;
@@ -22,21 +103,32 @@
         font-size: 1rem;
         font-weight: 100;
         cursor: pointer;
+        transition:
+            transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+            background-color 0.3s ease,
+            color 0.3s ease;
 
         &:hover {
+            color: var(--pink);
             background-color: rgba(255, 255, 255, 0.05);
+            transform: rotate(90deg) scale(1.1);
         }
     }
 
     .modalHeader {
         height: 2.25rem;
-        color: var(--blue);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         font-family: Coolvetica Rg;
         letter-spacing: 0.05rem;
+        background: linear-gradient(90deg, var(--blue), var(--pink), var(--gold), var(--blue));
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: header-flow 6s linear infinite;
     }
 
     .modalHolder {
@@ -44,5 +136,17 @@
         margin-top: 1.5rem;
         overflow-y: auto;
         height: calc(100% - 3.5rem);
+    }
+}
+
+@keyframes beam {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes header-flow {
+    to {
+        background-position: 300% 0;
     }
 }

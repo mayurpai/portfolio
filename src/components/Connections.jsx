@@ -1,8 +1,9 @@
 import { Connections } from "@/constants/Connections";
+import styles from "@/styles/components/Connections.module.scss";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PT_Mono } from "next/font/google";
 import Link from "next/link";
-import styles from "@/styles/components/Connections.module.scss";
 
 
 const pt_mono = PT_Mono({
@@ -14,7 +15,7 @@ const pt_mono = PT_Mono({
 export default function ModalLinks(props) {
   return Connections.map((item, id) => {
     return (
-      <div className={styles.modalLinks} key={id}>
+      <div className={styles.modalLinks} key={id} style={{ "--i": id }}>
         <Link href={item.link} target="_blank" onClick={props.onRequestClose}>
           <div className={styles.modalSingleLink}>
             <span className={styles.modalIcon}>
@@ -31,6 +32,7 @@ export default function ModalLinks(props) {
               <p>{item.heading}</p>
               <p>{item.username}</p>
             </div>
+            <FontAwesomeIcon icon={faArrowRight} className={styles.arrow} />
           </div>
         </Link>
       </div>

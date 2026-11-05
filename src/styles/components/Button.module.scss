@@ -1,4 +1,7 @@
 .button {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     font-family: Coolvetica Rg;
     border: 0.1rem solid var(--blue);
     color: var(--blue);
@@ -7,11 +10,12 @@
     font-weight: bolder;
     width: max-content;
     height: 3.5rem;
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.5rem;
     font-size: 1.25rem;
     border-radius: 0.5rem;
     -webkit-border-radius: 0.5rem;
@@ -19,11 +23,113 @@
     -ms-border-radius: 0.5rem;
     -o-border-radius: 0.5rem;
     cursor: pointer;
-    transition: 0.25s ease-in-out;
+    transition:
+        transform 0.25s ease-in-out,
+        box-shadow 0.25s ease-in-out,
+        color 0.35s ease;
+
+    // Periodic light sweep to draw the eye.
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        z-index: 2;
+        width: 45%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+        transform: skewX(-20deg);
+        animation: shine 5s ease-in-out infinite;
+        pointer-events: none;
+    }
 
     &:hover {
+        color: var(--black);
         transform: translateX(-0.25rem) translateY(-0.25rem);
-        box-shadow: 0.2rem 0.2rem var(--pink);
-        background-color: var(--light-navy);
+        box-shadow: 0.25rem 0.25rem var(--pink);
+
+        .fill {
+            border-radius: 0;
+            transform: translateY(0) scale(1.2);
+        }
+
+        .label > span,
+        .label::after {
+            transform: translateY(-100%);
+        }
+
+        .icon {
+            animation: wiggle 0.5s ease-in-out;
+        }
+    }
+
+    &:active {
+        transform: translate(0, 0);
+        box-shadow: 0 0 var(--pink);
+    }
+}
+
+.fill {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 50% 50% 0 0;
+    background: linear-gradient(120deg, var(--blue), var(--green));
+    transform: translateY(115%) scale(1.2);
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1), border-radius 0.5s ease;
+}
+
+.icon {
+    font-size: 1.3rem;
+}
+
+// Text rolls up and a copy rolls in from below on hover.
+.label {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1.3;
+
+    > span {
+        display: inline-block;
+    }
+
+    > span,
+    &::after {
+        transition: transform 0.45s cubic-bezier(0.7, 0, 0.3, 1);
+    }
+
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@keyframes shine {
+    0%,
+    65% {
+        left: -75%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-18deg) scale(1.15);
+    }
+
+    60% {
+        transform: rotate(12deg) scale(1.1);
     }
 }

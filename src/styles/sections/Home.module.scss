@@ -1,6 +1,6 @@
 .home_container {
     position: relative;
-    width: 100vw;
+    width: 100%;
     // padding: 2rem 0;
     display: flex;
     flex-wrap: wrap;
@@ -9,9 +9,24 @@
     // scroll-snap-align: start;
 
     .home_body_container {
-        // width: 100%;
+        // A fixed width keeps the typed text from growing out of the centre.
+        width: 100%;
+        // Contains the floated orbit.
+        display: flow-root;
         // max-width: 1200px;
         padding: 0 2rem;
+
+        // Floated so the role and paragraph sit right under the name and curve round the orbit.
+        .orbit_slot {
+            float: right;
+            // The heading and paragraph boxes run underneath the float (only their lines wrap), so they'd swallow the hover.
+            position: relative;
+            z-index: 1;
+            pointer-events: none;
+            shape-outside: circle(50%) content-box;
+            shape-margin: 1.75rem;
+            margin: 1rem 4rem 1rem 2.5rem;
+        }
 
         .main_heading_container {
             font-family: Coolvetica Rg;
@@ -63,5 +78,27 @@
         -moz-transform: translate(50%);
         -ms-transform: translate(50%);
         -o-transform: translate(50%);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    // Stacked: name and role first, then the orbit, then the paragraph.
+    .home_container .home_body_container {
+        display: flex;
+        flex-direction: column;
+
+        > * {
+            order: 2;
+        }
+
+        > :global(.heading_block) {
+            order: 0;
+        }
+
+        .orbit_slot {
+            float: none;
+            order: 1;
+            margin: 2rem auto 2.5rem;
+        }
     }
 }

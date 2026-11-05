@@ -1,29 +1,29 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from 'next/link';
 import styles from "../styles/components/Button.module.scss";
 
-export default function Button(props) {
-    return (
+export default function Button({ buttonName, icon, href, onClick, cursor }) {
+    const content = (
         <>
-            {props?.buttonName == "Stalk My Dev Resume" ? <Link passHref href="docs/Resume.pdf" target="_blank" rel="noopener noreferrer">
-                <div className={styles.button}>
-                    <FontAwesomeIcon
-                        icon={props.icon}
-                        style={{ fontSize: "1.4rem", padding: "0.2rem" }}
-                        fixedWidth
-                        fade
-                    />{props.buttonName}
-                </div></Link> :
-                <div className={styles.button}>
-                    <FontAwesomeIcon
-                        icon={props.icon}
-                        style={{ fontSize: "1.4rem", padding: "0.2rem" }}
-                        fixedWidth
-                        fade
-                    />
-                    {props.buttonName}
-                </div>
-            }
+            <span className={styles.fill} aria-hidden="true" />
+            {icon && <FontAwesomeIcon icon={icon} className={styles.icon} fixedWidth />}
+            <span className={styles.label} data-text={buttonName}>
+                <span>{buttonName}</span>
+            </span>
         </>
+    );
+
+    // A plain anchor: `href` points at files (the resume PDF), which next/link would try to prefetch as a route.
+    if (href) {
+        return (
+            <a href={href} target="_blank" rel="noopener noreferrer" className={styles.button} data-cursor={cursor}>
+                {content}
+            </a>
+        );
+    }
+
+    return (
+        <button type="button" className={styles.button} onClick={onClick} data-cursor={cursor}>
+            {content}
+        </button>
     );
 }

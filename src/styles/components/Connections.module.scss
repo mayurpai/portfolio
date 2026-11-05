@@ -7,15 +7,32 @@
     width: 98%;
     margin: 0.25rem 0;
     padding: 0.5rem;
-    transition: 0.3s all linear;
-    -moz-transition: 0.3s all linear;
-    -ms-transition: 0.3s all linear;
-    -o-transition: 0.3s all linear;
-    -webkit-transition: 0.3s all linear;
+    transition:
+        background-color 0.3s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: link-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(0.15s + var(--i, 0) * 0.06s);
 
     &:hover {
         cursor: pointer;
         background-color: var(--green-tint);
+        transform: translateX(0.4rem);
+
+        .arrow {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    .arrow {
+        margin-left: auto;
+        margin-right: 0.75rem;
+        color: var(--blue);
+        opacity: 0;
+        transform: translateX(-0.75rem);
+        transition:
+            opacity 0.3s ease,
+            transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .modalSingleLink {
@@ -81,5 +98,12 @@
                 font-weight: bold;
             }
         }
+    }
+}
+
+@keyframes link-in {
+    from {
+        opacity: 0;
+        transform: translateX(-1.5rem);
     }
 }

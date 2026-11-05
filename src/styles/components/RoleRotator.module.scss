@@ -1,0 +1,60 @@
+.role {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin: 0.3rem 0 0 8rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+// Remounted for every role, so it sweeps in again as the new title decodes.
+.accent {
+    flex: none;
+    width: 2.75rem;
+    height: 0.15rem;
+    // Centred on the first line even when a long role wraps.
+    margin-top: calc(0.75em - 0.075rem);
+    border-radius: 1rem;
+    background: linear-gradient(90deg, var(--blue), var(--pink));
+    box-shadow: 0 0 0.75rem rgba(9, 253, 217, 0.45);
+    transform-origin: left center;
+    animation: draw 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.output {
+    min-width: 0;
+    white-space: pre-wrap;
+    color: var(--lightest-slate);
+    text-shadow: 0 0 0.75rem rgba(9, 253, 217, 0.35);
+}
+
+.caret {
+    display: inline-block;
+    width: 0.6rem;
+    height: 1.15em;
+    margin-left: 0.2rem;
+    vertical-align: text-bottom;
+    background: var(--blue);
+    box-shadow: 0 0 0.6rem var(--blue);
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes draw {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+// The longest role wraps on phones; keep two lines so the paragraph below doesn't bob.
+@media screen and (max-width: 480px) {
+    .role {
+        min-height: 3em;
+    }
+}
