@@ -54,3 +54,15 @@
     }
   }
 }
+
+// Phones: a live blur of the animated backdrop costs a full re-blur every frame; go near-opaque instead.
+@media (hover: none), (pointer: coarse) {
+  .navigation_links {
+    backdrop-filter: none;
+
+    &.scrolled {
+      background-color: rgba(10, 25, 47, 0.92);
+      backdrop-filter: none;
+    }
+  }
+}

@@ -84,3 +84,10 @@
         transform: scaleY(1.5);
     }
 }
+
+@media (hover: none), (pointer: coarse) {
+    .button {
+        background: rgba(17, 34, 64, 0.94);
+        backdrop-filter: none;
+    }
+}

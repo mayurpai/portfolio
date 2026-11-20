@@ -15,3 +15,8 @@
         line-height: 1.3rem;
     }
 }
+
+// Inside a column there's no need for the matching right-hand gutter.
+.fluid .about_section_body_container {
+    width: auto;
+}

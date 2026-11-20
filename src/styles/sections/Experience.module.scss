@@ -1,84 +1,653 @@
+// Experience as a `git log --graph`: every role is a commit, several roles at one company hang off it in a bracket.
+// Sized in px (not rem): the site shrinks rem on phones, which would make terminal text unreadably small.
 .experience_conatiner {
-    // position: relative;
-    // width: 100vw;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     padding: 2rem 0;
-    // scroll-snap-align: start;
 
     .experience_body_container {
-        // width: 100%;
-        // max-width: 1200px;
+        width: min(1120px, 100%);
         padding: 0 2rem;
+        color: var(--light-slate);
+        font-size: 15px;
+        line-height: 1.6;
 
         .experience_resume {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 1rem 0;
-        }
-
-        .experience_heading_container {
-            font-family: Coolvetica Rg;
-            font-style: normal;
-            font-weight: bolder;
-            margin: 0 8rem;
-            font-size: 5.5rem;
-        }
-
-        .experience_section_container {
-            // Shared with ExperienceCard so each node sits on the rail.
-            --gutter: 3rem;
-            --rail: 1.25rem;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: fit-content;
-            margin: 0 auto;
-            padding-left: var(--gutter);
-        }
-
-        // Scroll-drawn line running past every role.
-        .timeline {
-            position: absolute;
-            top: 2rem;
-            bottom: 2rem;
-            left: var(--rail);
-            width: 0.12rem;
-            border-radius: 1rem;
-            background: rgba(100, 255, 218, 0.1);
-        }
-
-        .timeline_fill {
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            transform-origin: top center;
-            background: linear-gradient(to bottom, var(--blue), var(--green), var(--pink));
-            box-shadow: 0 0 0.75rem rgba(9, 253, 217, 0.6);
-        }
-
-        .timeline_comet {
-            position: absolute;
-            left: 50%;
-            width: 0.9rem;
-            height: 0.9rem;
-            margin: -0.45rem 0 0 -0.45rem;
-            border-radius: 50%;
-            background: var(--white);
-            box-shadow:
-                0 0 0 0.25rem rgba(9, 253, 217, 0.25),
-                0 0 1.25rem 0.3rem var(--blue);
+            margin: 2.5rem 0 1rem;
         }
     }
 }
 
+.lede {
+    position: relative;
+    max-width: 560px;
+    margin: 2.25rem 0 2rem 6rem;
+    color: var(--slate);
+    font-size: 14px;
+}
+
+.terminal {
+    border: 1px solid var(--lightest-navy);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(17, 34, 64, 0.85), rgba(2, 12, 27, 0.9));
+    box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.8);
+}
+
+.titlebar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    border-radius: 13px 13px 0 0;
+    border-bottom: 1px solid var(--lightest-navy);
+    background: rgba(2, 12, 27, 0.6);
+    color: var(--slate);
+    font-size: 12px;
+}
+
+.lights {
+    display: flex;
+    gap: 7px;
+
+    i {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--pink);
+
+        &:nth-child(2) {
+            background: var(--gold);
+        }
+
+        &:nth-child(3) {
+            background: var(--blue);
+        }
+    }
+}
+
+.prompt {
+    margin: 0;
+    padding: 18px 22px 6px;
+    font-size: 14px;
+    color: var(--lightest-slate);
+}
+
+.path {
+    color: var(--blue);
+}
+
+.sigil {
+    margin: 0 8px;
+    color: var(--pink);
+}
+
+.log {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 8px 22px 6px;
+    list-style: none;
+}
+
+.graph {
+    position: relative;
+}
+
+// Main line of the graph, placed on the node centres from JS. Dim track, scroll-driven light.
+.rail {
+    position: absolute;
+    z-index: 0;
+    width: 2px;
+    margin-left: -1px;
+    border-radius: 2px;
+    background: rgba(100, 255, 218, 0.12);
+}
+
+.rail_fill {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    transform-origin: top center;
+    background: linear-gradient(to bottom, var(--blue), var(--green), var(--pink));
+    box-shadow: 0 0 0.75rem rgba(9, 253, 217, 0.6);
+}
+
+.rail_track {
+    position: absolute;
+    inset: 0;
+}
+
+.rail_comet {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow:
+        0 0 0 4px rgba(9, 253, 217, 0.25),
+        0 0 20px 5px var(--blue);
+}
+
+// Each commit row; the node sits on the rail.
+.commit {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+}
+
+.lane {
+    position: relative;
+    grid-row: span 2;
+}
+
+.node {
+    position: absolute;
+    z-index: 1;
+    left: 7px;
+    top: 15px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 2px solid var(--blue);
+}
+
+.head .node {
+    background: var(--blue);
+    box-shadow: 0 0 0 5px rgba(9, 253, 217, 0.18), 0 0 18px rgba(9, 253, 217, 0.7);
+}
+
+.multi .node {
+    left: 6px;
+    top: 14px;
+    width: 16px;
+    height: 16px;
+    border-color: var(--gold);
+}
+
+.details {
+    min-width: 0;
+    border-radius: 10px;
+
+    &[open] > .diff {
+        animation: diff-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    &:not([open]) > .diff {
+        display: none;
+    }
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    list-style: none;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &:hover,
+    .details[open] > & {
+        background: rgba(35, 53, 84, 0.45);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 2px;
+    }
+}
+
+.hash {
+    color: var(--gold);
+    font-size: 13px;
+}
+
+.logo {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.initials {
+    display: grid;
+    place-items: center;
+    background: #111;
+    color: var(--gold);
+    font-family: Coolvetica Rg;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+}
+
+.msg {
+    min-width: 0;
+    color: var(--lightest-slate);
+    font-size: 15px;
+
+    b {
+        font-family: Coolvetica Rg;
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 0.01em;
+        color: var(--white);
+    }
+}
+
+.at {
+    margin: 0 6px;
+    color: var(--slate);
+}
+
+.refs {
+    margin-left: 8px;
+    font-size: 12px;
+    color: var(--slate);
+}
+
+.ref_head {
+    color: var(--blue);
+}
+
+.ref_branch {
+    color: var(--green);
+}
+
+.ref_tag {
+    color: var(--gold);
+}
+
+.win {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 1px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(9, 253, 217, 0.25);
+    background: rgba(9, 253, 217, 0.1);
+    color: var(--blue);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.date {
+    color: var(--slate);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.chevron {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.25s;
+
+    .details[open] > .summary & {
+        transform: rotate(90deg);
+        color: var(--blue);
+    }
+}
+
+.diff {
+    padding: 6px 12px 18px;
+}
+
+.stat {
+    margin: 4px 0 14px;
+    color: var(--slate);
+    font-size: 12px;
+}
+
+.plus {
+    color: var(--green);
+}
+
+.site {
+    color: var(--light-slate);
+    border-bottom: 1px dashed var(--lightest-navy);
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--blue);
+        border-color: var(--blue);
+        outline: none;
+    }
+}
+
+.impact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 0 0 16px;
+}
+
+.metric {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--lightest-navy);
+    background: rgba(2, 12, 27, 0.55);
+
+    strong {
+        display: block;
+        font-family: Coolvetica Rg;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 1;
+        color: var(--blue);
+    }
+
+    &:nth-child(2) strong {
+        color: var(--pink);
+    }
+
+    &:nth-child(3) strong {
+        color: var(--gold);
+    }
+
+    &:nth-child(4) strong {
+        color: var(--green);
+    }
+
+    span {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: var(--light-slate);
+    }
+}
+
+.lines {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-left: 2px solid rgba(100, 255, 218, 0.25);
+
+    li {
+        position: relative;
+        padding: 5px 0 5px 34px;
+        font-size: 14px;
+        color: var(--light-slate);
+
+        &::before {
+            content: "+";
+            position: absolute;
+            left: 12px;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        // Each line's lead phrase arrives bold from the data.
+        span {
+            color: var(--lightest-slate);
+        }
+    }
+
+    .more {
+        &::before {
+            content: "@@";
+            left: 6px;
+            top: 7px;
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--slate);
+        }
+
+        button {
+            padding: 0;
+            border: 0;
+            background: none;
+            color: var(--slate);
+            font: inherit;
+            cursor: pointer;
+            border-bottom: 1px dashed var(--lightest-navy);
+
+            &:hover,
+            &:focus-visible {
+                color: var(--blue);
+                border-color: var(--blue);
+                outline: none;
+            }
+        }
+    }
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.chip {
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(100, 255, 218, 0.15);
+    background: rgba(100, 255, 218, 0.08);
+    color: var(--green);
+    font: inherit;
+    font-size: 12px;
+}
+
+button.chip_more {
+    border-style: dashed;
+    border-color: var(--lightest-navy);
+    background: none;
+    color: var(--slate);
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--blue);
+        border-color: var(--blue);
+        outline: none;
+    }
+}
+
+// A run of roles at one company, drawn as a bracket. Each role's circle is centred on the
+// bracket's vertical line (--line) and on its role's first line of text (--dot-y).
+.branch {
+    --line: 15px;
+    // 4px row padding + half of the 13px × 1.6 first line: the circle's centre in each row.
+    --dot-y: 14.4px;
+    position: relative;
+    grid-column: 2;
+    margin: 2px 0 6px;
+    padding: 0;
+    list-style: none;
+
+    li {
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding: 4px 0 4px 34px;
+        font-size: 13px;
+        color: var(--light-slate);
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: calc(var(--line) - 7px);
+            top: calc(var(--dot-y) - 7px);
+            width: 14px;
+            height: 14px;
+            box-sizing: border-box;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            background: var(--navy);
+        }
+
+        // The bracket, one piece per row so wrapped text can't make the two ends uneven: the first
+        // row opens it --dot-y above its circle, the last closes it --dot-y below its circle.
+        &::after {
+            content: "";
+            position: absolute;
+            left: calc(var(--line) - 1px);
+            top: 0;
+            bottom: 0;
+            border-left: 2px solid rgba(246, 205, 41, 0.55);
+        }
+
+        &:first-child::after {
+            width: 18px;
+            border-top: 2px solid rgba(246, 205, 41, 0.55);
+            border-top-left-radius: 10px;
+        }
+
+        &:last-child::after {
+            bottom: auto;
+            height: calc(var(--dot-y) * 2);
+            width: 18px;
+            border-bottom: 2px solid rgba(246, 205, 41, 0.55);
+            border-bottom-left-radius: 10px;
+            box-sizing: border-box;
+        }
+    }
+
+    .hash {
+        font-size: 12px;
+    }
+}
+
+.who {
+    color: var(--lightest-slate);
+}
+
+.when {
+    margin-left: auto;
+    color: var(--slate);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.end {
+    margin: 0;
+    padding: 6px 22px 18px 62px;
+    color: var(--slate);
+    font-size: 12px;
+}
+
+@keyframes diff-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .lede {
+        margin-left: 0;
+    }
+
+    .summary {
+        grid-template-columns: auto minmax(0, 1fr);
+        row-gap: 4px;
+
+        .hash {
+            display: none;
+        }
+    }
+
+    .date {
+        grid-column: 2;
+    }
+
+    .refs {
+        display: block;
+        margin: 2px 0 0;
+    }
+}
+
 @media screen and (max-width: 576px) {
-    .experience_conatiner .experience_body_container .experience_section_container {
-        --gutter: 2rem;
-        --rail: 0.6rem;
+    .experience_conatiner .experience_body_container {
+        padding: 0 14px;
+    }
+
+    .log {
+        padding: 4px 10px 6px;
+    }
+
+    .prompt {
+        padding: 14px 14px 4px;
+        font-size: 12px;
+    }
+
+    .commit {
+        grid-template-columns: 30px minmax(0, 1fr);
+    }
+
+    .node {
+        left: 3px;
+    }
+
+    .multi .node {
+        left: 2px;
+    }
+
+    .msg b {
+        font-size: 18px;
+    }
+
+    .head_pointer {
+        display: none;
+    }
+
+    .win {
+        display: table;
+        margin: 4px 0 0;
+    }
+
+    .branch li {
+        flex-wrap: wrap;
+        gap: 2px 10px;
+        padding-left: 30px;
+    }
+
+    .when {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .end {
+        padding-left: 40px;
+    }
+
+    .diff {
+        padding: 6px 4px 16px;
+    }
+
+    .lines li {
+        padding-left: 22px;
+
+        &::before {
+            left: 6px;
+        }
+    }
+
+    .lines .more::before {
+        left: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .details[open] > .diff {
+        animation: none;
+    }
+
+    .rail_comet {
+        display: none;
     }
 }

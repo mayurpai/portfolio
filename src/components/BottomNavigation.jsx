@@ -1,7 +1,7 @@
 "use client";
 
 import { useStageReady } from "@/common/stage";
-import { startPageTransition } from "@/components/PageTransition";
+import { routeOf, startPageTransition } from "@/components/PageTransition";
 import { Navigations } from "@/constants/Navigations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -28,7 +28,7 @@ const icon = {
 };
 
 export default function BottomNavigation() {
-    const currentPage = usePathname();
+    const currentPage = routeOf(usePathname());
     const ready = useStageReady();
 
     return (

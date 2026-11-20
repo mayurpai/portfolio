@@ -3,6 +3,7 @@ import styles from "@/styles/components/Marquee.module.scss";
 import {
     motion,
     useAnimationFrame,
+    useInView,
     useMotionValue,
     useReducedMotion,
     useScroll,
@@ -39,7 +40,7 @@ const MOTTO = [
 ];
 
 // Drifts on its own and speeds up (or reverses) with the page's scroll velocity.
-function Band({ items, baseVelocity, className }) {
+function Band({ items, baseVelocity, className, active }) {
     const reduceMotion = useReducedMotion();
     const baseX = useMotionValue(0);
     const direction = useRef(1);
@@ -51,7 +52,7 @@ function Band({ items, baseVelocity, className }) {
     const x = useTransform(baseX, (value) => `${wrap(-50, -25, value)}%`);
 
     useAnimationFrame((_, delta) => {
-        if (reduceMotion) return;
+        if (reduceMotion || !active) return;
         const factor = velocityFactor.get();
         if (factor < 0) direction.current = -1;
         else if (factor > 0) direction.current = 1;
@@ -79,10 +80,13 @@ function Band({ items, baseVelocity, className }) {
 }
 
 export default function Marquee() {
+    const ref = useRef(null);
+    const active = useInView(ref, { margin: "100px 0px" });
+
     return (
-        <section className={styles.marquee} aria-hidden="true">
-            <Band items={TECH} baseVelocity={-0.6} className={styles.band_primary} />
-            <Band items={MOTTO} baseVelocity={0.6} className={styles.band_outline} />
+        <section ref={ref} className={styles.marquee} aria-hidden="true">
+            <Band items={TECH} baseVelocity={-0.6} className={styles.band_primary} active={active} />
+            <Band items={MOTTO} baseVelocity={0.6} className={styles.band_outline} active={active} />
         </section>
     );
 }

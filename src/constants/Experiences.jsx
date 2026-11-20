@@ -1,10 +1,13 @@
-export const imageLink = "./images/experiences/";
+import { asset } from "@/common/assets";
+
+export const imageLink = asset("images/experiences/");
 export const linkedInCompanyLink = "https://www.linkedin.com/company/";
 export const linkedInSchoolLink = "https://www.linkedin.com/school/";
 
 export const Experiences = [
     {
         name: "Nike",
+        focus: "cloud platform engineering",
         role: ["Software Engineer II"],
         from: ["Dec 2025"],
         to: "Present",
@@ -47,6 +50,14 @@ export const Experiences = [
     },
     {
         name: "Endava India",
+        focus: "healthcare, fintech & enterprise automation",
+        promoted: true,
+        impact: [
+            { value: "80%", label: "less manual work from the ETL automation platform" },
+            { value: "85%", label: "faster resolution with GenAI support systems" },
+            { value: "120+ h", label: "saved every month" },
+            { value: "70%", label: "faster investigations for Fortune 500 fintech clients" },
+        ],
         role: ["Associate Developer", "Developer", "Senior Developer"],
         from: ["Aug 2022", "Jan 2024", "Jan 2025"],
         to: "Dec 2025",
@@ -111,6 +122,7 @@ export const Experiences = [
     },
     {
         name: "QuantumHunts",
+        focus: "mobile & web performance",
         role: ["Tech Consultant (Internship)"],
         from: ["Jan 2022"],
         to: "Feb 2022",
@@ -133,6 +145,9 @@ export const Experiences = [
     },
     {
         name: "LetsGrowMore",
+        focus: "responsive web apps",
+        // The logo is unreadable at commit-row size, so the row shows initials instead.
+        initials: "LG",
         role: ["Web Developer (Internship)"],
         from: ["Sep 2021"],
         to: "Sep 2021",
@@ -157,6 +172,8 @@ export const Experiences = [
     },
     {
         name: "Xpert",
+        focus: "digital marketing & outreach",
+        badge: "top 1%",
         role: ["Marketing Strategy Intern", "Outreach Coordinator"],
         from: ["Aug 2020", "Sep 2020"],
         to: "Sep 2020",

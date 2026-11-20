@@ -1,0 +1,385 @@
+// The Lafzon Ka Jadugar spellbook. Sized in px (headings aside): the site shrinks rem on phones.
+.spellbook {
+    display: grid;
+    justify-items: center;
+    color: var(--light-slate);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.hero,
+.library {
+    position: relative;
+    width: min(1200px, 100%);
+    padding: 0 2rem;
+}
+
+// A wrapped title (phones) would otherwise get the browser's loose default line height.
+.hero h1 {
+    line-height: 1.1;
+}
+
+.hero_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    margin-top: 2.5rem;
+}
+
+.intro {
+    min-width: 0;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin: 26px 0 0 9rem;
+
+    strong {
+        display: block;
+        font-family: Coolvetica Rg;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 1;
+        color: var(--lightest-slate);
+    }
+
+    span {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--slate);
+    }
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 30px 0 0 9rem;
+}
+
+.featured_slot {
+    position: relative;
+    margin-top: 2.25rem;
+    scroll-margin: 24px 0 96px;
+}
+
+.featured_card {
+    position: relative;
+}
+
+.library {
+    margin-top: 90px;
+}
+
+// Sits just under the top bar while it's showing, and slides up to the top when the bar tucks away.
+.filters {
+    position: sticky;
+    top: calc(var(--nav-height, 0px) * var(--nav-shown, 0));
+    z-index: 50;
+    display: grid;
+    gap: 10px;
+    margin-bottom: 26px;
+    padding: 14px 0 12px;
+    background: rgba(10, 25, 47, 0.97);
+    border-bottom: 1px solid var(--lightest-navy);
+    transition: top 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 18px;
+        background: linear-gradient(180deg, rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0));
+        pointer-events: none;
+    }
+
+    // Full-bleed backing so cards don't show either side of the bar.
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0 -2rem;
+        z-index: -1;
+        background: inherit;
+    }
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 2px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.seg {
+    display: inline-flex;
+    flex: none;
+    padding: 3px;
+    border-radius: 10px;
+    border: 1px solid var(--lightest-navy);
+    background: rgba(2, 12, 27, 0.6);
+
+    button {
+        border: 0;
+        border-radius: 7px;
+        padding: 7px 12px;
+        background: none;
+        color: var(--slate);
+        font: inherit;
+        font-size: 12px;
+        white-space: nowrap;
+        cursor: pointer;
+
+        &[aria-pressed="true"] {
+            background: var(--lightest-navy);
+            color: var(--white);
+        }
+    }
+}
+
+.chip {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--lightest-navy);
+    background: rgba(2, 12, 27, 0.5);
+    color: var(--light-slate);
+    font: inherit;
+    font-size: 12px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+
+    &:hover {
+        border-color: rgba(246, 205, 41, 0.5);
+    }
+
+    &[aria-pressed="true"] {
+        border-color: var(--gold);
+        background: rgba(246, 205, 41, 0.12);
+        color: var(--white);
+
+        small {
+            color: var(--gold);
+        }
+    }
+}
+
+.seg small,
+.chip small {
+    margin-left: 4px;
+    color: var(--slate);
+    font-size: 11px;
+}
+
+.seg button:focus-visible,
+.chip:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.count {
+    flex: none;
+    margin: 0 0 0 auto;
+    padding-left: 12px;
+    font-size: 12px;
+    color: var(--slate);
+    white-space: nowrap;
+
+    button {
+        margin-left: 8px;
+        padding: 0;
+        border: 0;
+        border-bottom: 1px dashed rgba(246, 205, 41, 0.5);
+        background: none;
+        color: var(--gold);
+        font: inherit;
+        cursor: pointer;
+    }
+}
+
+// Row order (#100 | #099, #098 | #097…) with both cards in a row the same height.
+.grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 22px;
+}
+
+.follow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(253, 9, 83, 0.35);
+    background:
+        radial-gradient(120% 120% at 0% 0%, rgba(253, 9, 83, 0.25), transparent 55%),
+        radial-gradient(120% 120% at 100% 100%, rgba(246, 205, 41, 0.22), transparent 55%),
+        var(--light-navy);
+    text-align: center;
+
+}
+
+// Classes, not tag selectors: the button inside is built from spans too.
+.follow_title {
+    margin: 0 0 4px;
+    font-family: Coolvetica Rg;
+    font-size: 24px;
+    color: var(--white);
+}
+
+.follow_text {
+    margin: 0 0 18px;
+    font-size: 12px;
+    color: var(--light-slate);
+}
+
+.empty {
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--slate);
+
+    strong {
+        display: block;
+        font-family: Coolvetica Rg;
+        font-weight: 400;
+        font-size: 26px;
+        color: var(--lightest-slate);
+    }
+
+    button {
+        padding: 0;
+        border: 0;
+        border-bottom: 1px dashed rgba(246, 205, 41, 0.5);
+        background: none;
+        color: var(--gold);
+        font: inherit;
+        cursor: pointer;
+    }
+}
+
+.more {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+// Portalled to <body>, so these are placed in page coordinates.
+.pop {
+    position: absolute;
+    z-index: 1000;
+    display: grid;
+    min-width: 200px;
+    padding: 6px;
+    border-radius: 12px;
+    border: 1px solid var(--lightest-navy);
+    background: var(--light-navy);
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9);
+
+    a,
+    button {
+        display: flex;
+        padding: 9px 12px;
+        border: 0;
+        border-radius: 8px;
+        background: none;
+        color: var(--light-slate);
+        font: inherit;
+        font-size: 13px;
+        text-align: left;
+        cursor: pointer;
+
+        &:hover,
+        &:focus-visible {
+            outline: none;
+            background: rgba(246, 205, 41, 0.1);
+            color: var(--gold);
+        }
+    }
+}
+
+// Clears the bottom navigation bar.
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 96px;
+    z-index: 1001;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 13px;
+    opacity: 0;
+    transform: translate(-50%, 20px);
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+
+    &.on {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 920px) {
+    .hero_grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 48px;
+    }
+
+    .featured_slot {
+        width: min(560px, 100%);
+        justify-self: center;
+    }
+
+    .grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .hero,
+    .library {
+        padding: 0 14px;
+    }
+
+    .filters::before {
+        inset: 0 -14px;
+    }
+
+    .stats {
+        gap: 18px;
+    }
+
+    .row:first-child {
+        flex-wrap: wrap;
+        row-gap: 6px;
+    }
+
+    .count {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .filters,
+    .toast {
+        transition: none;
+    }
+}

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Fragment } from "react";
+import { noLayer } from "./motion";
 
 const sentence = {
     hidden: {},
@@ -21,6 +22,7 @@ const letter = {
             opacity: { duration: 0.35 },
             filter: { duration: 0.45 },
         },
+        transitionEnd: { filter: "none" },
     },
 };
 
@@ -50,6 +52,7 @@ export function AnimatedText({ text, play }) {
                                 className="animated_char"
                                 variants={letter}
                                 whileHover={jelly}
+                                transformTemplate={noLayer}
                                 style={{ "--i": index++ }}
                             >
                                 {char}

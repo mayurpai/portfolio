@@ -1,7 +1,7 @@
 export const AboutDesc = [
     {
         "page": "Home",
-        "description": `I 'm a web wizard and coding aficionado, always on a quest to conquer the wildest realms of programming. Cracking complex challenges, bending systems to my will, and blazing new trails through code is my comfort zone. Teaching fuels my passion, sharpens my thinking, and keeps my curiosity permanently switched on. <br/><br/>
+        "description": `I'm a web wizard and coding aficionado, always on a quest to conquer the wildest realms of programming. Cracking complex challenges, bending systems to my will, and blazing new trails through code is my comfort zone. Teaching fuels my passion, sharpens my thinking, and keeps my curiosity permanently switched on. <br/><br/>
 
         Armed with a Bachelor's degree in Information Science from <span style="font-size: 1.5rem; font-family: Coolvetica Rg;">Sahyadri College of Engineering and Management, Mangalore</span>, my foundation is as solid as my ambition. I don't just keep up with trends — I chase them down, break them apart, and rebuild them better. <br/><br/>
 
@@ -13,7 +13,7 @@ export const AboutDesc = [
     },
     {
         "page": "Lafzon Ka Jadugar",
-        "description": `S tep into a world where words don't just talk—they freaking come alive. <br/> <br/> On "Lafzon Ka Jadugar", <span style="font-size: 1.5rem; font-family: Coolvetica Rg;">I, the poet, the damn "Magician Of Words"</span>, serving you a spellbinding collection of verses designed to blow your mind and ignite your soul. Each poem is a wild ride through raw emotions and untamed imagination. Buckle up and let's dive into the kind of magic only a true wordsmith can conjure.`
+        "description": `Step into a world where words don't just talk—they freaking come alive. <br/> <br/> On "Lafzon Ka Jadugar", <span style="font-size: 1.5rem; font-family: Coolvetica Rg;">I, the poet, the damn "Magician Of Words"</span>, serving you a spellbinding collection of verses designed to blow your mind and ignite your soul. Each poem is a wild ride through raw emotions and untamed imagination. Buckle up and let's dive into the kind of magic only a true wordsmith can conjure.`
     },
     {
         "page": "Not Found",

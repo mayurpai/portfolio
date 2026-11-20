@@ -1,4 +1,5 @@
 "use client";
+import { useStageReady } from "@/common/stage";
 import styles from "@/styles/components/Backdrop.module.scss";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -16,21 +17,34 @@ export default function Backdrop() {
     const rootRef = useRef(null);
     const canvasRef = useRef(null);
     const paletteRef = useRef(PALETTES[theme]);
+    // Nothing to draw while the intro or a page transition covers the screen.
+    const ready = useStageReady();
+    const readyRef = useRef(ready);
+    const syncRef = useRef(() => {});
 
     useEffect(() => {
         paletteRef.current = PALETTES[theme];
     }, [theme]);
 
     useEffect(() => {
+        readyRef.current = ready;
+        syncRef.current();
+    }, [ready]);
+
+    useEffect(() => {
         const root = rootRef.current;
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        // Phones and small CPUs: 1x pixels at 30fps keeps the canvas from competing with scrolling.
+        const lowPower = window.matchMedia("(hover: none), (pointer: coarse)").matches || (navigator.hardwareConcurrency || 8) <= 4;
+        const frameGap = lowPower ? 1000 / 30 - 2 : 0;
         const pointer = { x: -1e4, y: -1e4, moved: false };
         let particles = [];
         let width = 0;
         let height = 0;
         let frame = 0;
+        let lastDraw = 0;
 
         const createParticles = () => {
             const count = Math.min(110, Math.floor((width * height) / 14000));
@@ -53,7 +67,7 @@ export default function Backdrop() {
         };
 
         const resize = () => {
-            const ratio = Math.min(window.devicePixelRatio || 1, 2);
+            const ratio = lowPower ? 1 : Math.min(window.devicePixelRatio || 1, 2);
             const widthChanged = window.innerWidth !== width;
             width = window.innerWidth;
             height = window.innerHeight;
@@ -66,7 +80,10 @@ export default function Backdrop() {
             if (widthChanged || !particles.length) createParticles();
         };
 
-        const draw = () => {
+        const draw = (now) => {
+            frame = reduceMotion ? 0 : requestAnimationFrame(draw);
+            if (frameGap && now - lastDraw < frameGap) return;
+            lastDraw = now;
             const palette = paletteRef.current;
             const span = height + 40;
             const scroll = reduceMotion ? 0 : window.scrollY;
@@ -137,8 +154,6 @@ export default function Backdrop() {
                 context.arc(particle.sx, particle.sy, particle.radius, 0, Math.PI * 2);
                 context.fill();
             }
-
-            frame = reduceMotion ? 0 : requestAnimationFrame(draw);
         };
 
         const start = () => {
@@ -148,8 +163,11 @@ export default function Backdrop() {
             cancelAnimationFrame(frame);
             frame = 0;
         };
+        const sync = () => (document.hidden || !readyRef.current ? stop() : start());
 
         const onPointerMove = (event) => {
+            // Touches scroll the page; only a mouse pushes particles and moves the grid light.
+            if (event.pointerType && event.pointerType !== "mouse") return;
             pointer.x = event.clientX;
             pointer.y = event.clientY;
             pointer.moved = true;
@@ -159,25 +177,26 @@ export default function Backdrop() {
             pointer.x = -1e4;
             pointer.y = -1e4;
         };
-        const onVisibility = () => (document.hidden ? stop() : start());
         const onResize = () => {
             resize();
             if (reduceMotion) start();
         };
 
         resize();
-        start();
+        syncRef.current = sync;
+        sync();
         window.addEventListener("resize", onResize);
         window.addEventListener("pointermove", onPointerMove, { passive: true });
         document.documentElement.addEventListener("pointerleave", onPointerLeave);
-        document.addEventListener("visibilitychange", onVisibility);
+        document.addEventListener("visibilitychange", sync);
 
         return () => {
             stop();
+            syncRef.current = () => {};
             window.removeEventListener("resize", onResize);
             window.removeEventListener("pointermove", onPointerMove);
             document.documentElement.removeEventListener("pointerleave", onPointerLeave);
-            document.removeEventListener("visibilitychange", onVisibility);
+            document.removeEventListener("visibilitychange", sync);
         };
     }, []);
 

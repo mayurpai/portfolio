@@ -124,3 +124,13 @@
         transform: translate(6%, 6%);
     }
 }
+
+// Phones: the glow and grain stay but hold still, so they're painted once instead of
+// riding as huge GPU layers that are re-composited every frame.
+@media (hover: none), (pointer: coarse) {
+    .aurora span,
+    .grain {
+        animation: none;
+        will-change: auto;
+    }
+}

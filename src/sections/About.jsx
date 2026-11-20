@@ -9,10 +9,10 @@ const pt_mono = PT_Mono({
     display: "swap",
 });
 
-export default function About({ page }) {
+export default function About({ page, fluid = false }) {
     const matchedParent = AboutDesc.filter(parent => parent.page === page);
     return (
-        <div className={styles.about_section_container}>
+        <div className={`${styles.about_section_container} ${fluid ? styles.fluid : ""}`}>
             <div
                 className={`${styles.about_section_body_container} ${pt_mono.className}`}
             >

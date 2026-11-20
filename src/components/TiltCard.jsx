@@ -1,4 +1,5 @@
 "use client";
+import { releaseLayerAtRest } from "@/common/motion";
 import styles from "@/styles/components/TiltCard.module.scss";
 import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -57,12 +58,15 @@ export default function TiltCard({ children, className = "", max = 10 }) {
             ref={ref}
             className={`${styles.tilt} ${className}`}
             style={{ rotateX, rotateY, transformPerspective: 1000 }}
+            transformTemplate={releaseLayerAtRest}
             onPointerMove={onPointerMove}
             onPointerLeave={onPointerLeave}
         >
             {children}
             <motion.span className={styles.glare} style={{ background: glare, opacity: glareOpacity }} aria-hidden="true" />
-            <span className={styles.spotlight} aria-hidden="true" />
+            <span className={styles.spotlight} aria-hidden="true">
+                <span className={styles.beam} />
+            </span>
         </motion.div>
     );
 }

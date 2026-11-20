@@ -550,3 +550,20 @@ $panel: #020c1b;
         top: 92%;
     }
 }
+
+// Phones: no live blur of the starfield behind the terminal, and a steady glow instead of a pulsing one.
+@media (hover: none), (pointer: coarse) {
+    .terminal {
+        background: linear-gradient(160deg, rgba(17, 34, 64, 0.94), rgba(2, 12, 27, 0.97));
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        .preloader[data-phase="run"] & {
+            animation: none;
+            box-shadow:
+                0 30px 80px rgba(2, 12, 27, 0.8),
+                0 0 80px rgba(9, 253, 217, 0.4),
+                0 0 160px rgba(253, 9, 83, 0.2);
+        }
+    }
+}

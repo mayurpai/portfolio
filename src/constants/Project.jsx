@@ -1,16 +1,27 @@
+import { asset } from "@/common/assets";
 import { Social } from "./Social";
 
 export const githubLink = "https://github.com/mayurpai/";
-export const imageLink = "./images/projects/";
+export const imageLink = asset("images/projects/");
 
 export const Projects = [
   {
     title: "My Portfolio",
+    // Featured projects get a case-study row (in this order); the rest go in the archive table.
+    featured: 1,
+    // This very site: no "Visit live" link, the visitor is already here.
+    self: true,
+    eyebrow: "Next.js",
+    ideaLabel: "The idea",
+    idea: "A portfolio that feels like stepping into a universe, not reading a résumé.",
+    built: "A terminal you type npm run mayur into, portal transitions between worlds and a hand-synthesised soundtrack, statically exported to GitHub Pages.",
+    urlLabel: "mayurpai.github.io/portfolio",
+    imgSize: [1920, 982],
     shortDescription:
       "Unveil my artistic portfolio, showcasing my essence, achievements, and aspirations through creativity and vision.",
     fullDescription:
       "Unveil My Journey Canvas an artistic portfolio that reflects the essence of who I am, my remarkable achievements, and the splendid aspirations I harbor. With every brushstroke of creativity, making visible the kaleidoscope of my personality, accomplishments, and the brilliant future I am set to paint.",
-    technology: ["Next.js"],
+    technology: ["Next.js", "Framer Motion", "Web Audio", "SCSS"],
     codeLink: githubLink + "portfolio",
     webLink: Social.Portfolio,
     imgLink: imageLink + "Portfolio.webp",
@@ -19,6 +30,7 @@ export const Projects = [
   },
   {
     title: "Target Clone",
+    tagline: "A Target-inspired store: React front end on a Spring back end",
     shortDescription:
       "My Target-insprired clone offers diverse, discounted products for home, school, and business needs, spanning from baby essentials to electronics.",
     fullDescription:
@@ -32,6 +44,7 @@ export const Projects = [
   },
   {
     title: "Carbon Footprint Management",
+    tagline: "IoT and machine learning that predict optimal air quality",
     shortDescription:
       "Developed a predictive system using machine learning to optimize air quality and mitigate carbon footprint impacts on health.",
     fullDescription:
@@ -46,6 +59,7 @@ export const Projects = [
   },
   {
     title: "Auto Rickshaw Fare Meter (A.F.M)",
+    tagline: "Google Maps–based fares that dodge unfair price hikes",
     shortDescription:
       "Developed an Android application which is based over the usage of Google Maps API for those who wish to evade unreasonable fare price hikes.",
     fullDescription:
@@ -59,6 +73,7 @@ export const Projects = [
   },
   {
     title: "Pharmacy Management System",
+    tagline: "Drug inventory, billing and clinical tasks, automated",
     shortDescription:
       "My Pharmacy Management System automates drug inventory, billing, and clinical tasks, enhancing patient care and operational efficiency.",
     fullDescription:
@@ -72,6 +87,7 @@ export const Projects = [
   },
   {
     title: "Arms & Ammunition",
+    tagline: "Real-time simulation of a military base's stock",
     shortDescription:
       "Implemented an accurate real-time simulation of a military base system for defense, maintaining stock, tracking deficits, and aiding national security.",
     fullDescription:
@@ -94,6 +110,13 @@ export const Projects = [
   },
   {
     title: "Engineering Calculator",
+    featured: 3,
+    eyebrow: "Live tool",
+    ideaLabel: "The problem",
+    idea: "Engineering students work out semester and cumulative grades, and percentage conversions, by hand.",
+    built: "A calculator for semester-wise and cumulative grades with quick percentage conversion, made for engineering students.",
+    urlLabel: "mayurpai.github.io/Engineering-Calculator",
+    imgSize: [2920, 1640],
     shortDescription:
       "The essential academic companion for students, simplifying grade calculations and percentage conversions with precision.",
     fullDescription:
@@ -107,11 +130,18 @@ export const Projects = [
   },
   {
     title: "Tu Phodega",
+    featured: 2,
+    eyebrow: "Live site",
+    ideaLabel: "The problem",
+    idea: "Notes, materials and question papers for engineering students were scattered across colleges and sites.",
+    built: "One mobile-friendly home for notes, materials and MQPs from engineering colleges across India.",
+    urlLabel: "mayurpai.github.io/TuPhodega",
+    imgSize: [1920, 982],
     shortDescription:
       "Your engineering companion, streamlining resources, notes, and materials for an exciting journey.",
     fullDescription:
       "Designed and developed a website with Mobile Responsive User Experience to include notes, materials, and MQPs from all Engineering colleges in India.",
-    technology: ["HTML5", "CSS3", "JavaScript"],
+    technology: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
     codeLink: githubLink + "TuPhodega",
     webLink: Social.TuPhodega,
     imgLink: imageLink + "TuPhodega.webp",

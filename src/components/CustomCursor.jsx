@@ -46,8 +46,23 @@ export default function CustomCursor() {
             if (!frame) frame = requestAnimationFrame(follow);
         };
 
+        // A modal <dialog> sits in the browser's top layer, above every z-index, so the cursor
+        // moves inside an open one while it's in use and goes back to its place when it closes.
+        const home = { parent: root.parentNode, next: root.nextSibling };
+        const release = () => {
+            if (root.parentNode === home.parent) return;
+            home.parent.insertBefore(root, home.next?.parentNode === home.parent ? home.next : null);
+        };
+        const adopt = (dialog) => {
+            if (root.parentNode === dialog) return;
+            dialog.appendChild(root);
+            dialog.addEventListener("close", release, { once: true });
+        };
+
         const onOver = (event) => {
             const element = event.target instanceof Element ? event.target : null;
+            const dialog = element?.closest("dialog");
+            if (dialog?.matches(":modal")) adopt(dialog);
             const interactive = element?.closest(INTERACTIVE);
             const text = element?.closest("[data-cursor]")?.getAttribute("data-cursor") || "";
             root.dataset.hover = interactive ? "true" : "false";
@@ -73,6 +88,7 @@ export default function CustomCursor() {
 
         return () => {
             cancelAnimationFrame(frame);
+            release();
             html.classList.remove("has-custom-cursor");
             window.removeEventListener("pointermove", onMove);
             window.removeEventListener("pointerover", onOver);

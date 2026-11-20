@@ -1,4 +1,5 @@
 "use client";
+import { playEntrance, unlockSound } from "@/common/sound";
 import { setStageReady } from "@/common/stage";
 import styles from "@/styles/components/Preloader.module.scss";
 import { animate, motion, useAnimationControls, useMotionTemplate, useMotionValue, useTransform } from "framer-motion";
@@ -160,6 +161,7 @@ export default function Preloader() {
         clearTimeout(autoTimer.current);
         setPhase("launch");
         speedRef.current = 70;
+        playEntrance();
         // The page's own entrances play while the portal is opening.
         window.setTimeout(() => setStageReady(true), 250);
         animate(hole, 150, {
@@ -225,6 +227,16 @@ export default function Preloader() {
         return () => {
             html.style.overflow = "";
             app?.removeAttribute("inert");
+        };
+    }, [locked]);
+
+    useEffect(() => {
+        if (!locked) return undefined;
+        window.addEventListener("keydown", unlockSound);
+        window.addEventListener("pointerdown", unlockSound);
+        return () => {
+            window.removeEventListener("keydown", unlockSound);
+            window.removeEventListener("pointerdown", unlockSound);
         };
     }, [locked]);
 

@@ -26,7 +26,25 @@
     font-size: 2rem;
     color: var(--white);
     background: radial-gradient(circle at 30% 30%, #1d3b66, var(--dark-navy) 70%);
-    animation: pulse 3.2s ease-in-out infinite;
+    box-shadow:
+        0 0 0 0.06rem rgba(100, 255, 218, 0.3),
+        0 0 2.5rem rgba(9, 253, 217, 0.3),
+        inset 0 0 1.5rem rgba(9, 253, 217, 0.2);
+
+    // The pink half of the pulse fades in and out: animating opacity stays on the GPU, box-shadow repaints.
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        box-shadow:
+            0 0 0 0.06rem rgba(253, 9, 83, 0.4),
+            0 0 4rem rgba(253, 9, 83, 0.35),
+            inset 0 0 2rem rgba(253, 9, 83, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        animation: pulse 3.2s ease-in-out infinite;
+    }
 
     &::before {
         content: "";
@@ -138,19 +156,8 @@
 }
 
 @keyframes pulse {
-    0%,
-    100% {
-        box-shadow:
-            0 0 0 0.06rem rgba(100, 255, 218, 0.3),
-            0 0 2.5rem rgba(9, 253, 217, 0.3),
-            inset 0 0 1.5rem rgba(9, 253, 217, 0.2);
-    }
-
     50% {
-        box-shadow:
-            0 0 0 0.06rem rgba(253, 9, 83, 0.4),
-            0 0 4rem rgba(253, 9, 83, 0.35),
-            inset 0 0 2rem rgba(253, 9, 83, 0.25);
+        opacity: 1;
     }
 }
 

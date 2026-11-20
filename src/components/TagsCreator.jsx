@@ -3,6 +3,7 @@ import { useRef } from "react";
 import styles from "../styles/components/Tags.module.scss";
 
 import { useStageReady } from "@/common/stage";
+import { noLayer } from "@/common/motion";
 import { motion, useInView } from "framer-motion";
 import { La_Belle_Aurore } from "next/font/google";
 
@@ -42,6 +43,7 @@ export default function TagsCreator(props) {
         initial="hidden"
         animate={inView && ready ? "shown" : "hidden"}
         whileHover={{ scale: 1.08, rotate: -3 }}
+        transformTemplate={noLayer}
       >
         {props.bool ? (
           <span> &lt;/{props.tag}&gt; </span>

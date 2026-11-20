@@ -79,3 +79,15 @@
         transform: rotate(1turn);
     }
 }
+
+// Phones: 76 spinning stars would each be a GPU layer, and the blur re-renders every frame.
+@media (hover: none), (pointer: coarse) {
+    .star {
+        animation: none;
+    }
+
+    .band_outline {
+        background: rgba(10, 25, 47, 0.92);
+        backdrop-filter: none;
+    }
+}

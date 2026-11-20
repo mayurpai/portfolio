@@ -1,4 +1,5 @@
 "use client";
+import { releaseLayerAtRest } from "@/common/motion";
 import Button from "@/components/Button";
 import Magnetic from "@/components/Magnetic";
 import styles from "@/styles/sections/Message.module.scss";
@@ -43,7 +44,7 @@ export default function Message() {
                 >
                     {TAGLINE.map((text, index) => (
                         <span className={styles.word_mask} key={text} aria-hidden="true">
-                            <motion.span className={index < 3 ? styles.word_outline : styles.word_fill} variants={word}>
+                            <motion.span className={index < 3 ? styles.word_outline : styles.word_fill} variants={word} transformTemplate={releaseLayerAtRest}>
                                 {text}
                             </motion.span>
                         </span>

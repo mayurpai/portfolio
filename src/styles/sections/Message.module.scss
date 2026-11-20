@@ -101,6 +101,16 @@
     }
 }
 
+// Phones: moving text gradients repaint every frame; keep the colours, drop the motion.
+@media (hover: none), (pointer: coarse) {
+    .message_conatiner .message_body_container {
+        .word_fill,
+        .message .bold_text {
+            animation: none;
+        }
+    }
+}
+
 @keyframes heartbeat {
     0%,
     40%,
